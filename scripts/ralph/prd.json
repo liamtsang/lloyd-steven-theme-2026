@@ -129,7 +129,7 @@
         "templates/page.customs-process.json",
         "assets/*.css"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,

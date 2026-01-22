@@ -86,3 +86,15 @@
   - Liquid conditional syntax: {% if section.settings.anchor_id != blank %}...{% endif %}
   - **Next step required:** Update footer menu links in Shopify admin to use the new anchor URLs
 ---
+## 2026-01-22 - Story 7
+- Fixed center alignment for Customs Process intro paragraph
+- Files changed:
+  - assets/section-rich-text.css: Removed text-align: left from .rich-text__text rules
+- **Learnings for future iterations:**
+  - CSS specificity can override section settings - section-rich-text.css had text-align: left that overrode the content_alignment setting
+  - Rich-text sections support content_alignment: center/left/right set in the section settings JSON
+  - The .rich-text__text class is used for all text blocks in rich-text sections
+  - Removed text-align from three locations: base rule (line 23-26), mobile @media (line 89-94), desktop @media (line 133-138)
+  - By removing the explicit text-align, the section now respects the content_alignment setting from the JSON template
+  - This fix applies to all rich-text sections site-wide, improving consistency
+---
