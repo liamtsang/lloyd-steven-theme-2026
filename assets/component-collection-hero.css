@@ -112,3 +112,24 @@
     min-height: 20rem;
   }
 }
+
+/* Editorial Media Styles */
+.collection-hero__editorial-media {
+  width: 100%;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.collection-hero__editorial-media img,
+.collection-hero__editorial-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 750px) {
+  .collection-hero__editorial-media {
+    margin: 3rem 0;
+  }
+}

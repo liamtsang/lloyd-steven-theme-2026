@@ -21,6 +21,48 @@
       {%- endif -%}
     </div>
 
+    {%- comment -%}Editorial Image/Video from metafield{%- endcomment -%}
+    {%- if section.settings.show_editorial_media and collection.metafields.custom.editorial_image != blank -%}
+      <div class="collection-hero__editorial-media media gradient">
+        {%- assign editorial_media = collection.metafields.custom.editorial_image -%}
+
+        {%- if editorial_media.media_type == 'video' -%}
+          <video
+            class="collection-hero__editorial-video"
+            autoplay
+            loop
+            muted
+            playsinline
+            width="{{ editorial_media.preview_image.width }}"
+            height="{{ editorial_media.preview_image.height }}"
+          >
+            {%- for source in editorial_media.sources -%}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}">
+            {%- endfor -%}
+          </video>
+        {%- else -%}
+          <img
+            srcset="
+              {%- if editorial_media.width >= 375 -%}{{ editorial_media | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if editorial_media.width >= 750 -%}{{ editorial_media | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if editorial_media.width >= 1100 -%}{{ editorial_media | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if editorial_media.width >= 1500 -%}{{ editorial_media | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if editorial_media.width >= 1780 -%}{{ editorial_media | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if editorial_media.width >= 2000 -%}{{ editorial_media | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if editorial_media.width >= 3000 -%}{{ editorial_media | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {{ editorial_media | image_url }} {{ editorial_media.width }}w
+            "
+            src="{{ editorial_media | image_url: width: 1500 }}"
+            sizes="100vw"
+            alt="{{ editorial_media.alt | escape }}"
+            loading="lazy"
+            width="{{ editorial_media.width }}"
+            height="{{ editorial_media.height }}"
+          >
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
         <img
@@ -71,6 +113,13 @@
       "id": "show_collection_description",
       "default": true,
       "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_editorial_media",
+      "default": true,
+      "label": "Show Editorial Media",
+      "info": "Display editorial image or video from Collection Editorial Image metafield"
     },
     {
       "type": "checkbox",
