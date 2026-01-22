@@ -111,3 +111,18 @@
   - Adjacent accordion selector (.accordion + .accordion) ensures no gaps between items
   - Desktop appearance preserved by keeping existing min-width: 750px media query unchanged
 ---
+## 2026-01-22 - Story 9
+- Fixed About Us page formatting issues for desktop and mobile
+- Files changed:
+  - templates/page.about-us.json: Changed second image-with-text section desktop_content_position from "bottom" to "top"
+  - assets/component-image-with-text.css: Added mobile-specific padding overrides for About Us page sections
+- **Learnings for future iterations:**
+  - Image-with-text sections support desktop_content_position settings: top/middle/bottom
+  - Section-specific CSS classes follow pattern: .section-{section_id}-padding (e.g., .section-image_with_text_DwxgNk-padding)
+  - Mobile padding is calculated in image-with-text.liquid as desktop padding × 0.75 by default
+  - Can override mobile padding with section-specific CSS using !important for precise control
+  - About Us page sections have IDs: image_with_text_cCJdYB, image_with_text_DwxgNk, image_with_text_mzJ4wM, image_with_text_YrnFrc
+  - Rich-text sections between image blocks also need padding adjustments (rich_text_bJeEUz)
+  - Reduced mobile padding to ~28px for consistent gaps, ~20px after second block for tighter spacing
+  - Desktop layout remains unchanged when only targeting mobile with @media screen and (max-width: 749px)
+---

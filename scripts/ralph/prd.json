@@ -165,7 +165,7 @@
         "templates/page.about-us.json",
         "assets/*.css"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,
