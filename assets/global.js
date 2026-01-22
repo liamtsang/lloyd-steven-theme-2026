@@ -718,12 +718,35 @@ class DeferredMedia extends HTMLElement {
     const poster = this.querySelector('[id^="Deferred-Poster-"]');
     if (!poster) return;
 
-    // Automatically load content on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      this.loadContent(); // Call loadContent directly on page load
-    });
+    // Use Intersection Observer for lazy loading videos when they enter viewport
+    if ('IntersectionObserver' in window) {
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !this.getAttribute('loaded')) {
+            this.loadContent();
+            this.observer.disconnect();
+          }
+        });
+      }, {
+        rootMargin: '50px', // Start loading 50px before entering viewport
+        threshold: 0.1
+      });
+
+      this.observer.observe(this);
+    } else {
+      // Fallback for browsers without Intersection Observer
+      document.addEventListener('DOMContentLoaded', () => {
+        this.loadContent();
+      });
+    }
 
     poster.addEventListener('click', this.loadContent.bind(this));
+  }
+
+  disconnectedCallback() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
 loadContent(focus = false) {
@@ -731,7 +754,7 @@ loadContent(focus = false) {
   if (!this.getAttribute('loaded')) {
     const content = document.createElement('div');
     const videoElement = this.querySelector('template').content.firstElementChild.cloneNode(true);
-    
+
     // Hide controls by removing the 'controls' attribute
     if (videoElement.nodeName === 'VIDEO') {
       videoElement.removeAttribute('controls');
