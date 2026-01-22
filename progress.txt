@@ -49,3 +49,22 @@
   - Interior pages use margin-top on footer (8rem desktop, 4rem mobile) for proper spacing
   - Homepage footer uses margin-top: auto to push to bottom with logo centered
 ---
+## 2026-01-22 - Story 6
+- Standardized font sizes across all pages to match About page reference scale
+- Files changed:
+  - assets/base.css: Added typography documentation comments
+  - assets/section-rich-text.css: Reduced About page h3 from 4rem to 2rem
+  - sections/main-product.liquid: Changed product title from h1 to h2
+  - templates/*.json (9 files): Updated heading_size from h1 to h2 across all page templates
+- **Learnings for future iterations:**
+  - Typography uses CSS custom properties: --font-heading-scale and --font-body-scale (configurable in theme settings)
+  - Standard "small" heading size is h2: 2rem mobile (20px) → 2.4rem desktop (24px)
+  - All heading sizes multiply by --font-heading-scale variable for global scaling
+  - Paragraph alignment utilities already exist: .left, .center, .right in base.css (lines 471-481)
+  - h1 is 3rem (30px), h2 is 2rem→2.4rem, h3 is 1.7rem→1.8rem, h4 is 1.5rem, h5 is 1.2rem→1.3rem
+  - Product titles are rendered in sections/main-product.liquid, block type 'title'
+  - Template JSON files use "heading_size" property to control heading sizes in sections
+  - About page had custom 4rem h3 sizing in section-rich-text.css that was reduced to match h2 scale
+  - Typography system is now documented in base.css lines 263-276 for future reference
+  - Font family hierarchy: h1 uses "DaVinci", h2-h5 use --font-heading-family (Assistant by default)
+---

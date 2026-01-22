@@ -111,7 +111,7 @@
         "config/settings_schema.json",
         "sections/*.liquid"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,
