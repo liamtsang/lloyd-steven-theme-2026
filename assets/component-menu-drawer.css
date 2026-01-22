@@ -124,7 +124,7 @@ details[open].menu-opening > .menu-drawer__submenu {
   display: grid;
   grid-template-rows: 1fr auto;
   align-content: space-between;
-  overflow-y: clip;
+  overflow-y: auto;
   height: 100%;
 }
 
