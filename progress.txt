@@ -1,0 +1,31 @@
+## Codebase Patterns
+- Header navigation uses snippets/header-drawer.liquid for drawer menu system
+- Menu styling controlled by assets/component-menu-drawer.css
+- Menu uses details/summary HTML structure for toggle functionality
+- Standard Shopify theme: direct edits to Liquid templates and CSS, no build tools
+- CSS can target details[open] and details:not([open]) for state-based styling
+---
+
+## 2026-01-22 - Story 1
+- Implemented 2-line hamburger icon to replace "MENU" text in header navigation
+- Files changed:
+  - snippets/header-drawer.liquid: Replaced text span with hamburger icon structure
+  - assets/component-menu-drawer.css: Added CSS styles for hamburger icon with proper transitions
+- **Learnings for future iterations:**
+  - The header navigation uses a drawer system with snippets/header-drawer.liquid
+  - Menu styling is controlled by assets/component-menu-drawer.css
+  - The menu uses a details/summary HTML structure that toggles between open and closed states
+  - CSS can target details[open] and details:not([open]) to show/hide elements based on menu state
+  - This is a standard Shopify theme without build tools - changes are direct to Liquid templates and CSS
+---
+## 2026-01-22 - Story 12
+- Fixed menu scroll issue on desktop and mobile by changing overflow property
+- Files changed:
+  - assets/component-menu-drawer.css: Changed overflow-y from 'clip' to 'auto' on .menu-drawer__navigation-container
+- **Learnings for future iterations:**
+  - The menu drawer was using overflow-y: clip which prevented scrolling when content exceeded viewport height
+  - The .menu-drawer__navigation-container is the scrollable container that holds the menu items
+  - overflow-y: auto allows scrolling when content overflows while keeping it hidden when content fits
+  - No JavaScript changes were needed - this was purely a CSS overflow issue
+  - The menu drawer uses a grid layout with grid-template-rows: 1fr auto to position menu and utility links
+---

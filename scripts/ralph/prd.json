@@ -1,0 +1,312 @@
+{
+  "project": "Lloyd Steven Theme 2026 Updates",
+  "branch": "theme-updates-2026",
+  "description": "Comprehensive theme updates including UI improvements, footer implementation, font consistency, and feature additions for the Lloyd Steven Shopify store.",
+  "stories": [
+    {
+      "id": 1,
+      "title": "Replace MENU text with hamburger icon",
+      "type": "code",
+      "priority": "high",
+      "description": "Replace the text 'MENU' with a 2-line hamburger icon in the header navigation.",
+      "acceptance_criteria": [
+        "Hamburger icon displays with 2 horizontal lines",
+        "Icon appears consistently on desktop and mobile",
+        "Icon maintains proper spacing and alignment with header",
+        "Icon is clickable and opens menu as expected"
+      ],
+      "files_likely_affected": [
+        "snippets/header*.liquid",
+        "sections/header*.liquid",
+        "assets/*.css"
+      ],
+      "passes": true
+    },
+    {
+      "id": 2,
+      "title": "Update page navigation names for consistency",
+      "type": "content",
+      "priority": "high",
+      "description": "Update page names in navigation to match URL slugs and page titles: 'ABOUT US' \u2192 'ABOUT', 'CUSTOMER INFO GUIDE' \u2192 'CUSTOMER SUPPORT', 'CUSTOMS PROCESS' \u2192 'CUSTOM DESIGN AND CONCIERGE'",
+      "acceptance_criteria": [
+        "Navigation displays 'ABOUT' instead of 'ABOUT US'",
+        "Navigation displays 'CUSTOMER SUPPORT' instead of 'CUSTOMER INFO GUIDE'",
+        "Navigation displays 'CUSTOM DESIGN AND CONCIERGE' instead of 'CUSTOMS PROCESS'",
+        "Names are consistent across all menu locations"
+      ],
+      "notes": "This is likely a Shopify admin navigation menu configuration change, not code",
+      "passes": false
+    },
+    {
+      "id": 3,
+      "title": "Remove unused pages",
+      "type": "content",
+      "priority": "medium",
+      "description": "Remove pages that are not in use: ABOUT, POLICIES, CUSTOMS GALLERY, SHOGUN LANDING, DEFAULT, etc.",
+      "acceptance_criteria": [
+        "Unused pages are deleted from Shopify admin",
+        "No broken links remain on the site",
+        "Navigation no longer references deleted pages"
+      ],
+      "notes": "This is a Shopify admin task - delete pages via admin panel, not code",
+      "passes": false
+    },
+    {
+      "id": 4,
+      "title": "Build and style footer across all pages",
+      "type": "code",
+      "priority": "high",
+      "description": "Implement footer design based on Figma specs and THE ROW website reference. Homepage should have Lloyd Steven logo centered with footer barely visible without scroll. Other pages should have decent spacing before footer.",
+      "acceptance_criteria": [
+        "Footer appears on all pages",
+        "Homepage footer is positioned low with logo appearing centered",
+        "Interior pages have appropriate spacing between content and footer",
+        "Footer design matches Figma specifications",
+        "Footer content matches THE ROW website styling approach",
+        "Footer is responsive on mobile and desktop"
+      ],
+      "files_likely_affected": [
+        "sections/footer.liquid",
+        "sections/footer-group.json",
+        "layout/theme.liquid",
+        "assets/*.css"
+      ],
+      "passes": false
+    },
+    {
+      "id": 5,
+      "title": "Add anchor links in footer to page sections",
+      "type": "code",
+      "priority": "medium",
+      "description": "When footer links to 'Custom Gallery', it should jump to the Custom Gallery section on the customs process page. Privacy Policy and Terms links should jump directly to those sections in customer support page.",
+      "acceptance_criteria": [
+        "Footer 'Custom Gallery' link jumps to Custom Gallery section on customs process page",
+        "Privacy Policy link jumps to Privacy Policy section",
+        "Terms link jumps to Terms section",
+        "Anchor links work smoothly with appropriate scroll behavior",
+        "Links work correctly on both desktop and mobile"
+      ],
+      "files_likely_affected": [
+        "sections/footer.liquid",
+        "templates/page.customs-process.json",
+        "templates/page.customer-info-guide.json"
+      ],
+      "passes": false
+    },
+    {
+      "id": 6,
+      "title": "Site-wide font size audit and consistency",
+      "type": "code",
+      "priority": "high",
+      "description": "Review and standardize all font sizes across the site. Heading fonts should read small across all pages (About page is reference). Enable center-alignment for paragraphs and provide consistent header/text size options.",
+      "acceptance_criteria": [
+        "All heading fonts match the scale used on About page",
+        "Font sizes are consistent across all page types",
+        "Paragraphs can be center-aligned when needed",
+        "Header and text size options are clearly defined and consistent",
+        "Typography system is documented in CSS/theme settings"
+      ],
+      "files_likely_affected": [
+        "assets/*.css",
+        "config/settings_schema.json",
+        "sections/*.liquid"
+      ],
+      "passes": false
+    },
+    {
+      "id": 7,
+      "title": "Format Customs Process intro paragraph",
+      "type": "code",
+      "priority": "low",
+      "description": "The 'Customs and Concierge' intro paragraph should be center-aligned and font/size should match the paragraphs below it.",
+      "acceptance_criteria": [
+        "Intro paragraph is center-aligned",
+        "Font and size match other paragraphs on the page",
+        "Formatting is consistent on desktop and mobile"
+      ],
+      "files_likely_affected": [
+        "templates/page.customs-process.json",
+        "assets/*.css"
+      ],
+      "passes": false
+    },
+    {
+      "id": 8,
+      "title": "Fix Customer Guide mobile dropdown consistency",
+      "type": "code",
+      "priority": "medium",
+      "description": "On mobile, dropdown menu sections appear inconsistent (some thicker, some thinner). Make all sections consistent while maintaining desktop appearance.",
+      "acceptance_criteria": [
+        "All dropdown sections have consistent thickness on mobile",
+        "Desktop view remains unchanged",
+        "Visual consistency across all accordion/dropdown elements"
+      ],
+      "files_likely_affected": [
+        "templates/page.customer-info-guide.json",
+        "assets/*.css",
+        "snippets/accordion*.liquid"
+      ],
+      "passes": false
+    },
+    {
+      "id": 9,
+      "title": "Fix About Us page formatting issues",
+      "type": "code",
+      "priority": "medium",
+      "description": "Desktop: Second paragraph text box is too low - should align with other photos. Mobile: Reduce gaps between image/text blocks, especially after second block.",
+      "acceptance_criteria": [
+        "Desktop: Second paragraph text box aligns properly with photos",
+        "Mobile: Gaps between image/text blocks are reduced appropriately",
+        "Mobile: Gap after second block is noticeably smaller",
+        "Layout remains responsive and clean"
+      ],
+      "files_likely_affected": [
+        "templates/page.about-us.json",
+        "assets/*.css"
+      ],
+      "passes": false
+    },
+    {
+      "id": 10,
+      "title": "Format collection descriptions above product grid",
+      "type": "code",
+      "priority": "medium",
+      "description": "Custom descriptions exist in each collection but are hidden. Format them so collection name is small (consistent with header text size) and paragraph below is center-aligned.",
+      "acceptance_criteria": [
+        "Collection name displays in small header size (consistent with site headers)",
+        "Description paragraph is center-aligned",
+        "Formatting appears above product grid",
+        "Styling is consistent across all collection pages",
+        "Responsive on mobile and desktop"
+      ],
+      "files_likely_affected": [
+        "templates/collection*.json",
+        "sections/main-collection*.liquid",
+        "assets/*.css"
+      ],
+      "passes": false
+    },
+    {
+      "id": 11,
+      "title": "Reduce product title size on product pages",
+      "type": "code",
+      "priority": "high",
+      "description": "Product titles are too large, especially on mobile. Should match 'small' heading size (reference: About page heading scale).",
+      "acceptance_criteria": [
+        "Product title size matches small heading standard",
+        "Size is consistent with About page heading scale",
+        "Particularly improved on mobile view",
+        "Applied to all product templates"
+      ],
+      "files_likely_affected": [
+        "templates/product.json",
+        "sections/main-product*.liquid",
+        "assets/*.css"
+      ],
+      "passes": false
+    },
+    {
+      "id": 12,
+      "title": "Fix menu scroll issue on desktop and mobile",
+      "type": "code",
+      "priority": "high",
+      "description": "Menu cannot scroll down on desktop or mobile - it stops at 'ABOUT' preventing access to items below.",
+      "acceptance_criteria": [
+        "Menu scrolls properly on desktop",
+        "Menu scrolls properly on mobile",
+        "All menu items are accessible",
+        "Scroll behavior is smooth and intuitive",
+        "No items are cut off or hidden"
+      ],
+      "files_likely_affected": [
+        "sections/header*.liquid",
+        "snippets/header*.liquid",
+        "assets/*.css",
+        "assets/*.js"
+      ],
+      "passes": true
+    },
+    {
+      "id": 13,
+      "title": "Add editorial images/video to collection pages",
+      "type": "code",
+      "priority": "medium",
+      "description": "Enable editorial images (and video if possible) on collection pages. A 'Collection Editorial Image' metafield has been created but needs to be implemented in the theme.",
+      "acceptance_criteria": [
+        "Collection Editorial Image metafield displays on collection pages",
+        "Editorial images render properly within collection layout",
+        "Video support is implemented if theme-compatible",
+        "Editorial content maintains collection theme consistency",
+        "Feature works across all collection pages",
+        "Responsive on mobile and desktop"
+      ],
+      "files_likely_affected": [
+        "templates/collection*.json",
+        "sections/main-collection*.liquid",
+        "assets/*.css"
+      ],
+      "notes": "Investigate theme capabilities for media rendering",
+      "passes": false
+    },
+    {
+      "id": 14,
+      "title": "Implement fast-loading product video across all products",
+      "type": "code",
+      "priority": "medium",
+      "description": "Replicate the clean, fast video loading experience from reference product page across all product pages to enable video addition for all styles.",
+      "acceptance_criteria": [
+        "Video loads quickly and smoothly on product pages",
+        "Video player experience matches reference product",
+        "All product templates support video",
+        "Video maintains quality while loading efficiently",
+        "Mobile and desktop video experience is optimized",
+        "No impact on page load performance"
+      ],
+      "files_likely_affected": [
+        "templates/product.json",
+        "sections/main-product*.liquid",
+        "snippets/product-media*.liquid",
+        "assets/*.css",
+        "assets/*.js"
+      ],
+      "notes": "May require Shopify video media type implementation",
+      "passes": false
+    },
+    {
+      "id": 15,
+      "title": "Update Google metadata and search preview",
+      "type": "content",
+      "priority": "high",
+      "description": "Update site metadata for Google search preview to display: 'LLOYD STEVEN | FINE JEWELLERY MADE IN AUSTRALIA' with description about precious metals, ethically sourced stones, and concierge services.",
+      "acceptance_criteria": [
+        "Meta title reads 'LLOYD STEVEN | FINE JEWELLERY MADE IN AUSTRALIA'",
+        "Meta description includes: precious metals, ethically sourced stones, concierge services, custom design, private styling",
+        "Search preview displays correctly in Google",
+        "Metadata is set in Shopify admin SEO settings"
+      ],
+      "notes": "This is primarily a Shopify admin Online Store > Preferences change, though theme.liquid may need meta tag verification",
+      "files_likely_affected": [
+        "layout/theme.liquid",
+        "config/settings_data.json"
+      ],
+      "passes": false
+    }
+  ],
+  "technical_notes": {
+    "platform": "Shopify",
+    "theme_structure": "Standard Shopify theme with sections, snippets, templates, assets",
+    "content_vs_code": "Stories marked 'content' type are primarily Shopify admin changes. Stories marked 'code' type require template/CSS/JS modifications.",
+    "references": {
+      "design": "Figma specs provided",
+      "style_reference": "THE ROW website footer",
+      "font_reference": "About page heading scale"
+    }
+  },
+  "success_criteria": {
+    "all_stories_complete": "All stories marked with passes: true",
+    "no_broken_links": "Site navigation functions properly",
+    "responsive_design": "All changes work on mobile and desktop",
+    "performance": "No degradation in page load times",
+    "consistency": "Typography and spacing consistent across all pages"
+  }
+}
