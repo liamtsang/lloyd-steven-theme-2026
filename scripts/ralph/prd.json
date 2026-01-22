@@ -203,7 +203,8 @@
         "sections/main-product*.liquid",
         "assets/*.css"
       ],
-      "passes": false
+      "passes": true,
+      "notes": "Completed as part of Story 6 - product titles changed from h1 to h2"
     },
     {
       "id": 12,
