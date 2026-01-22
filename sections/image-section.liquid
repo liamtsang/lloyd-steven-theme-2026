@@ -1,0 +1,71 @@
+{% schema %}
+  {
+    "name": "Image Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Upload Image"
+      },
+      {
+        "type": "text",
+        "id": "alt_text",
+        "label": "Alt Text",
+        "default": "Alt text for the image"
+      },
+      {
+        "type": "text",
+        "id": "image_link",
+        "label": "Image Link",
+        "default": "https://"
+      },
+      {
+        "type": "range",
+        "id": "image_max_width",
+        "label": "Image Max Width",
+        "min": 100,
+        "max": 1000,
+        "step": 10,
+        "unit": "px",
+        "default": 500
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Section"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+
+  .imgSection{
+    max-width:500px;
+    width:100%;
+    margin:0px auto;
+    position:relative;
+    z-index:2;
+  }
+  .imgSection img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: 115px;
+}
+
+  div#shopify-section-template--17344988577992__product-grid {
+    margin-top: -115px;
+    
+}
+</style>
+<!-- <section class="image-section" style="max-width: {{ section.settings.image_max_width }}px;"> -->
+<section class="image-section" style="">
+  {% if section.settings.image %}
+    <div class="imgSection">
+       <!-- <a href="{{ section.settings.image_link }}" target="_blank"> -->
+      <img src="{{ section.settings.image | image_url }}" alt="{{ section.settings.alt_text }}">
+    <!-- </a> -->
+    </div>
+   
+  {% endif %}
+</section>

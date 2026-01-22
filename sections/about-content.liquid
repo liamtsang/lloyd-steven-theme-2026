@@ -1,0 +1,98 @@
+{% comment %}
+  sections/about-content.liquid
+{% endcomment %}
+
+<div class="about-content">
+  <h1 class="about-title">{{ section.settings.title }}</h1>
+  
+  <div class="about-intro">
+    {{ section.settings.intro_text }}
+  </div>
+
+  <div class="about-image-description-container"
+    <div class="about-description">
+      {{ section.settings.description }}
+    </div>
+    <div class="about-image">
+      <img src="{{ section.settings.main_image | img_url: 'large' }}" alt="{{ section.settings.main_image.alt }}">
+    </div>
+  </div>
+  
+</div>
+
+{% schema %}
+{
+  "name": "About Content",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "About Us"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Intro Text",
+      "default": "Welcome to our story"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Enter your company description here.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Content",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-intro {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-image-description-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-image {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+{% endstylesheet %}

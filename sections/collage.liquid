@@ -1,0 +1,558 @@
+{% comment %}
+  Include necessary stylesheets
+{% endcomment %}
+{{ 'collage.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-modal-video.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  .home-rain {
+    position: fixed;
+    transition: top 0.01s linear;
+    z-index: 2;
+    cursor: pointer;
+    top: -20%;
+    opacity: 0;
+    padding-top: 0 !important;
+    mix-blend-mode: darken;
+  }
+
+  .home-rain img {
+    transform: scale(50%) translateY(-50%) translateX(-50%);
+    height: auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .home-rain img {
+      transform: scale(100%);
+    }
+  }
+
+  .collage-wrapper {
+    cursor: pointer;
+  }
+{%- endstyle -%}
+
+<div
+  class="color-{{ section.settings.color_scheme }} gradient isolate collage-wrapper"
+  {% if section.settings.body_link != blank %}
+    onclick="window.location.href='{{ section.settings.body_link }}'"
+  {% endif %}
+>
+  {% for block in section.blocks %}
+    {% if block.type == 'rain_image' %}
+      <div
+        id="home-rain-{{ forloop.index }}"
+        class="home-rain"
+        style="left: {{ block.settings.initial_left }}%;"
+        data-href="{{ block.settings.href | escape }}"
+        data-block-id="{{ block.id }}"
+        data-delay="{{ block.settings.delay }}"
+      >
+        <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}">
+      </div>
+    {% endif %}
+  {% endfor %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rainElements = document.querySelectorAll('.home-rain');
+      
+      function initializeElements() {
+        rainElements.forEach(el => {
+          el.dataset.speed = 0.5 + Math.random() * 1.5;
+          el.style.top = `-20%`;
+          el.dataset.initialLeft = el.style.left;
+          el.style.opacity = '0';
+        });
+      }
+
+      function animateRain(el) {
+        let rect = el.getBoundingClientRect();
+        let newTop = rect.top + parseFloat(el.dataset.speed);
+        if (newTop > window.innerHeight) {
+          el.style.top = `-60%`;
+          el.style.left = el.dataset.initialLeft;
+          el.dataset.speed = 0.5 + Math.random() * 1.5;
+        } else {
+          el.style.top = `${newTop}px`;
+        }
+        requestAnimationFrame(() => animateRain(el));
+      }
+
+      function handleRainClick(event) {
+        const rainElement = event.currentTarget;
+        const href = rainElement.dataset.href;
+        if (href) {
+          window.open(href, '_blank');
+          event.stopPropagation(); // Prevent the body click event from firing
+        }
+      }
+
+      function startRainAnimation(el) {
+        el.style.opacity = '1';
+        animateRain(el);
+      }
+
+      rainElements.forEach(el => {
+        el.addEventListener('click', handleRainClick);
+        const delay = parseFloat(el.dataset.delay) * 1000; // Convert to milliseconds
+        setTimeout(() => startRainAnimation(el), delay);
+      });
+
+      initializeElements();
+      window.addEventListener('resize', initializeElements);
+    });
+  </script>
+
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="collage-wrapper-title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ section.settings.heading }}
+      </h2>
+    {%- endif -%}
+    <div class="collage{% if section.settings.mobile_layout == 'collage' %} collage--mobile{% endif %}">
+      {% assign skip_card_product_styles = false %}
+      {%- for block in section.blocks -%}
+        <div
+          class="collage__item collage__item--{{ block.type }} collage__item--{{ section.settings.desktop_layout }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          {%- assign placeholder_image_index = forloop.index0 | modulo: 4 | plus: 1 -%}
+          {%- case block.type -%}
+            {%- when 'image' -%}
+              <div class="collage-card {% if section.settings.card_styles == 'none' %}global-media-settings{% else %}card-wrapper {{ section.settings.card_styles }} gradient{% endif %}">
+                <div
+                  class="media media--transparent ratio"
+                  {% if block.settings.image != blank %}
+                    style="--ratio-percent: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%"
+                  {% else %}
+                    style="--ratio-percent: 100%"
+                  {% endif %}
+                >
+                  {%- if block.settings.image != blank -%}
+                    {%- liquid
+                      if section.settings.desktop_layout == 'left'
+                        assign large_block = forloop.first
+                      else
+                        assign large_block = forloop.last
+                      endif
+
+                      assign grid_space_desktop = settings.spacing_grid_horizontal | divided_by: 2 | append: 'px'
+                      assign grid_space_mobile = settings.spacing_grid_horizontal | divided_by: 4 | append: 'px'
+                    -%}
+                    {%- if large_block -%}
+                      {%- capture sizes -%}
+                        {% if section.blocks.size == 1 -%}(min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px){% else %}(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 2 / 3 - {{ grid_space_desktop }}){% endif %},
+                        {% if section.blocks.size == 1 -%}(min-width: 750px) calc(100vw - 100px){% else %}(min-width: 750px) calc((100vw - 100px) * 2 / 3 - {{ grid_space_desktop }}){% endif %},
+                        {% if section.blocks.size == 2 and section.settings.mobile_layout == 'collage' -%}calc((100vw - 30px) / 2){% else %}calc(100vw - 30px){% endif %}
+                        {%- endcapture -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 3200
+                        | image_tag:
+                          sizes: sizes,
+                          widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                      }}
+                    {%- else -%}
+                      {%- capture sizes -%}
+                           (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 1 / 3 - {{ grid_space_desktop }}),
+                           (min-width: 750px) calc((100vw - 100px) * 1 / 3 - {{ grid_space_desktop }}),
+                           {% if section.settings.mobile_layout == 'collage' %}calc((100vw - 30px) / 2 - {{ grid_space_mobile }}){% else %}calc(100vw - 30px){% endif %}
+                        {%- endcapture -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 3200
+                        | image_tag:
+                          sizes: sizes,
+                          widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                      }}
+                    {%- endif -%}
+                  {%- else -%}
+                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- when 'product' -%}
+              {%- assign placeholder_image = 'product-apparel-' | append: placeholder_image_index -%}
+              {% render 'card-product',
+                card_product: block.settings.product,
+                media_aspect_ratio: 'adapt',
+                show_secondary_image: block.settings.second_image,
+                extend_height: true,
+                placeholder_image: placeholder_image,
+                skip_styles: skip_card_product_styles
+              %}
+              {% assign skip_card_product_styles = true %}
+            {%- when 'collection' -%}
+              {%- assign placeholder_image = 'collection-apparel-' | append: placeholder_image_index -%}
+              {% render 'card-collection',
+                card_collection: block.settings.collection,
+                media_aspect_ratio: 'adapt',
+                columns: 2,
+                extend_height: true,
+                wrapper_class: section.settings.card_styles,
+                placeholder_image: placeholder_image
+              %}
+            {%- when 'video' -%}
+              <div class="collage-card {% if section.settings.card_styles == 'none' %}global-media-settings{% else %}{{ section.settings.card_styles }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
+                <modal-opener data-modal="#PopupModal-{{ block.id }}">
+                  <div class="deferred-media">
+                    <button
+                      class="deferred-media__poster full-unstyled-link"
+                      type="button"
+                      aria-label="{{ 'sections.video.load_video' | t: description: block.settings.description | escape }}"
+                      aria-haspopup="dialog"
+                      data-media-id="{{ block.settings.video_url.id }}"
+                    >
+                      <div
+                        class="media media--transparent ratio"
+                        {% if block.settings.cover_image != blank %}
+                          style="--ratio-percent: {{ 1 | divided_by: block.settings.cover_image.aspect_ratio | times: 100 }}%"
+                        {% else %}
+                          style="--ratio-percent: 100%"
+                        {% endif %}
+                      >
+                        <span class="deferred-media__poster-button motion-reduce">
+                          <span class="svg-wrapper">
+                            {{- 'icon-play.svg' | inline_asset_content -}}
+                          </span>
+                        </span>
+
+                        {%- if block.settings.cover_image != blank -%}
+                          {%- capture sizes -%}
+                            (min-width: {{ settings.page_width }}px)
+                            {% if section.blocks.size == 1 -%}
+                              calc({{ settings.page_width }}px - 100px)
+                            {%- else -%}
+                              {{- settings.page_width | minus: 100 | times: 0.67 | round }}px
+                            {%- endif -%}
+                            , (min-width: 750px)
+                            {%- if section.blocks.size == 1 %} calc(100vw - 100px){% else %} 500px{% endif -%}
+                            , calc(100vw - 30px)
+                          {%- endcapture -%}
+                          {{
+                            block.settings.cover_image
+                            | image_url: width: 3000
+                            | image_tag: sizes: sizes, widths: '550, 720, 990, 1100, 1500, 2200, 3000'
+                          }}
+                        {%- else -%}
+                          {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                        {%- endif -%}
+                      </div>
+                    </button>
+                  </div>
+                </modal-opener>
+                <modal-dialog
+                  id="PopupModal-{{ block.id }}"
+                  class="modal-video media-modal color-{{ settings.color_schemes | first }}"
+                >
+                  <div
+                    class="modal-video__content"
+                    role="dialog"
+                    aria-label="{{ block.settings.description | escape }}"
+                    aria-modal="true"
+                    tabindex="-1"
+                  >
+                    <button
+                      id="ModalClose-{{ block.id }}"
+                      type="button"
+                      class="modal-video__toggle"
+                      aria-label="{{ 'accessibility.close' | t }}"
+                    >
+                      <span class="svg-wrapper">
+                        {{- 'icon-close.svg' | inline_asset_content -}}
+                      </span>
+                    </button>
+                    <div class="modal-video__content-info">
+                      <deferred-media class="modal-video__video template-popup">
+                        <template>
+                          {%- if block.settings.video_url.type == 'youtube' -%}
+                            <iframe
+                              src="https://www.youtube.com/embed/{{ block.settings.video_url.id }}?enablejsapi=1"
+                              class="js-youtube"
+                              allow="autoplay; encrypted-media"
+                              allowfullscreen
+                              title="{{ block.settings.description | escape }}"
+                            ></iframe>
+                          {%- else -%}
+                            <iframe
+                              src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}"
+                              class="js-vimeo"
+                              allow="autoplay; encrypted-media"
+                              allowfullscreen
+                              title="{{ block.settings.description | escape }}"
+                            ></iframe>
+                          {%- endif -%}
+                        </template>
+                      </deferred-media>
+                    </div>
+                  </div>
+                </modal-dialog>
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Rain Effect Collage",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Multimedia collage",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Desktop Layout"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "options": [
+        {
+          "value": "collage",
+          "label": "Collage"
+        },
+        {
+          "value": "column",
+          "label": "Column"
+        }
+      ],
+      "default": "column",
+      "label": "Mobile Layout"
+    },
+    {
+      "type": "select",
+      "id": "card_styles",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "product-card-wrapper",
+          "label": "Product card"
+        }
+      ],
+      "default": "product-card-wrapper",
+      "label": "Card styles"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "url",
+      "id": "body_link",
+      "label": "Body Link",
+      "info": "Optional link for the entire collage section"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rain_image",
+      "name": "Rain Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "initial_left",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Horizontal Position",
+          "default": 50
+        },
+        {
+          "type": "url",
+          "id": "href",
+          "label": "Link"
+        },
+        {
+          "type": "range",
+          "id": "delay",
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "unit": "sec",
+          "label": "Delay before falling",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_image",
+          "default": false,
+          "label": "Show second image on hover"
+        }
+      ]
+    },
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover image"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+          "label": "Video URL"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "default": "Describe the video",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rain Effect Collage",
+      "blocks": [
+        {
+          "type": "rain_image"
+        },
+        {
+          "type": "rain_image"
+        },
+        {
+          "type": "rain_image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
