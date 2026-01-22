@@ -22,7 +22,6 @@
 
 .rich-text__text {
   font-size: medium;
-  text-align: left;
   border-radius: 7px;
 }
 
@@ -89,7 +88,6 @@ h6 {
 
   .rich-text__text {
     font-size: small;
-    text-align: left;
     padding: 4rem 2rem 2rem 2rem;
     border-radius: 7px;
     line-height: 2rem;
@@ -134,7 +132,6 @@ h6 {
 
   .rich-text__text {
     font-size: medium;
-    text-align: left;
     padding: 6rem 10rem 6rem 10rem;
     border-radius: 7px;
     line-height: 2rem;
