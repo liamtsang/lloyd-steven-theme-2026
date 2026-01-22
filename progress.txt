@@ -126,3 +126,20 @@
   - Reduced mobile padding to ~28px for consistent gaps, ~20px after second block for tighter spacing
   - Desktop layout remains unchanged when only targeting mobile with @media screen and (max-width: 749px)
 ---
+## 2026-01-22 - Story 10
+- Enabled and formatted collection descriptions to display above product grids
+- Files changed:
+  - templates/collection.json: Enabled banner section, set show_collection_description to true
+  - templates/collection.letter-pendant.json: Enabled banner section, set show_collection_description to true
+  - sections/main-collection-banner.liquid: Changed collection title from h1 to h2
+  - assets/component-collection-hero.css: Updated title to h2 scale (2rem → 2.4rem), added center-alignment to description, uppercase + letter-spacing for luxury aesthetic
+- **Learnings for future iterations:**
+  - Collection templates have a "banner" section (main-collection-banner) that was previously disabled
+  - Banner section controls collection title and description display via show_collection_description setting
+  - Collection hero title now uses h2 size: calc(var(--font-heading-scale) * 2rem) mobile, 2.4rem desktop
+  - Description text is center-aligned with max-width: 66.67% on desktop for readability
+  - Collection banner styling follows site typography patterns: uppercase, letter-spacing: 0.1em
+  - Typography uses --font-heading-scale variable for consistent scaling across the site
+  - Description font size set to 1.1rem (matching body text) with line-height: 1.6 for readability
+  - Multiple collection templates exist (collection.json, collection.letter-pendant.json) that need consistent updates
+---

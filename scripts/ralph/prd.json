@@ -185,7 +185,7 @@
         "sections/main-collection*.liquid",
         "assets/*.css"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 11,
