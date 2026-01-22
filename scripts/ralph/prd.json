@@ -91,7 +91,8 @@
         "templates/page.customs-process.json",
         "templates/page.customer-info-guide.json"
       ],
-      "passes": false
+      "passes": true,
+      "notes": "Anchor IDs added to sections. Footer menu links must be updated in Shopify admin to: /pages/customs-process#custom-gallery, /pages/customer-info-guide#terms, /pages/customer-info-guide#privacy-policy"
     },
     {
       "id": 6,

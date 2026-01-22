@@ -68,3 +68,21 @@
   - Typography system is now documented in base.css lines 263-276 for future reference
   - Font family hierarchy: h1 uses "DaVinci", h2-h5 use --font-heading-family (Assistant by default)
 ---
+## 2026-01-22 - Story 5
+- Implemented anchor link functionality for footer navigation to page sections
+- Files changed:
+  - sections/rich-text.liquid: Added anchor_id setting to schema and ID attribute to section wrapper
+  - sections/collapsible-content.liquid: Added anchor_id setting to schema and ID attribute to section wrapper
+  - templates/page.customs-process.json: Added anchor_id "custom-gallery" to Custom Gallery section
+  - templates/page.customer-info-guide.json: Added anchor_id "terms" to Terms section, "privacy-policy" to Policies section
+- **Learnings for future iterations:**
+  - Shopify sections can have custom schema settings added to the {% schema %} JSON block
+  - Section IDs (like rich_text_M4a6hn) are auto-generated and can change if sections are reordered
+  - Custom anchor_id settings provide stable, user-friendly anchor links that won't break with reordering
+  - Footer menu links are managed in Shopify admin (Navigation menu), not in theme code
+  - Anchor links format: /pages/page-handle#anchor-id (e.g., /pages/customs-process#custom-gallery)
+  - The rich-text and collapsible-content sections are commonly used for content pages
+  - Section wrappers need explicit id="{{ section.settings.anchor_id }}" attributes for anchor links to work
+  - Liquid conditional syntax: {% if section.settings.anchor_id != blank %}...{% endif %}
+  - **Next step required:** Update footer menu links in Shopify admin to use the new anchor URLs
+---
