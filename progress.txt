@@ -8,6 +8,8 @@
 - Body tag has template-specific classes (e.g., `custom-home` for homepage) for targeted styling
 - Footer configuration: sections/footer-group.json controls padding, social icons, and other settings
 - Typography for luxury aesthetic: 1.1rem base, uppercase headings, letter-spacing: 0.1em
+- Product videos: DeferredMedia custom element in assets/global.js handles lazy loading with Intersection Observer
+- Product media rendering: snippets/product-thumbnail.liquid for gallery, snippets/product-media.liquid for modals
 ---
 
 ## 2026-01-22 - Story 1
@@ -161,4 +163,21 @@
   - Videos should use autoplay, loop, muted, and playsinline attributes for background video effect
   - The show_editorial_media setting needs to be added to all collection template JSON files for consistency
   - **Next step required:** Upload edited metafield content via Shopify admin to populate Collection Editorial Image
+---
+## 2026-01-22 - Story 14
+- Optimized product video loading for fast, efficient performance across all product pages
+- Files changed:
+  - assets/global.js: Implemented Intersection Observer in DeferredMedia class for lazy video loading
+  - templates/product.json: Enabled video looping (enable_video_looping: true)
+- **Learnings for future iterations:**
+  - Video support already existed via DeferredMedia custom element in global.js
+  - DeferredMedia was loading videos immediately on DOMContentLoaded, causing potential performance issues
+  - Intersection Observer provides better performance by loading videos only when they enter viewport
+  - rootMargin: '50px' starts loading videos 50px before they become visible for smoother UX
+  - Video looping was disabled in product template - enabling it provides better UX for product videos
+  - Product videos use template tag with autoplay, loop, muted, and preload='metadata' attributes
+  - product-thumbnail.liquid snippet handles video rendering in product gallery
+  - Videos automatically hide controls and autoplay when loaded via DeferredMedia.loadContent()
+  - Intersection Observer has good browser support with graceful fallback to DOMContentLoaded
+  - The observer disconnects after loading to prevent memory leaks (observer.disconnect() in loadContent and disconnectedCallback)
 ---

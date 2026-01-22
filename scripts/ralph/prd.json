@@ -271,8 +271,8 @@
         "assets/*.css",
         "assets/*.js"
       ],
-      "notes": "May require Shopify video media type implementation",
-      "passes": false
+      "notes": "Video support optimized with Intersection Observer for lazy loading, video looping enabled in product template",
+      "passes": true
     },
     {
       "id": 15,
