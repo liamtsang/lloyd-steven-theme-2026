@@ -181,3 +181,35 @@
   - Intersection Observer has good browser support with graceful fallback to DOMContentLoaded
   - The observer disconnects after loading to prevent memory leaks (observer.disconnect() in loadContent and disconnectedCallback)
 ---
+
+## 2026-01-22 - Ralph Agent Review
+- Reviewed all remaining user stories in prd.json
+- All CODE-type stories have been completed (passes: true)
+- Remaining stories are CONTENT-type requiring Shopify admin access:
+  - Story 2: Update page navigation names (admin menu config)
+  - Story 3: Remove unused pages (admin page deletion)
+  - Story 15: Update Google metadata (admin SEO settings)
+
+**Learnings for future iterations:**
+- This codebase separates "code" type stories (theme files) from "content" type stories (Shopify admin)
+- All theme-level code improvements have been successfully implemented
+- Remaining tasks require human intervention in Shopify admin panel
+
+**Manual tasks required in Shopify admin:**
+
+### Story 2: Update Navigation Names
+Location: Shopify Admin > Online Store > Navigation > Main Menu
+- Change "ABOUT US" → "ABOUT"
+- Change "CUSTOMER INFO GUIDE" → "CUSTOMER SUPPORT"
+- Change "CUSTOMS PROCESS" → "CUSTOM DESIGN AND CONCIERGE"
+
+### Story 3: Remove Unused Pages
+Location: Shopify Admin > Online Store > Pages
+- Delete: ABOUT (unused), POLICIES, CUSTOMS GALLERY, SHOGUN LANDING, DEFAULT
+- Verify no broken links remain
+
+### Story 15: Update Google Metadata
+Location: Shopify Admin > Online Store > Preferences
+- Title: "LLOYD STEVEN | FINE JEWELLERY MADE IN AUSTRALIA"
+- Description: Include precious metals, ethically sourced stones, concierge services, custom design, private styling
+---
