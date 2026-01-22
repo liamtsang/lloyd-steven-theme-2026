@@ -71,7 +71,7 @@
         "layout/theme.liquid",
         "assets/*.css"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,

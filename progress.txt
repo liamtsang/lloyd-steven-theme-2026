@@ -4,6 +4,10 @@
 - Menu uses details/summary HTML structure for toggle functionality
 - Standard Shopify theme: direct edits to Liquid templates and CSS, no build tools
 - CSS can target details[open] and details:not([open]) for state-based styling
+- Footer included via `{% sections 'footer-group' %}` in layout/theme.liquid
+- Body tag has template-specific classes (e.g., `custom-home` for homepage) for targeted styling
+- Footer configuration: sections/footer-group.json controls padding, social icons, and other settings
+- Typography for luxury aesthetic: 1.1rem base, uppercase headings, letter-spacing: 0.1em
 ---
 
 ## 2026-01-22 - Story 1
@@ -28,4 +32,20 @@
   - overflow-y: auto allows scrolling when content overflows while keeping it hidden when content fits
   - No JavaScript changes were needed - this was purely a CSS overflow issue
   - The menu drawer uses a grid layout with grid-template-rows: 1fr auto to position menu and utility links
+---
+## 2026-01-22 - Story 4
+- Implemented footer design based on THE ROW website reference and Figma specs
+- Files changed:
+  - assets/section-footer.css: Updated footer styling with minimal, clean aesthetic
+  - sections/footer-group.json: Updated footer configuration (padding, social icons)
+- **Learnings for future iterations:**
+  - The footer is included in theme.liquid via `{% sections 'footer-group' %}` on line 333
+  - Body uses grid layout with `grid-template-rows: auto auto 1fr auto` for automatic footer positioning
+  - Homepage has class `custom-home` added to body tag, allowing targeted CSS for different footer behavior
+  - Footer styling follows THE ROW aesthetic: 1.1rem font size, minimal spacing, clean typography
+  - Footer configuration is in sections/footer-group.json (padding_top: 36, padding_bottom: 36)
+  - Social icons can be enabled/disabled in footer settings (show_social: true)
+  - Footer headings use uppercase, letter-spacing: 0.1em for minimal luxury aesthetic
+  - Interior pages use margin-top on footer (8rem desktop, 4rem mobile) for proper spacing
+  - Homepage footer uses margin-top: auto to push to bottom with logo centered
 ---
