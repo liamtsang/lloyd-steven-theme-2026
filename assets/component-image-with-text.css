@@ -448,3 +448,24 @@
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
+
+/* About Us page - reduce mobile gaps between image/text blocks */
+@media screen and (max-width: 749px) {
+  .section-image_with_text_cCJdYB-padding {
+    padding-bottom: 28px !important;
+  }
+
+  .section-image_with_text_DwxgNk-padding {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+
+  .section-image_with_text_mzJ4wM-padding {
+    padding-top: 20px !important;
+  }
+
+  .section-rich_text_bJeEUz-padding {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+}
