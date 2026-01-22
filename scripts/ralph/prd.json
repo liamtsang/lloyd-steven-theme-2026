@@ -147,7 +147,7 @@
         "assets/*.css",
         "snippets/accordion*.liquid"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 9,

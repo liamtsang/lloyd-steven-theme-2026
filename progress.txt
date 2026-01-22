@@ -98,3 +98,16 @@
   - By removing the explicit text-align, the section now respects the content_alignment setting from the JSON template
   - This fix applies to all rich-text sections site-wide, improving consistency
 ---
+## 2026-01-22 - Story 8
+- Fixed mobile dropdown consistency on Customer Guide page
+- Files changed:
+  - assets/collapsible-content.css: Added mobile-specific media query for consistent accordion styling
+- **Learnings for future iterations:**
+  - Mobile inconsistencies can arise from missing mobile-specific CSS rules
+  - Desktop media query (min-width: 750px) was setting margin-top: 0, but mobile was inheriting default margin-top: 2.5rem
+  - Added max-width: 749px media query to explicitly set consistent spacing on mobile
+  - Set margin-top: 0 and border-bottom-width: 0.1rem for all .collapsible-content .accordion elements on mobile
+  - Accordion spacing controlled by component-accordion.css and collapsible-content.css working together
+  - Adjacent accordion selector (.accordion + .accordion) ensures no gaps between items
+  - Desktop appearance preserved by keeping existing min-width: 750px media query unchanged
+---
