@@ -78,6 +78,18 @@
   margin-top: 1rem;
 }
 
+/* Mobile: Ensure consistent accordion spacing and borders */
+@media screen and (max-width: 749px) {
+  .collapsible-content .accordion {
+    margin-top: 0;
+    border-bottom-width: 0.1rem;
+  }
+
+  .collapsible-content .accordion + .accordion {
+    margin-top: 0;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .collapsible-content .accordion {
     margin-top: 0;
