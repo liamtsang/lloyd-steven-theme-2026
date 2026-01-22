@@ -247,8 +247,8 @@
         "sections/main-collection*.liquid",
         "assets/*.css"
       ],
-      "notes": "Investigate theme capabilities for media rendering",
-      "passes": false
+      "notes": "Metafield accessed via collection.metafields.custom.editorial_image. Video support included for media type 'video'. Toggle via show_editorial_media setting in section.",
+      "passes": true
     },
     {
       "id": 14,

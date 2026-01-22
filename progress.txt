@@ -143,3 +143,22 @@
   - Description font size set to 1.1rem (matching body text) with line-height: 1.6 for readability
   - Multiple collection templates exist (collection.json, collection.letter-pendant.json) that need consistent updates
 ---
+## 2026-01-22 - Story 13
+- Implemented editorial image/video display on collection pages using Collection Editorial Image metafield
+- Files changed:
+  - sections/main-collection-banner.liquid: Added editorial media display with video and image support
+  - assets/component-collection-hero.css: Added styling for editorial media
+  - templates/collection.json: Enabled show_editorial_media setting
+  - templates/collection.letter-pendant.json: Enabled show_editorial_media setting
+- **Learnings for future iterations:**
+  - Shopify metafields can be accessed via collection.metafields.custom.field_name for custom metafields
+  - Metafield media types can be detected using .media_type property (e.g., 'video')
+  - Video metafields have .sources array with .url and .mime_type for different formats
+  - Image metafields can use the | image_url filter with width parameter for responsive images
+  - Section schema settings support checkbox type for toggles with label and info properties
+  - Editorial media placed between description and collection image in banner section
+  - Responsive image srcset should include multiple breakpoints (375w, 750w, 1100w, 1500w, 1780w, 2000w, 3000w)
+  - Videos should use autoplay, loop, muted, and playsinline attributes for background video effect
+  - The show_editorial_media setting needs to be added to all collection template JSON files for consistency
+  - **Next step required:** Upload edited metafield content via Shopify admin to populate Collection Editorial Image
+---
