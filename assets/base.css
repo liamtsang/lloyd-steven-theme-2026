@@ -277,7 +277,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 .product__title,
 h2 {
-    font-family: "DaVinic", system-ui;
+    font-family: "DaVinci", system-ui;
 }
 h1,
 .related-products__heading {
