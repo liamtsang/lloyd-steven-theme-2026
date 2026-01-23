@@ -275,8 +275,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
  * - h5: 1.2rem → 1.3rem desktop (12px → 13px)
  */
 
-.product__title,
-h2 {
+.product__title > h2 {
     font-family: "DaVinci", system-ui !important;
 }
 h1,
