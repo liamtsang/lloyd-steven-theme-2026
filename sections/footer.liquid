@@ -74,7 +74,6 @@
               {%- comment -%} Each top-level link is a "dummy" column header - only its children render {%- endcomment -%}
               {%- if link.links.size > 0 -%}
                 <div class="footer__menu-column">
-                  <h3 class="footer__menu-heading">{{ link.title | escape }}</h3>
                   <ul class="footer__menu-list list-unstyled">
                     {%- for child_link in link.links -%}
                       <li class="footer__menu-item">
