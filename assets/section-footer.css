@@ -193,7 +193,7 @@ body:not(.custom-home) .footer {
 
 @media screen and (min-width: 750px) {
     .footer__box--newsletter {
-        align-items: flex-end;
+        align-items: flex-start;
     }
 }
 
