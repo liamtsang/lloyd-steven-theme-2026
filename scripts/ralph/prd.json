@@ -63,7 +63,10 @@
         "Interior pages have appropriate spacing between content and footer",
         "Footer design matches Figma specifications",
         "Footer content matches THE ROW website styling approach",
-        "Footer is responsive on mobile and desktop"
+        "Footer is responsive on mobile and desktop",
+        "Box 1: Select Language and Select Country dropdowns using Shopify localization",
+        "Box 2: Menu input reads Shopify menu - parent items (DUMMY) do not render, only child items render side by side",
+        "Box 3: Subscribe to newsletter form with email input and submit button"
       ],
       "files_likely_affected": [
         "sections/footer.liquid",
@@ -71,7 +74,29 @@
         "layout/theme.liquid",
         "assets/*.css"
       ],
-      "passes": true
+      "passes": true,
+      "footer_structure": {
+        "box_1": {
+          "description": "Localization selectors",
+          "components": [
+            "Select Language dropdown (uses Shopify localization)",
+            "Select Country dropdown (uses Shopify localization)"
+          ]
+        },
+        "box_2": {
+          "description": "Footer menu columns rendered from Shopify menu",
+          "behavior": "Menu input reads a Shopify menu. Structure should be DUMMY>ITEM,ITEM or DUMMY>ITEM,ITEM,ITEM where DUMMY is a parent that does NOT render - only its child items render side by side as column headers. Each DUMMY represents a column, its children are the links in that column.",
+          "example": "Menu structure: COL1>Shop,Collections,New | COL2>About,Contact renders as two columns without showing COL1 or COL2"
+        },
+        "box_3": {
+          "description": "Newsletter subscription",
+          "components": [
+            "Subscribe to newsletter form with email input",
+            "Submit button"
+          ]
+        }
+      },
+      "notes": "Footer implemented with THE ROW-inspired minimalist design. Configure footer_menu setting in Shopify admin to set up columns. Parent menu items act as column headers, their children are the links."
     },
     {
       "id": 5,

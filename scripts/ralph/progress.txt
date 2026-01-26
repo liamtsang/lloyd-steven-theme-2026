@@ -1,3 +1,31 @@
 # Ralph Progress Log
 Started: Thu Jan 22 10:51:36 AM EST 2026
 ---
+
+## Codebase Patterns
+- Footer menu uses nested Shopify menu structure: parent items are column headers (don't link), children are the actual links
+- CSS uses rgba(var(--color-foreground), 0.X) pattern for opacity variations on text colors
+- Homepage styling uses `.custom-home` class on body element (set in theme.liquid when template == 'index')
+- Localization uses `localization-form` custom element with Shopify's built-in localization snippets
+- Font sizes use rem units (typically 1.1rem-1.2rem for body text, letter-spacing: 0.05em-0.15em)
+
+---
+
+## 2026-01-26 - Story 4
+- **What was implemented**: Complete footer redesign with THE ROW-inspired minimalist aesthetic
+  - Box 1: Language and Country localization selectors using Shopify's built-in localization
+  - Box 2: Footer menu columns where parent items act as column headers and their children are the links
+  - Box 3: Newsletter subscription form with email input and submit button
+  - Bottom bar with copyright and payment icons
+  - Social icons row (optional)
+- **Files changed**:
+  - sections/footer.liquid - Complete rewrite of footer markup with 3-box layout
+  - assets/section-footer.css - Complete rewrite with THE ROW-inspired styling
+  - sections/footer-group.json - Updated default settings to enable new features
+- **Learnings for future iterations:**
+  - Footer menu structure: To create columns, configure a Shopify menu where top-level items are "dummy" headers (they don't render as links themselves), and their child items become the actual links in that column
+  - The `footer_menu` setting was added to schema - configure in Shopify admin under Footer section
+  - Localization selectors only appear when multiple languages/countries are available in Shopify settings
+  - Newsletter form uses Shopify's `customer` form with hidden `contact[tags]` input for "newsletter" tag
+  - Homepage has `.custom-home` class that enables special positioning (margin-top: auto)
+---
