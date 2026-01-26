@@ -26,7 +26,7 @@
 }
 
 .rich-text__text h1 {
-    line-height: 3rem;
+    /*line-height: 3rem;*/
     margin-top: 5rem;
 }
 
@@ -47,7 +47,7 @@ h6 {
 
 .rich-text__heading p {
     margin: 0;
-    line-height: 125%;
+    /*line-height: 125%;*/
 }
 
 @media (max-width: 480px) {
@@ -87,10 +87,10 @@ h6 {
     }
 
     .rich-text__text {
-        font-size: small;
+        /*font-size: small;*/
         padding: 4rem 2rem 2rem 2rem;
         border-radius: 7px;
-        line-height: 2rem;
+        /*line-height: 2rem;*/
     }
 
     .rich-text__heading {
