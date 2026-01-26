@@ -97,7 +97,7 @@
       {%- if section.settings.newsletter_enable -%}
         <div class="footer__box footer__box--newsletter">
           {%- if section.settings.newsletter_heading != blank -%}
-            <h3 class="footer__newsletter-heading">{{ section.settings.newsletter_heading }}</h3>
+            <h3 class="">{{ section.settings.newsletter_heading }}</h3>
           {%- endif -%}
           {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletter-form' -%}
             <input type="hidden" name="contact[tags]" value="newsletter">
