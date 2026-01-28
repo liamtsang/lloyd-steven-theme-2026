@@ -202,7 +202,7 @@ body:not(.custom-home) .footer {
 
 @media screen and (max-width: 749px) {
   .footer__menu-link {
-    padding: 4px;
+    padding-top: 4px;
   }
 }
 
