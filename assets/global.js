@@ -1734,9 +1734,15 @@ function openDetailsFromHash() {
     target.closest("details") || (target.tagName === "DETAILS" ? target : null);
   if (details) {
     details.open = true;
-    target.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   }
 }
 
-document.addEventListener("DOMContentLoaded", openDetailsFromHash);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", openDetailsFromHash);
+} else {
+  openDetailsFromHash();
+}
 window.addEventListener("hashchange", openDetailsFromHash);
