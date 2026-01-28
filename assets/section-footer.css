@@ -41,7 +41,7 @@ body:not(.custom-home) .footer {
 
 @media screen and (min-width: 750px) {
   .footer__grid {
-    grid-template-columns: auto 2fr 1fr;
+    grid-template-columns: auto 2fr auto;
     gap: 3rem;
     align-items: start;
   }
