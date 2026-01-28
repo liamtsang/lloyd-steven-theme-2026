@@ -75,7 +75,7 @@
                 {{ block.shopify_attributes }}
               >
                 <details
-                  id="Details-{{ block.id }}-{{ section.id }}"
+                  id="{% if block.settings.anchor_id != blank %}{{ block.settings.anchor_id }}{% else %}Details-{{ block.id }}-{{ section.id }}{% endif %}"
                   {% if section.settings.open_first_collapsible_row and forloop.first %}
                     open
                   {% endif %}
@@ -301,6 +301,12 @@
           "default": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.default",
           "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.label",
           "info": "t:sections.collapsible_content.blocks.collapsible_row.settings.heading.info"
+        },
+        {
+          "type": "text",
+          "id": "anchor_id",
+          "label": "Anchor ID",
+          "info": "Optional ID for anchor links (e.g., 'shipping' for #shipping)"
         },
         {
           "type": "select",
