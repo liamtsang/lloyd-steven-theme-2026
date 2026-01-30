@@ -2,6 +2,17 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
+{%- assign has_disrupter = false -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'disrupter' and block.settings.image != blank -%}
+    {%- assign has_disrupter = true -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if has_disrupter -%}
+  {{ 'component-collection-disrupter.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -149,15 +160,49 @@
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
+                {% if has_disrupter %} product-grid--has-disrupter{% endif %}
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               "
             >
               {% assign skip_card_product_styles = false %}
+
+              {%- comment -%} Find the disrupter block if one exists {%- endcomment -%}
+              {%- assign disrupter_block = nil -%}
+              {%- assign disrupter_position = 3 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'disrupter' and block.settings.image != blank -%}
+                  {%- assign disrupter_block = block -%}
+                  {%- assign disrupter_position = block.settings.position -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+
+                {%- comment -%} Insert disrupter at the configured position {%- endcomment -%}
+                {%- if disrupter_block and forloop.index == disrupter_position -%}
+                  <li
+                    class="grid__item grid__item--disrupter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {{ disrupter_block.shopify_attributes }}
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                      style="--animation-order: {{ forloop.index }};"
+                    {% endif %}
+                  >
+                    {% render 'collection-disrupter',
+                      image: disrupter_block.settings.image,
+                      heading: disrupter_block.settings.heading,
+                      link_url: disrupter_block.settings.link_url,
+                      link_text: disrupter_block.settings.link_text,
+                      lazy_load: lazy_load
+                    %}
+                  </li>
+                {%- endif -%}
+
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
@@ -411,6 +456,50 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "disrupter",
+      "name": "Disrupter image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "position",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "default": 4,
+          "label": "Insert after product number",
+          "info": "The disrupter appears after this many products. For a 3-column grid, use multiples of 3 (e.g. 3, 6, 9) to align with row boundaries."
+        },
+        {
+          "type": "header",
+          "content": "Optional content"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Shop now"
+        }
+      ]
     }
   ]
 }
