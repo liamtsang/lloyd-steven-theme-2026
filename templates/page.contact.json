@@ -1,1 +1,168 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":36,"padding_bottom":36}},"rich_text_Vc8mFJ":{"type":"rich-text","blocks":{"heading_AcH7br":{"type":"heading","settings":{"heading":"Contact","heading_size":"h2"}}},"block_order":["heading_AcH7br"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"","full_width":true,"padding_top":40,"padding_bottom":52}},"form":{"type":"contact-form","settings":{"heading":"","heading_size":"h2","color_scheme":"scheme-1","padding_top":36,"padding_bottom":36}}},"order":["main","rich_text_Vc8mFJ","form"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_9rDixy": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_abPRVy": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>CUSTOM WORKS</p>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_abPRVy"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multirow_UQ9NeK": {
+      "type": "multirow",
+      "blocks": {
+        "row_ccpmtX": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/PENDANT_SPIRIT_CROSS_633c7242-dfe7-44ea-9e3e-febb9f89abbf.png",
+            "caption": "",
+            "heading": "",
+            "text": "<p>-18K Gold</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_qb6tYK": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/MATT_CARO_Front_dafd4681-a38b-44c8-aecb-004b664d3fad.jpg",
+            "caption": "",
+            "heading": "",
+            "text": "<p>-18K Gold</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_FLy3kM": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/Sailor_4x5_739130ff-9851-48cd-b5bf-29513ffdf697.jpg",
+            "caption": "",
+            "heading": "",
+            "text": "<p>-Platnium</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_ccpmtX",
+        "row_qb6tYK",
+        "row_FLy3kM"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "large",
+        "desktop_image_width": "medium",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "align-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "multirow_xCPDwL": {
+      "type": "multirow",
+      "blocks": {
+        "row_YMAHe9": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ALI_ORB_FRONT_192b6f59-993b-46f0-a9b3-8c4198e077ac.png",
+            "caption": "",
+            "heading": "",
+            "text": "<p>-18K Gold</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_iXKUQn": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/RING_MILLEFIORI.png",
+            "caption": "",
+            "heading": "",
+            "text": "<p>-18K White Gold</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_9QRmhW": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/NAMEPLATE_MyMind_09fab2ab-23de-4414-92b9-adf5dd620cfd.jpg",
+            "caption": "",
+            "heading": "",
+            "text": "<p>-18K Matte Gold</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_YMAHe9",
+        "row_iXKUQn",
+        "row_9QRmhW"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "large",
+        "desktop_image_width": "medium",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "align-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 12,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_9rDixy",
+    "multirow_UQ9NeK",
+    "multirow_xCPDwL"
+  ]
+}
