@@ -317,6 +317,98 @@
         "config/settings_data.json"
       ],
       "passes": false
+    },
+    {
+      "id": 16,
+      "title": "Implement collection grid disrupter block",
+      "type": "code",
+      "priority": "high",
+      "description": "Add a 'disrupter' editorial image block to the collection product grid that spans multiple grid cells (2 columns × 3 rows on desktop) with a sticky image. The current flexbox grid must be converted to CSS Grid for the product grid container specifically when a disrupter is present. See scripts/ralph/story-16-disrupter.md for full implementation guide.",
+      "acceptance_criteria": [
+        "Disrupter block type is available in the theme editor under the collection product grid section",
+        "Disrupter renders as a 2-column × 3-row spanning element on desktop (990px+)",
+        "Disrupter renders as 2-column × 2-row on tablet (750-989px)",
+        "Disrupter renders as full-width single row on mobile (<750px)",
+        "Image inside the disrupter is position:sticky on desktop/tablet, scrolling with the viewport while the disrupter area is in view",
+        "Product grid converts from flexbox to CSS Grid ONLY when a disrupter block is present — no impact on grids without disrupters",
+        "Grid items (products) retain correct sizing and spacing after CSS Grid conversion",
+        "Disrupter position is configurable via a 'Insert after product number' range setting (1-24)",
+        "Optional heading text overlay renders at the bottom of the disrupter with a gradient scrim",
+        "Optional link URL and link text render correctly",
+        "Disrupter image uses responsive srcset with lazy loading",
+        "When no disrupter block is added, the grid remains unchanged (pure flexbox, zero regression)",
+        "Works correctly with 3-column and 4-column desktop grid configurations",
+        "Pagination unaffected — disrupter position is per-page",
+        "Scroll reveal animations (--animation-order) still work correctly",
+        "Limited to 1 disrupter block per section"
+      ],
+      "files_likely_affected": [
+        "snippets/collection-disrupter.liquid",
+        "sections/main-collection-product-grid.liquid",
+        "assets/component-collection-disrupter.css"
+      ],
+      "implementation_guide": "scripts/ralph/story-16-disrupter.md",
+      "passes": true,
+      "steps": [
+        {
+          "step": 1,
+          "title": "Create the disrupter CSS file",
+          "description": "Create assets/component-collection-disrupter.css with CSS Grid overrides for .product-grid--has-disrupter and all disrupter block styling including sticky image, responsive spans, and optional text overlay.",
+          "file": "assets/component-collection-disrupter.css",
+          "action": "create"
+        },
+        {
+          "step": 2,
+          "title": "Create the disrupter Liquid snippet",
+          "description": "Create snippets/collection-disrupter.liquid with the disrupter markup: sticky image wrapper, responsive image tag with srcset, optional heading and link overlay.",
+          "file": "snippets/collection-disrupter.liquid",
+          "action": "create"
+        },
+        {
+          "step": 3,
+          "title": "Add conditional CSS loading to the section",
+          "description": "At the top of sections/main-collection-product-grid.liquid, detect whether a disrupter block exists and conditionally load component-collection-disrupter.css.",
+          "file": "sections/main-collection-product-grid.liquid",
+          "action": "modify"
+        },
+        {
+          "step": 4,
+          "title": "Add CSS Grid class to the product grid container",
+          "description": "On the <ul id='product-grid'> element, conditionally add the class 'product-grid--has-disrupter' when a disrupter block is present.",
+          "file": "sections/main-collection-product-grid.liquid",
+          "action": "modify"
+        },
+        {
+          "step": 5,
+          "title": "Modify the product loop to insert the disrupter",
+          "description": "Replace the product for-loop to insert the disrupter <li> at the configured position. The disrupter <li> gets class 'grid__item--disrupter' and renders the collection-disrupter snippet.",
+          "file": "sections/main-collection-product-grid.liquid",
+          "action": "modify"
+        },
+        {
+          "step": 6,
+          "title": "Add disrupter block definition to the section schema",
+          "description": "Add a 'blocks' array to the schema with a 'disrupter' block type (limit: 1) containing settings for image_picker, position range, heading text, link_url, and link_text.",
+          "file": "sections/main-collection-product-grid.liquid",
+          "action": "modify"
+        },
+        {
+          "step": 7,
+          "title": "Test and verify",
+          "description": "Verify: disrupter renders at correct position, sticky image works, responsive breakpoints behave correctly, grid without disrupter is unchanged, animations still cascade properly."
+        }
+      ],
+      "technical_context": {
+        "current_grid": "Flexbox (display:flex; flex-wrap:wrap) in base.css .grid class",
+        "why_css_grid": "Flexbox cannot span items across multiple rows and columns simultaneously. CSS Grid is required for the 2col × 3row disrupter span.",
+        "conversion_strategy": "Only the product grid with a disrupter converts to CSS Grid via .product-grid--has-disrupter class. The base .grid flexbox class in base.css is NOT modified. This ensures zero regression on other grids site-wide.",
+        "sticky_mechanism": "position:sticky on the image wrapper works because the parent <li> (grid-row: span 3) is taller than the viewport-height image. As the user scrolls, the image pins to top:0 until the parent's bottom edge passes.",
+        "responsive_layout": {
+          "desktop_990": "3-col grid, disrupter spans 2 col × 3 row",
+          "tablet_750_989": "2-col grid, disrupter spans 2 col × 2 row (full width)",
+          "mobile_under_750": "2-col grid, disrupter spans full width × 1 row, no sticky"
+        }
+      }
     }
   ],
   "technical_notes": {
