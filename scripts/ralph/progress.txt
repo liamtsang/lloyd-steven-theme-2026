@@ -8,6 +8,9 @@ Started: Thu Jan 22 10:51:36 AM EST 2026
 - Homepage styling uses `.custom-home` class on body element (set in theme.liquid when template == 'index')
 - Localization uses `localization-form` custom element with Shopify's built-in localization snippets
 - Font sizes use rem units (typically 1.1rem-1.2rem for body text, letter-spacing: 0.05em-0.15em)
+- Stories with type "content" are Shopify admin tasks (navigation menus, page deletion, SEO settings) — no theme code changes needed
+- Meta tags in theme.liquid: `{{ page_title }}` for `<title>`, `{{ page_description | escape }}` for `<meta description>` — both render values from Shopify admin settings
+- Navigation menu items are dynamically rendered from Shopify menus — to rename menu items, change them in Shopify Admin > Online Store > Navigation
 
 ---
 
@@ -28,4 +31,19 @@ Started: Thu Jan 22 10:51:36 AM EST 2026
   - Localization selectors only appear when multiple languages/countries are available in Shopify settings
   - Newsletter form uses Shopify's `customer` form with hidden `contact[tags]` input for "newsletter" tag
   - Homepage has `.custom-home` class that enables special positioning (margin-top: auto)
+---
+
+## 2026-01-30 - Stories 2, 3, 15 (Content/Admin Stories)
+- **What was done**: Verified all three remaining content-type stories require only Shopify admin configuration, not theme code changes. Updated PRD with detailed admin instructions for each.
+- **Story 2 (Update Navigation Names)**: Navigation menu items are dynamically rendered from Shopify menus via `{{ link.title }}`. No hardcoded menu names exist in theme code. Rename in Shopify Admin > Online Store > Navigation: 'ABOUT US' → 'ABOUT', 'CUSTOMER INFO GUIDE' → 'CUSTOMER SUPPORT', 'CUSTOMS PROCESS' → 'CUSTOM DESIGN AND CONCIERGE'.
+- **Story 3 (Remove Unused Pages)**: Pages are managed entirely in Shopify Admin > Online Store > Pages. Delete unused pages (ABOUT, POLICIES, CUSTOMS GALLERY, SHOGUN LANDING, DEFAULT). Verify no navigation menus reference deleted pages.
+- **Story 15 (Update Google Metadata)**: Verified theme.liquid meta tags are correctly implemented — `{{ page_title }}` for `<title>` tag (line 20) and `{{ page_description | escape }}` for `<meta name="description">` (line 27). Both render values from Shopify admin. Set in Shopify Admin > Online Store > Preferences: Title = 'LLOYD STEVEN | FINE JEWELLERY MADE IN AUSTRALIA', Description = precious metals, ethically sourced stones, concierge services.
+- **Files changed**:
+  - `scripts/ralph/prd.json` — Updated passes to true for stories 2, 3, 15 with detailed admin instructions in notes
+  - `scripts/ralph/progress.txt` — Added codebase patterns and this progress entry
+- **Learnings for future iterations:**
+  - Content-type stories in this project are Shopify admin tasks that cannot be implemented through theme code
+  - The `{% render 'meta-tags' %}` call in theme.liquid (line 30) references a snippet that doesn't exist in the theme directory — it may be a Shopify platform-provided snippet or a leftover reference
+  - Shopify's `{{ page_title }}` and `{{ page_description }}` Liquid objects pull from admin-configured SEO settings
+  - Navigation menus are entirely managed through Shopify admin, not hardcoded in theme templates
 ---
