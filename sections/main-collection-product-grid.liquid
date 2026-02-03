@@ -188,9 +188,9 @@
                   <li
                     class="grid__item grid__item--disrupter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                     {{ disrupter_block.shopify_attributes }}
+                    style="--disrupter-col-span: {{ disrupter_block.settings.column_span | default: 2 }}; --disrupter-row-span: {{ disrupter_block.settings.row_span | default: 3 }};{% if settings.animations_reveal_on_scroll %} --animation-order: {{ forloop.index }};{% endif %}"
                     {% if settings.animations_reveal_on_scroll %}
                       data-cascade
-                      style="--animation-order: {{ forloop.index }};"
                     {% endif %}
                   >
                     {% render 'collection-disrupter',
@@ -478,6 +478,30 @@
           "default": 4,
           "label": "Insert after product number",
           "info": "The disrupter appears after this many products. For a 3-column grid, use multiples of 3 (e.g. 3, 6, 9) to align with row boundaries."
+        },
+        {
+          "type": "header",
+          "content": "Grid size"
+        },
+        {
+          "type": "range",
+          "id": "column_span",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 2,
+          "label": "Columns wide",
+          "info": "How many grid columns the disrupter spans on desktop."
+        },
+        {
+          "type": "range",
+          "id": "row_span",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "default": 3,
+          "label": "Rows tall",
+          "info": "How many grid rows the disrupter spans on desktop."
         },
         {
           "type": "header",

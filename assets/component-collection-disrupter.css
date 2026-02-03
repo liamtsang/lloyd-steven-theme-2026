@@ -49,19 +49,19 @@
    DISRUPTER: Grid spanning
    ============================================ */
 
-/* Desktop (990px+): 2 columns, 3 rows */
+/* Desktop (990px+): uses admin-configurable spans via custom properties */
 @media screen and (min-width: 990px) {
     .grid__item--disrupter {
-        grid-column: span 2;
-        grid-row: span 3;
+        grid-column: span var(--disrupter-col-span, 2);
+        grid-row: span var(--disrupter-row-span, 3);
     }
 }
 
 /* Tablet (750-989px): full width, 2 rows */
 @media screen and (min-width: 750px) and (max-width: 989px) {
     .grid__item--disrupter {
-        grid-column: span 2;
-        grid-row: span 2;
+        grid-column: span var(--disrupter-col-span, 2);
+        grid-row: span var(--disrupter-row-span, 3);
     }
 }
 
