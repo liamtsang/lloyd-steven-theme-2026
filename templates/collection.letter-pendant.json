@@ -25,7 +25,9 @@
           "type": "disrupter",
           "settings": {
             "image": "shopify://shop_images/TEST_IMAGE.jpg",
-            "position": 4,
+            "position": 5,
+            "column_span": 2,
+            "row_span": 4,
             "heading": "Test Heading",
             "link_url": "shopify://pages/contact",
             "link_text": "Shop now"
