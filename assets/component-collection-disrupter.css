@@ -5,35 +5,35 @@
    ============================================ */
 
 .product-grid--has-disrupter {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: var(--grid-mobile-horizontal-spacing);
-  row-gap: var(--grid-mobile-vertical-spacing);
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--grid-mobile-horizontal-spacing);
+    row-gap: var(--grid-mobile-vertical-spacing);
 }
 
 @media screen and (min-width: 750px) {
-  .product-grid--has-disrupter {
-    column-gap: var(--grid-desktop-horizontal-spacing);
-    row-gap: var(--grid-desktop-vertical-spacing);
-  }
+    .product-grid--has-disrupter {
+        column-gap: var(--grid-desktop-horizontal-spacing);
+        row-gap: var(--grid-desktop-vertical-spacing);
+    }
 }
 
 @media screen and (min-width: 990px) {
-  .product-grid--has-disrupter.grid--3-col-desktop {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .product-grid--has-disrupter.grid--3-col-desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-  .product-grid--has-disrupter.grid--4-col-desktop {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    .product-grid--has-disrupter.grid--4-col-desktop {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
-  .product-grid--has-disrupter.grid--5-col-desktop {
-    grid-template-columns: repeat(5, 1fr);
-  }
+    .product-grid--has-disrupter.grid--5-col-desktop {
+        grid-template-columns: repeat(5, 1fr);
+    }
 
-  .product-grid--has-disrupter.grid--6-col-desktop {
-    grid-template-columns: repeat(6, 1fr);
-  }
+    .product-grid--has-disrupter.grid--6-col-desktop {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }
 
 /*
@@ -41,8 +41,8 @@
  * CSS Grid's 1fr handles sizing; the old calc() widths would conflict.
  */
 .product-grid--has-disrupter .grid__item {
-  width: auto;
-  max-width: none;
+    width: auto;
+    max-width: none;
 }
 
 /* ============================================
@@ -51,26 +51,26 @@
 
 /* Desktop (990px+): 2 columns, 3 rows */
 @media screen and (min-width: 990px) {
-  .grid__item--disrupter {
-    grid-column: span 2;
-    grid-row: span 3;
-  }
+    .grid__item--disrupter {
+        grid-column: span 2;
+        grid-row: span 3;
+    }
 }
 
 /* Tablet (750-989px): full width, 2 rows */
 @media screen and (min-width: 750px) and (max-width: 989px) {
-  .grid__item--disrupter {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
+    .grid__item--disrupter {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
 }
 
 /* Mobile (<750px): full width, single row, no spanning */
 @media screen and (max-width: 749px) {
-  .grid__item--disrupter {
-    grid-column: 1 / -1;
-    grid-row: span 1;
-  }
+    .grid__item--disrupter {
+        grid-column: 1 / -1;
+        grid-row: span 1;
+    }
 }
 
 /* ============================================
@@ -78,11 +78,11 @@
    ============================================ */
 
 .collection-disrupter {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: var(--card-corner-radius, 0);
+    position: sticky;
+    top: 40px;
+    /*width: 100%;
+    height: 100%;*/
+    /*overflow: hidden;*/
 }
 
 /*
@@ -92,59 +92,59 @@
  * the sticky header.
  */
 .collection-disrupter__media {
-  position: sticky;
-  top: var(--header-height, 0px);
-  width: 100%;
-  height: calc(100vh - var(--header-height, 0px));
-  max-height: 100%;
-  overflow: hidden;
+    position: relative;
+    /*top: var(--header-height, 0px);*/
+    width: 100%;
+    height: calc(100vh - var(--header-height, 0px));
+    max-height: 100%;
+    overflow: hidden;
 }
 
 .collection-disrupter__image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Mobile: no sticky, static image with fixed aspect ratio */
 @media screen and (max-width: 749px) {
-  .collection-disrupter__media {
-    position: relative;
-    top: auto;
-    height: auto;
-    max-height: none;
-    aspect-ratio: 3 / 4;
-  }
+    .collection-disrupter__media {
+        position: relative;
+        top: auto;
+        height: auto;
+        max-height: none;
+        aspect-ratio: 3 / 4;
+    }
 }
 
 /* ---- Optional text overlay ---- */
 
 .collection-disrupter__content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
-  z-index: 2;
-  color: #fff;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    z-index: 2;
+    color: #fff;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 100%
+    );
 }
 
 .collection-disrupter__heading {
-  font-size: 1.5rem;
-  margin: 0 0 0.5rem;
-  font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    font-weight: 400;
 }
 
 .collection-disrupter__link {
-  display: inline-block;
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
+    display: inline-block;
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 0.3em;
 }
