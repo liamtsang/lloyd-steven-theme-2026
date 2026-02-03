@@ -28,9 +28,17 @@
             "position": 8,
             "column_span": 2,
             "row_span": 4,
-            "heading": "Test Heading",
+            "heading": "Letter Pendants",
+            "subheading": "Letter Pendants",
             "link_url": "shopify://pages/contact",
-            "link_text": "Shop now"
+            "link_text": "Shop now",
+            "text_color": "#ffffff",
+            "heading_size": "2rem",
+            "heading_weight": "400",
+            "subheading_size": "1rem",
+            "subheading_weight": "400",
+            "link_size": "1.5rem",
+            "link_weight": "400"
           }
         }
       },
