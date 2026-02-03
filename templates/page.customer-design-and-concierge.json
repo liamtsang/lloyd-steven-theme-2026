@@ -38,7 +38,7 @@
         "text_GakFTT": {
           "type": "text",
           "settings": {
-            "text": "<p>Custom engagement rings, personal jewelry and objects.</p><p>Each commission is guided end to end, from initial consultation to final delivery </p><p>and follows a defined design process, with a limited number accepted each month.</p><p><br/><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><strong>REQUEST AN APPOINTMENT</strong></a></p>"
+            "text": "<p>Custom engagement rings, personal jewelry and objects.</p><p>Each commission is guided end to end, from initial consultation to final delivery </p><p>and follows a defined design process, with a limited number accepted each month.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><strong>REQUEST AN APPOINTMENT</strong></a></p>"
           }
         }
       },
@@ -149,6 +149,50 @@
         "mobile_content_alignment": "left",
         "padding_top": 4,
         "padding_bottom": 100
+      }
+    },
+    "rich_text_YXj6ix": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YPRTVa": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_mdkX9J": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To learn more about our customs processes or ask a question, please email the studio.<br/><br/><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a></p>"
+          }
+        },
+        "button_zKNrVK": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YPRTVa",
+        "text_mdkX9J",
+        "button_zKNrVK"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "slideshow_K3UYkQ": {
@@ -290,6 +334,7 @@
     "rich_text_bYm7BH",
     "multirow_9fJdVY",
     "multirow_4qXczU",
+    "rich_text_YXj6ix",
     "slideshow_K3UYkQ",
     "rich_text_M4a6hn",
     "multirow_CKDeiK",
