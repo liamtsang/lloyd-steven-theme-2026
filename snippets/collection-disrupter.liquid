@@ -15,6 +15,7 @@
   - subheading_weight: {String}  CSS font-weight for the subheading
   - link_size:      {String}  CSS font-size for the link
   - link_weight:    {String}  CSS font-weight for the link
+  - text_alignment: {String}  left | center | right
 {%- endcomment -%}
 
 {%- if image != blank -%}
@@ -22,6 +23,7 @@
     class="collection-disrupter"
     style="
       --disrupter-text-color: {{ text_color | default: '#ffffff' }};
+      --disrupter-text-align: {{ text_alignment | default: 'left' }};
       --disrupter-heading-size: {{ heading_size | default: '2rem' }};
       --disrupter-heading-weight: {{ heading_weight | default: '400' }};
       --disrupter-subheading-size: {{ subheading_size | default: '1rem' }};

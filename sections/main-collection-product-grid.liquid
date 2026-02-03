@@ -201,6 +201,7 @@
                       link_text: disrupter_block.settings.link_text,
                       lazy_load: lazy_load,
                       text_color: disrupter_block.settings.text_color,
+                      text_alignment: disrupter_block.settings.text_alignment,
                       heading_size: disrupter_block.settings.heading_size,
                       heading_weight: disrupter_block.settings.heading_weight,
                       subheading_size: disrupter_block.settings.subheading_size,
@@ -545,6 +546,17 @@
           "id": "text_color",
           "label": "Text color",
           "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ]
         },
         {
           "type": "select",

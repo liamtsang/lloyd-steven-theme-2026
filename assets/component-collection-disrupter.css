@@ -130,6 +130,7 @@
     padding: 2rem;
     z-index: 2;
     color: var(--disrupter-text-color, #fff);
+    text-align: var(--disrupter-text-align, left);
 }
 
 .collection-disrupter__heading {
@@ -157,6 +158,7 @@
     padding: 2rem;
     z-index: 2;
     color: var(--disrupter-text-color, #fff);
+    text-align: var(--disrupter-text-align, left);
 }
 
 .collection-disrupter__link {
