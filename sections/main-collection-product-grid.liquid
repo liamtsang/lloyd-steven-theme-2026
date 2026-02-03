@@ -196,9 +196,17 @@
                     {% render 'collection-disrupter',
                       image: disrupter_block.settings.image,
                       heading: disrupter_block.settings.heading,
+                      subheading: disrupter_block.settings.subheading,
                       link_url: disrupter_block.settings.link_url,
                       link_text: disrupter_block.settings.link_text,
-                      lazy_load: lazy_load
+                      lazy_load: lazy_load,
+                      text_color: disrupter_block.settings.text_color,
+                      heading_size: disrupter_block.settings.heading_size,
+                      heading_weight: disrupter_block.settings.heading_weight,
+                      subheading_size: disrupter_block.settings.subheading_size,
+                      subheading_weight: disrupter_block.settings.subheading_weight,
+                      link_size: disrupter_block.settings.link_size,
+                      link_weight: disrupter_block.settings.link_weight
                     %}
                   </li>
                 {%- endif -%}
@@ -505,12 +513,17 @@
         },
         {
           "type": "header",
-          "content": "Optional content"
+          "content": "Content"
         },
         {
           "type": "text",
           "id": "heading",
           "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading"
         },
         {
           "type": "url",
@@ -522,6 +535,88 @@
           "id": "link_text",
           "label": "Link text",
           "default": "Shop now"
+        },
+        {
+          "type": "header",
+          "content": "Typography"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "default": "2rem",
+          "options": [
+            { "value": "1.2rem", "label": "Small" },
+            { "value": "1.6rem", "label": "Medium" },
+            { "value": "2rem", "label": "Large" },
+            { "value": "2.5rem", "label": "Extra large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "heading_weight",
+          "label": "Heading weight",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light" },
+            { "value": "400", "label": "Regular" },
+            { "value": "600", "label": "Semi-bold" },
+            { "value": "700", "label": "Bold" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "subheading_size",
+          "label": "Subheading size",
+          "default": "1rem",
+          "options": [
+            { "value": "0.85rem", "label": "Small" },
+            { "value": "1rem", "label": "Medium" },
+            { "value": "1.2rem", "label": "Large" },
+            { "value": "1.5rem", "label": "Extra large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "subheading_weight",
+          "label": "Subheading weight",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light" },
+            { "value": "400", "label": "Regular" },
+            { "value": "600", "label": "Semi-bold" },
+            { "value": "700", "label": "Bold" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "link_size",
+          "label": "Link text size",
+          "default": "1rem",
+          "options": [
+            { "value": "0.85rem", "label": "Small" },
+            { "value": "1rem", "label": "Medium" },
+            { "value": "1.2rem", "label": "Large" },
+            { "value": "1.5rem", "label": "Extra large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "link_weight",
+          "label": "Link text weight",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light" },
+            { "value": "400", "label": "Regular" },
+            { "value": "600", "label": "Semi-bold" },
+            { "value": "700", "label": "Bold" }
+          ]
         }
       ]
     }
