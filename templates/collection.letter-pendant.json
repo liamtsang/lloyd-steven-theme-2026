@@ -26,8 +26,8 @@
           "settings": {
             "image": "shopify://shop_images/TEST_IMAGE.jpg",
             "position": 4,
-            "heading": "",
-            "link_url": "",
+            "heading": "Test Heading",
+            "link_url": "shopify://pages/contact",
             "link_text": "Shop now"
           }
         }
