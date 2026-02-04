@@ -25,7 +25,7 @@
           "type": "disrupter",
           "settings": {
             "image": "shopify://shop_images/TEST_IMAGE.jpg",
-            "position": 8,
+            "position": 4,
             "column_span": 2,
             "row_span": 4,
             "heading": "Letter Pendants",
