@@ -49,27 +49,44 @@
    DISRUPTER: Grid spanning
    ============================================ */
 
-/* Desktop (990px+): uses admin-configurable spans via custom properties */
+/* Desktop (990px+): explicit row/column placement via custom properties */
 @media screen and (min-width: 990px) {
     .grid__item--disrupter {
-        grid-column: span var(--disrupter-col-span, 2);
-        grid-row: span var(--disrupter-row-span, 3);
+        grid-row-start: var(--disrupter-row-start, 2);
+        grid-row-end: span var(--disrupter-row-span, 3);
+        grid-column-start: var(--disrupter-col-start, 1);
+        grid-column-end: span var(--disrupter-col-span, 2);
     }
 }
 
-/* Tablet (750-989px): full width, 2 rows */
+/* Tablet (750-989px): explicit placement, respects row/col settings */
 @media screen and (min-width: 750px) and (max-width: 989px) {
     .grid__item--disrupter {
-        grid-column: span var(--disrupter-col-span, 2);
-        grid-row: span var(--disrupter-row-span, 3);
+        grid-row-start: var(--disrupter-row-start, 2);
+        grid-row-end: span var(--disrupter-row-span, 3);
+        grid-column-start: var(--disrupter-col-start, 1);
+        grid-column-end: span var(--disrupter-col-span, 2);
     }
 }
 
-/* Mobile (<750px): full width, single row, no spanning */
+/* Mobile (<750px): auto placement, full width, appears after first 2 products */
 @media screen and (max-width: 749px) {
     .grid__item--disrupter {
+        grid-row-start: auto;
+        grid-row-end: auto;
         grid-column: 1 / -1;
-        grid-row: span 1;
+        order: 2; /* After the first row of products (order 0-1) */
+    }
+
+    /* Ensure products flow naturally before the disrupter on mobile */
+    .product-grid--has-disrupter .grid__item:not(.grid__item--disrupter) {
+        order: 0;
+    }
+
+    /* Products after a certain point should come after the disrupter */
+    .product-grid--has-disrupter
+        .grid__item:not(.grid__item--disrupter):nth-child(n + 4) {
+        order: 3;
     }
 }
 

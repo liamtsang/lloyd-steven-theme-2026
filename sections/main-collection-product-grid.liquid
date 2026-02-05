@@ -168,48 +168,55 @@
 
               {%- comment -%} Find the disrupter block if one exists {%- endcomment -%}
               {%- assign disrupter_block = nil -%}
-              {%- assign disrupter_position = 3 -%}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'disrupter' and block.settings.image != blank -%}
                   {%- assign disrupter_block = block -%}
-                  {%- assign disrupter_position = block.settings.position -%}
                   {%- break -%}
                 {%- endif -%}
               {%- endfor -%}
+
+              {%- comment -%} Render disrupter with explicit grid placement {%- endcomment -%}
+              {%- if disrupter_block -%}
+                {%- assign disrupter_row = disrupter_block.settings.row | default: 2 -%}
+                {%- assign disrupter_col_span = disrupter_block.settings.column_span | default: 2 -%}
+                {%- assign disrupter_row_span = disrupter_block.settings.row_span | default: 3 -%}
+                {%- assign grid_cols = section.settings.columns_desktop | default: 3 -%}
+                {%- if disrupter_block.settings.grid_alignment == 'right' -%}
+                  {%- assign disrupter_col_start = grid_cols | minus: disrupter_col_span | plus: 1 -%}
+                {%- else -%}
+                  {%- assign disrupter_col_start = 1 -%}
+                {%- endif -%}
+                <li
+                  class="grid__item grid__item--disrupter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ disrupter_block.shopify_attributes }}
+                  style="--disrupter-row-start: {{ disrupter_row }}; --disrupter-col-start: {{ disrupter_col_start }}; --disrupter-col-span: {{ disrupter_col_span }}; --disrupter-row-span: {{ disrupter_row_span }};{% if settings.animations_reveal_on_scroll %} --animation-order: 1;{% endif %}"
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                  {% endif %}
+                >
+                  {% render 'collection-disrupter',
+                    image: disrupter_block.settings.image,
+                    heading: disrupter_block.settings.heading,
+                    subheading: disrupter_block.settings.subheading,
+                    link_url: disrupter_block.settings.link_url,
+                    link_text: disrupter_block.settings.link_text,
+                    lazy_load: false,
+                    text_color: disrupter_block.settings.text_color,
+                    text_alignment: disrupter_block.settings.text_alignment,
+                    heading_size: disrupter_block.settings.heading_size,
+                    heading_weight: disrupter_block.settings.heading_weight,
+                    subheading_size: disrupter_block.settings.subheading_size,
+                    subheading_weight: disrupter_block.settings.subheading_weight,
+                    link_size: disrupter_block.settings.link_size,
+                    link_weight: disrupter_block.settings.link_weight
+                  %}
+                </li>
+              {%- endif -%}
 
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
-                {%- endif -%}
-
-                {%- comment -%} Insert disrupter at the configured position {%- endcomment -%}
-                {%- if disrupter_block and forloop.index == disrupter_position -%}
-                  <li
-                    class="grid__item grid__item--disrupter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-                    {{ disrupter_block.shopify_attributes }}
-                    style="--disrupter-col-span: {{ disrupter_block.settings.column_span | default: 2 }}; --disrupter-row-span: {{ disrupter_block.settings.row_span | default: 3 }};{% if settings.animations_reveal_on_scroll %} --animation-order: {{ forloop.index }};{% endif %}"
-                    {% if settings.animations_reveal_on_scroll %}
-                      data-cascade
-                    {% endif %}
-                  >
-                    {% render 'collection-disrupter',
-                      image: disrupter_block.settings.image,
-                      heading: disrupter_block.settings.heading,
-                      subheading: disrupter_block.settings.subheading,
-                      link_url: disrupter_block.settings.link_url,
-                      link_text: disrupter_block.settings.link_text,
-                      lazy_load: lazy_load,
-                      text_color: disrupter_block.settings.text_color,
-                      text_alignment: disrupter_block.settings.text_alignment,
-                      heading_size: disrupter_block.settings.heading_size,
-                      heading_weight: disrupter_block.settings.heading_weight,
-                      subheading_size: disrupter_block.settings.subheading_size,
-                      subheading_weight: disrupter_block.settings.subheading_weight,
-                      link_size: disrupter_block.settings.link_size,
-                      link_weight: disrupter_block.settings.link_weight
-                    %}
-                  </li>
                 {%- endif -%}
 
                 <li
@@ -479,18 +486,28 @@
           "label": "Image"
         },
         {
-          "type": "range",
-          "id": "position",
-          "min": 1,
-          "max": 24,
-          "step": 1,
-          "default": 4,
-          "label": "Insert after product number",
-          "info": "The disrupter appears after this many products. For a 3-column grid, use multiples of 3 (e.g. 3, 6, 9) to align with row boundaries."
+          "type": "header",
+          "content": "Grid placement"
         },
         {
-          "type": "header",
-          "content": "Grid size"
+          "type": "range",
+          "id": "row",
+          "min": 1,
+          "max": 8,
+          "step": 1,
+          "default": 2,
+          "label": "Row",
+          "info": "Which row the disrupter starts on."
+        },
+        {
+          "type": "select",
+          "id": "grid_alignment",
+          "label": "Alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ]
         },
         {
           "type": "range",
