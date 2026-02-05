@@ -2,6 +2,17 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
+{%- assign has_disrupter = false -%}
+{%- for block in section.blocks -%}
+  {%- if block.type == 'disrupter' and block.settings.image != blank -%}
+    {%- assign has_disrupter = true -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if has_disrupter -%}
+  {{ 'component-collection-disrupter.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -149,15 +160,58 @@
               class="
                 grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                 grid--{{ section.settings.columns_desktop }}-col-desktop
+                {% if has_disrupter %} product-grid--has-disrupter{% endif %}
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               "
             >
               {% assign skip_card_product_styles = false %}
+
+              {%- comment -%} Find the disrupter block if one exists {%- endcomment -%}
+              {%- assign disrupter_block = nil -%}
+              {%- assign disrupter_position = 3 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'disrupter' and block.settings.image != blank -%}
+                  {%- assign disrupter_block = block -%}
+                  {%- assign disrupter_position = block.settings.position -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
+
+                {%- comment -%} Insert disrupter at the configured position {%- endcomment -%}
+                {%- if disrupter_block and forloop.index == disrupter_position -%}
+                  <li
+                    class="grid__item grid__item--disrupter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                    {{ disrupter_block.shopify_attributes }}
+                    style="--disrupter-col-span: {{ disrupter_block.settings.column_span | default: 2 }}; --disrupter-row-span: {{ disrupter_block.settings.row_span | default: 3 }};{% if settings.animations_reveal_on_scroll %} --animation-order: {{ forloop.index }};{% endif %}"
+                    {% if settings.animations_reveal_on_scroll %}
+                      data-cascade
+                    {% endif %}
+                  >
+                    {% render 'collection-disrupter',
+                      image: disrupter_block.settings.image,
+                      heading: disrupter_block.settings.heading,
+                      subheading: disrupter_block.settings.subheading,
+                      link_url: disrupter_block.settings.link_url,
+                      link_text: disrupter_block.settings.link_text,
+                      lazy_load: lazy_load,
+                      text_color: disrupter_block.settings.text_color,
+                      text_alignment: disrupter_block.settings.text_alignment,
+                      heading_size: disrupter_block.settings.heading_size,
+                      heading_weight: disrupter_block.settings.heading_weight,
+                      subheading_size: disrupter_block.settings.subheading_size,
+                      subheading_weight: disrupter_block.settings.subheading_weight,
+                      link_size: disrupter_block.settings.link_size,
+                      link_weight: disrupter_block.settings.link_weight
+                    %}
+                  </li>
+                {%- endif -%}
+
                 <li
                   class="grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                   {% if settings.animations_reveal_on_scroll %}
@@ -411,6 +465,172 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "disrupter",
+      "name": "Disrupter image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "position",
+          "min": 1,
+          "max": 24,
+          "step": 1,
+          "default": 4,
+          "label": "Insert after product number",
+          "info": "The disrupter appears after this many products. For a 3-column grid, use multiples of 3 (e.g. 3, 6, 9) to align with row boundaries."
+        },
+        {
+          "type": "header",
+          "content": "Grid size"
+        },
+        {
+          "type": "range",
+          "id": "column_span",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 2,
+          "label": "Columns wide",
+          "info": "How many grid columns the disrupter spans on desktop."
+        },
+        {
+          "type": "range",
+          "id": "row_span",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "default": 3,
+          "label": "Rows tall",
+          "info": "How many grid rows the disrupter spans on desktop."
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Shop now"
+        },
+        {
+          "type": "header",
+          "content": "Typography"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "default": "left",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading size",
+          "default": "2rem",
+          "options": [
+            { "value": "1.2rem", "label": "Small" },
+            { "value": "1.6rem", "label": "Medium" },
+            { "value": "2rem", "label": "Large" },
+            { "value": "2.5rem", "label": "Extra large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "heading_weight",
+          "label": "Heading weight",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light" },
+            { "value": "400", "label": "Regular" },
+            { "value": "600", "label": "Semi-bold" },
+            { "value": "700", "label": "Bold" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "subheading_size",
+          "label": "Subheading size",
+          "default": "1rem",
+          "options": [
+            { "value": "0.85rem", "label": "Small" },
+            { "value": "1rem", "label": "Medium" },
+            { "value": "1.2rem", "label": "Large" },
+            { "value": "1.5rem", "label": "Extra large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "subheading_weight",
+          "label": "Subheading weight",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light" },
+            { "value": "400", "label": "Regular" },
+            { "value": "600", "label": "Semi-bold" },
+            { "value": "700", "label": "Bold" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "link_size",
+          "label": "Link text size",
+          "default": "1rem",
+          "options": [
+            { "value": "0.85rem", "label": "Small" },
+            { "value": "1rem", "label": "Medium" },
+            { "value": "1.2rem", "label": "Large" },
+            { "value": "1.5rem", "label": "Extra large" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "link_weight",
+          "label": "Link text weight",
+          "default": "400",
+          "options": [
+            { "value": "300", "label": "Light" },
+            { "value": "400", "label": "Regular" },
+            { "value": "600", "label": "Semi-bold" },
+            { "value": "700", "label": "Bold" }
+          ]
+        }
+      ]
     }
   ]
 }

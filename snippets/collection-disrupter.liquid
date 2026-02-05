@@ -1,0 +1,67 @@
+{%- comment -%}
+  Renders a disrupter block within the collection product grid.
+
+  Accepts:
+  - image:          {Image}   The disrupter image (required)
+  - heading:        {String}  Optional heading text
+  - subheading:     {String}  Optional subheading text
+  - link_url:       {String}  Optional URL to link to
+  - link_text:      {String}  Optional link label
+  - lazy_load:      {Boolean} Whether to lazy-load the image
+  - text_color:     {Color}   Text / link border colour
+  - heading_size:   {String}  CSS font-size for the heading
+  - heading_weight: {String}  CSS font-weight for the heading
+  - subheading_size:   {String}  CSS font-size for the subheading
+  - subheading_weight: {String}  CSS font-weight for the subheading
+  - link_size:      {String}  CSS font-size for the link
+  - link_weight:    {String}  CSS font-weight for the link
+  - text_alignment: {String}  left | center | right
+{%- endcomment -%}
+
+{%- if image != blank -%}
+  <div
+    class="collection-disrupter"
+    style="
+      --disrupter-text-color: {{ text_color | default: '#ffffff' }};
+      --disrupter-text-align: {{ text_alignment | default: 'left' }};
+      --disrupter-heading-size: {{ heading_size | default: '2rem' }};
+      --disrupter-heading-weight: {{ heading_weight | default: '400' }};
+      --disrupter-subheading-size: {{ subheading_size | default: '1rem' }};
+      --disrupter-subheading-weight: {{ subheading_weight | default: '400' }};
+      --disrupter-link-size: {{ link_size | default: '1rem' }};
+      --disrupter-link-weight: {{ link_weight | default: '400' }};
+    "
+  >
+    <div class="collection-disrupter__media">
+      {%- assign image_widths = '450, 660, 900, 1100, 1500, 1780, 2000' -%}
+      {{
+        image
+        | image_url: width: 1500
+        | image_tag:
+          loading: lazy_load | default: true | ternary: 'lazy', 'eager',
+          sizes: '(min-width: 990px) 66vw, 100vw',
+          widths: image_widths,
+          class: 'collection-disrupter__image'
+      }}
+
+      {%- if heading != blank or subheading != blank -%}
+        <div class="collection-disrupter__top">
+          {%- if heading != blank -%}
+            <h3 class="collection-disrupter__heading">{{ heading }}</h3>
+          {%- endif -%}
+          {%- if subheading != blank -%}
+            <p class="collection-disrupter__subheading">{{ subheading }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if link_url != blank and link_text != blank -%}
+        <div class="collection-disrupter__bottom">
+          <a href="{{ link_url }}" class="collection-disrupter__link">
+            {{ link_text }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}

@@ -8,6 +8,11 @@ Started: Thu Jan 22 10:51:36 AM EST 2026
 - Homepage styling uses `.custom-home` class on body element (set in theme.liquid when template == 'index')
 - Localization uses `localization-form` custom element with Shopify's built-in localization snippets
 - Font sizes use rem units (typically 1.1rem-1.2rem for body text, letter-spacing: 0.05em-0.15em)
+- Product grid uses flexbox by default (`.grid` class in base.css). To span items across multiple rows+columns, use CSS Grid via an override class — never modify `base.css` `.grid` directly
+- `--header-height` CSS variable is set by `sections/header.liquid` JS and used for sticky positioning offsets
+- Section blocks with `limit: 1` restrict to a single block instance in the theme editor
+- Use `{{ block.shopify_attributes }}` on block wrappers to enable theme editor selection/highlighting
+- Working directory has trailing space in name (`Lloydsteven Theme 2026 `) — use explicit git paths with quotes
 
 ---
 
@@ -28,4 +33,25 @@ Started: Thu Jan 22 10:51:36 AM EST 2026
   - Localization selectors only appear when multiple languages/countries are available in Shopify settings
   - Newsletter form uses Shopify's `customer` form with hidden `contact[tags]` input for "newsletter" tag
   - Homepage has `.custom-home` class that enables special positioning (margin-top: auto)
+---
+
+## 2026-01-30 - Story 16
+- **What was implemented**: Collection grid disrupter block — an editorial image that spans 2 columns × 3 rows in the product grid with a sticky image effect
+  - Created `assets/component-collection-disrupter.css` with CSS Grid override (only applied via `.product-grid--has-disrupter` class) and all disrupter styling including sticky image, responsive breakpoints, and optional text overlay
+  - Created `snippets/collection-disrupter.liquid` with responsive image rendering (srcset), optional heading/link overlay with gradient scrim
+  - Modified `sections/main-collection-product-grid.liquid`: conditional CSS loading, grid class injection, disrupter insertion in product loop at configurable position, and blocks schema with `disrupter` type (limit: 1)
+  - Sticky image accounts for `--header-height` CSS variable to avoid overlapping the site header
+  - Responsive: 2col×3row desktop (990px+), 2col×2row tablet (750-989px), full-width static mobile (<750px)
+- **Files changed**:
+  - `assets/component-collection-disrupter.css` — NEW: CSS Grid override + disrupter component styles
+  - `snippets/collection-disrupter.liquid` — NEW: Disrupter block markup with responsive image
+  - `sections/main-collection-product-grid.liquid` — MODIFIED: 4 changes (CSS loading, grid class, loop insertion, schema blocks)
+- **Learnings for future iterations:**
+  - Flexbox (`.grid` in `base.css`) cannot span items across rows+columns — CSS Grid is needed, but must be applied via an additive class to avoid site-wide regression
+  - `display: grid !important` is necessary to override `display: flex` from base `.grid` class
+  - Must also reset `.grid__item { width: auto; max-width: none }` when switching from flex to grid, because the old `calc(33.33% - ...)` widths conflict with CSS Grid's `1fr` columns
+  - `position: sticky` on the image works because the parent `<li>` spans 3 rows (taller than viewport), so the sticky child can pin while the parent scrolls
+  - The working directory name has a trailing space, causing path issues with some tools — always use explicit quoted paths for git commands
+  - Schema JSON validation can be done with a simple Python script: extract content between `{% schema %}` and `{% endschema %}` tags
+  - Manual browser verification is needed (no Shopify CLI or browser testing tools available)
 ---

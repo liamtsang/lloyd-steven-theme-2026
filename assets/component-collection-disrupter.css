@@ -1,0 +1,181 @@
+/* ============================================
+   PRODUCT GRID: CSS Grid override
+   Only active when .product-grid--has-disrupter is present.
+   The base .grid flexbox in base.css is NOT touched.
+   ============================================ */
+
+.product-grid--has-disrupter {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--grid-mobile-horizontal-spacing);
+    row-gap: var(--grid-mobile-vertical-spacing);
+}
+
+@media screen and (min-width: 750px) {
+    .product-grid--has-disrupter {
+        column-gap: var(--grid-desktop-horizontal-spacing);
+        row-gap: var(--grid-desktop-vertical-spacing);
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .product-grid--has-disrupter.grid--3-col-desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-grid--has-disrupter.grid--4-col-desktop {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .product-grid--has-disrupter.grid--5-col-desktop {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .product-grid--has-disrupter.grid--6-col-desktop {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/*
+ * Reset flex-based width calculations from base.css.
+ * CSS Grid's 1fr handles sizing; the old calc() widths would conflict.
+ */
+.product-grid--has-disrupter .grid__item {
+    width: auto;
+    max-width: none;
+}
+
+/* ============================================
+   DISRUPTER: Grid spanning
+   ============================================ */
+
+/* Desktop (990px+): uses admin-configurable spans via custom properties */
+@media screen and (min-width: 990px) {
+    .grid__item--disrupter {
+        grid-column: span var(--disrupter-col-span, 2);
+        grid-row: span var(--disrupter-row-span, 3);
+    }
+}
+
+/* Tablet (750-989px): full width, 2 rows */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+    .grid__item--disrupter {
+        grid-column: span var(--disrupter-col-span, 2);
+        grid-row: span var(--disrupter-row-span, 3);
+    }
+}
+
+/* Mobile (<750px): full width, single row, no spanning */
+@media screen and (max-width: 749px) {
+    .grid__item--disrupter {
+        grid-column: 1 / -1;
+        grid-row: span 1;
+    }
+}
+
+/* ============================================
+   DISRUPTER: Component styles
+   ============================================ */
+
+.collection-disrupter {
+    position: sticky;
+    top: 40px;
+    /*width: 100%;
+    height: 100%;*/
+    /*overflow: hidden;*/
+}
+
+/*
+ * Sticky image wrapper.
+ * Pins the image to the viewport as the user scrolls through the
+ * tall disrupter area. Uses --header-height to avoid overlap with
+ * the sticky header.
+ */
+.collection-disrupter__media {
+    position: relative;
+    /*top: var(--header-height, 0px);*/
+    width: 100%;
+    height: calc(100vh - var(--header-height, 0px));
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.collection-disrupter__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Mobile: no sticky, static image with fixed aspect ratio */
+@media screen and (max-width: 749px) {
+    .collection-disrupter__media {
+        position: relative;
+        top: auto;
+        height: auto;
+        max-height: none;
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* ---- Text overlays ---- */
+
+/* Top: heading + subheading pinned to top of the visible image */
+.collection-disrupter__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    z-index: 2;
+    color: var(--disrupter-text-color, #fff);
+    text-align: var(--disrupter-text-align, left);
+}
+
+.collection-disrupter__heading {
+    font-size: var(--disrupter-heading-size, 2rem);
+    font-weight: var(--disrupter-heading-weight, 400);
+    margin: 0;
+    line-height: 1.2;
+    color: inherit;
+}
+
+.collection-disrupter__subheading {
+    font-size: var(--disrupter-subheading-size, 1rem);
+    font-weight: var(--disrupter-subheading-weight, 400);
+    margin: 0.4em 0 0;
+    line-height: 1.4;
+    color: inherit;
+}
+
+/* Bottom: boxed link pinned to bottom of the visible image */
+.collection-disrupter__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    z-index: 2;
+    color: var(--disrupter-text-color, #fff);
+    text-align: var(--disrupter-text-align, left);
+}
+
+.collection-disrupter__link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--disrupter-text-color, #fff);
+    color: var(--disrupter-text-color, #fff);
+    font-size: var(--disrupter-link-size, 1rem);
+    font-weight: var(--disrupter-link-weight, 400);
+    text-decoration: none;
+    line-height: 1.4;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.collection-disrupter__link:hover {
+    background-color: var(--disrupter-text-color, #fff);
+    color: #000;
+}
