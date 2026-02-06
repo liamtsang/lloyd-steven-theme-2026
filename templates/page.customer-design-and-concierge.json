@@ -16,7 +16,7 @@
         "title": "CUSTOM DESIGN AND CONCIERGE",
         "description": "<p>Custom engagement rings, personal jewelry and objects.</p><p>Each commission is guided end to end, from initial consultation to final delivery </p><p>and follows a defined design process, with a limited number accepted each month.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><strong>REQUEST AN APPOINTMENT</strong></a></p>",
         "show_description": true,
-        "show_editorial_media": true,
+        "show_editorial_media": false,
         "show_image": false,
         "color_scheme": ""
       }
