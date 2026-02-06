@@ -1,0 +1,160 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+  }
+{%- endstyle -%}
+
+<div class="collection-hero{% if section.settings.show_image and section.settings.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+    <div class="collection-hero__text-wrapper">
+      <h2 class="collection-hero__title">
+        {{- section.settings.title | escape -}}
+      </h2>
+
+      {%- if section.settings.show_description and section.settings.description != blank -%}
+        <div class="collection-hero__description rte">{{ section.settings.description }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%}Editorial Image/Video{%- endcomment -%}
+    {%- if section.settings.show_editorial_media and section.settings.editorial_media != blank -%}
+      <div class="collection-hero__editorial-media media gradient">
+        {%- assign editorial_media = section.settings.editorial_media -%}
+
+        {%- if editorial_media.media_type == 'video' -%}
+          <video
+            class="collection-hero__editorial-video"
+            autoplay
+            loop
+            muted
+            playsinline
+            width="{{ editorial_media.preview_image.width }}"
+            height="{{ editorial_media.preview_image.height }}"
+          >
+            {%- for source in editorial_media.sources -%}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}">
+            {%- endfor -%}
+          </video>
+        {%- else -%}
+          <img
+            srcset="
+              {%- if editorial_media.width >= 375 -%}{{ editorial_media | image_url: width: 375 }} 375w,{%- endif -%}
+              {%- if editorial_media.width >= 750 -%}{{ editorial_media | image_url: width: 750 }} 750w,{%- endif -%}
+              {%- if editorial_media.width >= 1100 -%}{{ editorial_media | image_url: width: 1100 }} 1100w,{%- endif -%}
+              {%- if editorial_media.width >= 1500 -%}{{ editorial_media | image_url: width: 1500 }} 1500w,{%- endif -%}
+              {%- if editorial_media.width >= 1780 -%}{{ editorial_media | image_url: width: 1780 }} 1780w,{%- endif -%}
+              {%- if editorial_media.width >= 2000 -%}{{ editorial_media | image_url: width: 2000 }} 2000w,{%- endif -%}
+              {%- if editorial_media.width >= 3000 -%}{{ editorial_media | image_url: width: 3000 }} 3000w,{%- endif -%}
+              {{ editorial_media | image_url }} {{ editorial_media.width }}w
+            "
+            src="{{ editorial_media | image_url: width: 1500 }}"
+            sizes="100vw"
+            alt="{{ editorial_media.alt | escape }}"
+            loading="lazy"
+            width="{{ editorial_media.width }}"
+            height="{{ editorial_media.height }}"
+          >
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_image and section.settings.image -%}
+      <div class="collection-hero__image-container media gradient">
+        {%- assign hero_image = section.settings.image -%}
+        <img
+          srcset="
+            {%- if hero_image.width >= 165 -%}{{ hero_image | image_url: width: 165 }} 165w,{%- endif -%}
+            {%- if hero_image.width >= 360 -%}{{ hero_image | image_url: width: 360 }} 360w,{%- endif -%}
+            {%- if hero_image.width >= 535 -%}{{ hero_image | image_url: width: 535 }} 535w,{%- endif -%}
+            {%- if hero_image.width >= 750 -%}{{ hero_image | image_url: width: 750 }} 750w,{%- endif -%}
+            {%- if hero_image.width >= 1070 -%}{{ hero_image | image_url: width: 1070 }} 1070w,{%- endif -%}
+            {%- if hero_image.width >= 1500 -%}{{ hero_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+            {{ hero_image | image_url }} {{ hero_image.width }}w
+          "
+          src="{{ hero_image | image_url: width: 750 }}"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+          alt="{{ hero_image.alt | escape }}"
+          width="{{ hero_image.width }}"
+          height="{{ hero_image.height }}"
+        >
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var headers = document.querySelectorAll('.collection-hero__title');
+
+    headers.forEach(function(header) {
+      var words = header.innerText.trim().split(/\s+/);
+      if (words.length === 2) {
+        header.innerHTML = words[0] + '<br>' + words[1];
+      }
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Page Banner",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Page Title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "default": true,
+      "label": "Show description"
+    },
+    {
+      "type": "image_picker",
+      "id": "editorial_media",
+      "label": "Editorial media"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_editorial_media",
+      "default": true,
+      "label": "Show editorial media"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": false,
+      "label": "Show image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page Banner"
+    }
+  ]
+}
+{% endschema %}
