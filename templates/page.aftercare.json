@@ -13,8 +13,8 @@
       "type": "custom-page-banner",
       "name": "Page Banner",
       "settings": {
-        "title": "CUSTOM DESIGN AND CONCIERGE",
-        "description": "<p>Custom engagement rings, personal jewelry and objects.</p><p>Each commission is guided end to end, from initial consultation to final delivery </p><p>and follows a defined design process, with a limited number accepted each month.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><strong>REQUEST AN APPOINTMENT</strong></a></p>",
+        "title": "Lloyd Steven Aftercare",
+        "description": "<p>Every Lloyd Steven piece is heirloom quality, but like anything precious, it benefits from proper care.</p><p>Here you’ll find simple guidelines to maintain the beauty, structure, and longevity of your piece for years to come. </p>",
         "show_description": true,
         "show_editorial_media": false,
         "show_image": false,
@@ -79,7 +79,7 @@
             "image": "shopify://shop_images/Screenshot_2025-12-18_at_11.01.07_am.png",
             "caption": "",
             "heading": "",
-            "text": "<h2>STEP ONE : CONSULTATION<br/></h2><p><br/>In person or virtually. We’ll review references, preferences, and parameters, then define a clear design brief. Guidance is provided on design, materials, and stone selection. A curated selection of diamonds and gemstones are sourced for each commission and will be presented to you following the consultation.</p><p>Consultations typically run 30-45 mins.</p><p>*Timelines are confirmed prior to production.<br/>*No obligation to proceed.</p>",
+            "text": "<h2>DAILY WEAR<br/></h2><p>Your jewellery should be enjoyed. Natural character and patina will develop with longterm wear. <br/><br/>That said, we recommend removing pieces before:</p><ul><li>Exercise or sport<br/></li><li>Swimming (chlorine & salt can damage metals)<br/></li><li>Heavy lifting<br/></li><li>Applying lotions, perfume, or hair products<br/></li><li>Sleeping, where chains and claws can catch<br/></li></ul><p>Impact is the most common cause of stone loosening. </p><p>When in doubt, take it off.</p>",
             "button_label": "",
             "button_link": ""
           }
