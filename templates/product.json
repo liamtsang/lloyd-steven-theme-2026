@@ -59,6 +59,15 @@
             "page": ""
           }
         },
+        "collapsible_tab_FeMitJ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Contact",
+            "icon": "none",
+            "content": "<p>Please feel at liberty to <a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\">contact the studio </a>with any ideas, questions or general jewellery conversation.</p>",
+            "page": ""
+          }
+        },
         "collapsible_tab_NPMeBK": {
           "type": "collapsible_tab",
           "settings": {
@@ -123,6 +132,7 @@
         "buy_buttons",
         "description",
         "collapsible_tab_7Gr8aR",
+        "collapsible_tab_FeMitJ",
         "collapsible_tab_NPMeBK",
         "collapsible_tab_XWBMFx",
         "collapsible_tab_cR3Ykr",
