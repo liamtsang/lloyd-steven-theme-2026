@@ -68,6 +68,15 @@
             "page": ""
           }
         },
+        "collapsible_tab_XWBMFx": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "SIZING",
+            "icon": "none",
+            "content": "<p>Sizing assistance is available for all pieces. Let us know how we can support you. </p><p>For rings, a complimentary ring sizer can be mailed to you, or you can follow our sizing PDF.<br/><br/><strong>RING SIZER PDF</strong></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\">CONTACT STUDIO</a></p><p></p>",
+            "page": ""
+          }
+        },
         "collapsible_tab_E7npwB": {
           "type": "collapsible_tab",
           "settings": {
@@ -94,6 +103,15 @@
             "content": "<p>LLOYD STEVEN jewellery is made for everyday wear. </p><p>Surfaces will soften. Metals will develop patina.</p><p>Store dry. Wipe with a soft cloth.</p><p>The studio can clean, service, resize, and restore your piece as needed. <br/></p>",
             "page": ""
           }
+        },
+        "collapsible_tab_HgVk9F": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "DUTIES + TAXES",
+            "icon": "none",
+            "content": "<p>All duties, tariffs and import taxes are included at checkout. <br/></p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -106,9 +124,11 @@
         "description",
         "collapsible_tab_7Gr8aR",
         "collapsible_tab_NPMeBK",
+        "collapsible_tab_XWBMFx",
         "collapsible_tab_E7npwB",
         "collapsible_tab_JErW8i",
-        "collapsible_tab_cR3Ykr"
+        "collapsible_tab_cR3Ykr",
+        "collapsible_tab_HgVk9F"
       ],
       "settings": {
         "enable_sticky_info": true,
