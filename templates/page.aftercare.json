@@ -14,7 +14,7 @@
       "name": "Page Banner",
       "settings": {
         "title": "Lloyd Steven Aftercare",
-        "description": "<p>Every Lloyd Steven piece is heirloom quality, but like anything precious, it benefits from proper care.</p><p>Here you’ll find simple guidelines to maintain the beauty, structure, and longevity of your piece for years to come. </p>",
+        "description": "<p>LLOYD STEVEN jewellery is made to wear. Made to last. </p><p>Here you’ll find simple guidelines to maintain the beauty, structure, and longevity of your piece for years to come. </p>",
         "show_description": true,
         "show_editorial_media": false,
         "show_image": false,
@@ -79,7 +79,7 @@
             "image": "shopify://shop_images/Lloyd_14_d420cf44-ad09-45e5-b050-2d25d7bf47b8.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>DAILY WEAR<br/></h2><p>LLOYD STEVEN jewellery is made to wear. Made to last.</p><p>Remove for sport, swimming, lifting, products, and sleep.<br/><br/>Impact can shift stones.</p><p>If unsure, take it off.</p>",
+            "text": "<h2>DAILY WEAR<br/></h2><p>Remove for sport, swimming, lifting, products, and sleep.<br/><br/>Impact can shift stones.</p><p>If unsure, take it off.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -149,18 +149,7 @@
             "image": "shopify://shop_images/N6A4769_fd71465d-1ac3-41cc-947f-0b5274db7f50.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>WARRANTY</h2><p>Lloyd Steven pieces are heirloom quality and guaranteed against manufacturing faults under normal wear.</p><p>Craftsmanship faults under normal wear are covered. Impact, accidents, misuse, wear, loss, theft, or outside repair are not.</p><p>Send images to the studio for assessment.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a><strong><br/><br/></strong><a href=\"/pages/customer-support\" title=\"Customer Support\"><strong>READ FULL WARRANTY</strong></a></p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "row_FkAJQ6": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/N6A4769_fd71465d-1ac3-41cc-947f-0b5274db7f50.jpg",
-            "caption": "",
-            "heading": "",
-            "text": "<h2>ADDITIONAL ASSISTANCE</h2><p>If you're unsure about something please images and a short description of your concern, and our team will advise on the safest solution. <br/><br/><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a></p>",
+            "text": "<h2>WARRANTY</h2><p>Lloyd Steven pieces are heirloom quality and guaranteed against manufacturing faults under normal wear.</p><p>Craftsmanship faults under normal wear are covered. Impact, accidents, misuse, wear, loss, theft, or outside repair are not.</p><p>If you are unsure of something, please contact the studio and send images for an assessment. <br/><br/><br/><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a><strong><br/><br/></strong><a href=\"/pages/customer-support\" title=\"Customer Support\"><strong>READ FULL WARRANTY</strong></a></p>",
             "button_label": "",
             "button_link": ""
           }
@@ -168,8 +157,7 @@
       },
       "block_order": [
         "row_nrYAyF",
-        "row_ij3P4i",
-        "row_FkAJQ6"
+        "row_ij3P4i"
       ],
       "name": "t:sections.multirow.presets.name",
       "settings": {
