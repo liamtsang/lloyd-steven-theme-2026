@@ -79,7 +79,7 @@
             "image": "shopify://shop_images/Lloyd_14_d420cf44-ad09-45e5-b050-2d25d7bf47b8.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>DAILY WEAR<br/></h2><p>Lloyd Steven jewellery is heirloom quality and designed to be worn everyday and passed down for generations to come. </p><p>To best care for your piece we recommend removing before:</p><ul><li>Exercise or sport<br/></li><li>Swimming (chlorine & salt can damage metals)<br/></li><li>Heavy lifting<br/></li><li>Applying lotions, perfume, or hair products<br/></li><li>Sleeping, where chains and claws can catch<br/></li></ul><p>Impact is the most common cause of stone loosening. </p><p>When in doubt, take it off.</p>",
+            "text": "<h2>DAILY WEAR<br/></h2><p>LLOYD STEVEN jewellery is made to wear. Made to last.</p><p>Remove for sport, swimming, lifting, products, and sleep.<br/><br/>Impact can shift stones.</p><p>If unsure, take it off.</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -138,7 +138,7 @@
             "image": "shopify://shop_images/N6A4769_fd71465d-1ac3-41cc-947f-0b5274db7f50.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>Servicing + Repairs</h2><p>Even beautifully made jewellery benefits from maintenance.</p><p>We suggest an inspection every 12 months to check:</p><ul><li>Stone security<br/></li><li>Claw wear<br/></li><li>Clasps and fittings<br/></li><li>Chain integrity<br/></li></ul><p>If something feels different, sounds loose, or has taken a knock, stop wearing it and contact us.</p><p>We will clean, service, resize, and restore your piece.</p><p></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\">ARRANGE A SERVICING</a></p>",
+            "text": "<h2>Servicing + Repairs</h2><p>Even beautifully made jewellery benefits from maintenance.</p><p>We suggest an inspection every 12 months to check:</p><ul><li>Stone security<br/></li><li>Claw wear<br/></li><li>Clasps and fittings<br/></li><li>Chain integrity<br/></li></ul><p>If something feels different, sounds loose, or has taken a knock, stop wearing it and contact us.</p><p>We will clean, service, resize, and restore your piece.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>ARRANGE A SERVICING</strong></a></p>",
             "button_label": "",
             "button_link": ""
           }
@@ -149,7 +149,7 @@
             "image": "shopify://shop_images/N6A4769_fd71465d-1ac3-41cc-947f-0b5274db7f50.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>WARRANTY</h2><p>Lloyd Steven jewellery is crafted with with the highest quality We proudly offer a 2 year  warranty from the date of purchase, covering manufacturing faults for all pieces purchased through our website. </p><p>This does not cover:</p><ul><li>Accidental damage<br/></li><li>Impact<br/></li><li>General wear and tear<br/></li><li>Loss or theft<br/></li><li>Unauthorised repair or modification<br/></li></ul><p>If you believe your piece has a fault, contact us and our team will guide the next steps.</p><p></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\">CONTACT STUDIO</a><br/><br/><a href=\"/pages/customer-support\" title=\"Customer Support\">READ FULL WARRANTY</a></p>",
+            "text": "<h2>WARRANTY</h2><p>Lloyd Steven pieces are heirloom quality and guaranteed against manufacturing faults under normal wear.</p><p>Craftsmanship faults under normal wear are covered. Impact, accidents, misuse, wear, loss, theft, or outside repair are not.</p><p>Send images to the studio for assessment.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a><strong><br/><br/></strong><a href=\"/pages/customer-support\" title=\"Customer Support\"><strong>READ FULL WARRANTY</strong></a></p>",
             "button_label": "",
             "button_link": ""
           }
@@ -160,7 +160,7 @@
             "image": "shopify://shop_images/N6A4769_fd71465d-1ac3-41cc-947f-0b5274db7f50.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>ADDITIONAL ASSISTANCE</h2><p>If you're unsure about something please images and a short description of your concern, and our team will advise on the safest solution. <br/><br/>CONTACT STUDIO</p>",
+            "text": "<h2>ADDITIONAL ASSISTANCE</h2><p>If you're unsure about something please images and a short description of your concern, and our team will advise on the safest solution. <br/><br/><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a></p>",
             "button_label": "",
             "button_link": ""
           }
@@ -198,12 +198,6 @@
             "heading_size": "h1"
           }
         },
-        "text_mdkX9J": {
-          "type": "text",
-          "settings": {
-            "text": "<p>If you have an idea or would like to learn more about our work, please feel at liberty to reach out. <br/><br/><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a></p>"
-          }
-        },
         "button_zKNrVK": {
           "type": "button",
           "settings": {
@@ -218,7 +212,6 @@
       },
       "block_order": [
         "heading_YPRTVa",
-        "text_mdkX9J",
         "button_zKNrVK"
       ],
       "name": "t:sections.rich-text.presets.name",
@@ -243,90 +236,6 @@
         "change_slides_speed": 5,
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
-      }
-    },
-    "rich_text_M4a6hn": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_pFtTPw": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>CUSTOM GALLERY</p>",
-            "heading_size": "h2"
-          }
-        }
-      },
-      "block_order": [
-        "heading_pFtTPw"
-      ],
-      "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "anchor_id": "custom-gallery",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": true,
-        "padding_top": 100,
-        "padding_bottom": 100
-      }
-    },
-    "multirow_CKDeiK": {
-      "type": "multirow",
-      "blocks": {
-        "row_BYipxi": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/MATT_CARO_Front_36e6871c-a167-4d7d-b7bc-f04e00d4809d.jpg",
-            "caption": "",
-            "heading": "",
-            "text": "<h2>BLACK DIAMOND ENGAGEMENT RING</h2><p>18k Gold<br/>Platnium<br/>1.5 ct Black Diamond<br/>0.3 ct VS Diamonds</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "row_jPxN8U": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/PENDANT_SPIRIT_CROSS_806a78d0-53ed-4ba8-88c8-8e6635c6ed9a.png",
-            "caption": "",
-            "heading": "",
-            "text": "<h2>CROSS</h2><p>18k Polished and Sandblasted Gold<br/>0.5 ct VS Diamonds<br/>18k Gold Wheat Chain</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "row_AYLdbU": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/ALI_ORB_FRONT_e5ba4344-b35b-49da-933f-1c8426173693.png",
-            "caption": "",
-            "heading": "",
-            "text": "<h2>ORB WITH EMERALD AND PEARLS</h2><p>18k Sandblasted Gold<br/>Platnium<br/>Marquise Emerald<br/>Pearls</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_BYipxi",
-        "row_jPxN8U",
-        "row_AYLdbU"
-      ],
-      "name": "t:sections.multirow.presets.name",
-      "settings": {
-        "image_height": "adapt",
-        "desktop_image_width": "small",
-        "heading_size": "h2",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "image_layout": "align-left",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
-        "mobile_content_alignment": "left",
-        "padding_top": 100,
-        "padding_bottom": 12
       }
     },
     "multirow_yrzXEb": {
@@ -374,8 +283,6 @@
     "multirow_4qXczU",
     "rich_text_YXj6ix",
     "slideshow_K3UYkQ",
-    "rich_text_M4a6hn",
-    "multirow_CKDeiK",
     "multirow_yrzXEb",
     "rich_text_3XqX4t"
   ]
