@@ -77,12 +77,12 @@
             "page": ""
           }
         },
-        "collapsible_tab_E7npwB": {
+        "collapsible_tab_cR3Ykr": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "AFTERCARE + REPAIRS",
             "icon": "none",
-            "content": "<p><strong>SHIPPING</strong><br/>-  Free shipping (Domestic and International)<br/>- All duties, tariffs and import taxes are included at checkout <br/><em> - </em>In-stock pieces ship in 3 business days<br/><em> - </em>Made-to-order pieces ship in maximum 6 weeks</p><p><strong>RETURNS<br/></strong>- Returns accepted if initiated within 14 days of delivery<br/>- Items must be unworn and accompanied by proof of purchase<br/>- Returns may be shipped to our US or Australian return address<br/><br/>For more on these policies visit our Customer Support Page.<br/><br/><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>CUSTOMER SUPPORT</strong></a></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>INITIATE A RETURN</strong></a></p>",
+            "content": "<p>LLOYD STEVEN jewellery is made for everyday wear. </p><p>Surfaces will soften. Metals will develop patina.</p><p>Store dry. Wipe with a soft cloth.</p><p>The studio can clean, service, resize, and restore your piece as needed. <br/></p>",
             "page": ""
           }
         },
@@ -95,12 +95,12 @@
             "page": ""
           }
         },
-        "collapsible_tab_cR3Ykr": {
+        "collapsible_tab_E7npwB": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "AFTERCARE + REPAIRS",
+            "heading": "Shipping & Returns",
             "icon": "none",
-            "content": "<p>LLOYD STEVEN jewellery is made for everyday wear. </p><p>Surfaces will soften. Metals will develop patina.</p><p>Store dry. Wipe with a soft cloth.</p><p>The studio can clean, service, resize, and restore your piece as needed. <br/></p>",
+            "content": "<p><strong>SHIPPING</strong><br/>-  Free shipping (Domestic and International)<br/>- All duties, tariffs and import taxes are included at checkout <br/><em> - </em>In-stock pieces ship in 3 business days<br/><em> - </em>Made-to-order pieces ship in maximum 6 weeks</p><p><strong>RETURNS<br/></strong>- Returns accepted if initiated within 14 days of delivery<br/>- Items must be unworn and accompanied by proof of purchase<br/>- Returns may be shipped to our US or Australian return address<br/><br/>For more on these policies visit our Customer Support Page.<br/><br/><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>CUSTOMER SUPPORT</strong></a></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>INITIATE A RETURN</strong></a></p>",
             "page": ""
           }
         },
@@ -125,9 +125,9 @@
         "collapsible_tab_7Gr8aR",
         "collapsible_tab_NPMeBK",
         "collapsible_tab_XWBMFx",
-        "collapsible_tab_E7npwB",
-        "collapsible_tab_JErW8i",
         "collapsible_tab_cR3Ykr",
+        "collapsible_tab_JErW8i",
+        "collapsible_tab_E7npwB",
         "collapsible_tab_HgVk9F"
       ],
       "settings": {
