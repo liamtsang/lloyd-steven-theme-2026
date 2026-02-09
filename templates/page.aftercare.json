@@ -90,7 +90,7 @@
             "image": "shopify://shop_images/Screenshot_2025-12-18_at_11.00.35_am_a9931c2c-cded-4453-b85e-f03e09db4ea3.png",
             "caption": "",
             "heading": "",
-            "text": "<h2>CLEANING </h2><p><br/>To restore brilliance at home:</p><ol><li>Soak in warm water with a small amount of mild dish soap.<br/></li><li>Gently brush with a soft toothbrush.<br/></li><li>Rinse thoroughly and pat dry with a lint-free cloth.<br/></li></ol><p>Avoid ultrasonic cleaners unless approved, some stones require specialised care.</p><p>For a professional clean and inspection, we recommend periodic servicing. </p><p>Please contact the studio to arrange your servicing. </p>",
+            "text": "<h2>CLEANING </h2><p>To restore brilliance at home:</p><ol><li>Soak in warm water with a small amount of mild dish soap.<br/></li><li>Gently brush with a soft toothbrush.<br/></li><li>Rinse thoroughly and pat dry with a lint-free cloth.<br/></li></ol><p>Avoid ultrasonic cleaners unless approved, some stones require specialised care.</p><p>For a professional clean and inspection, we recommend periodic servicing. </p><p>Please contact the studio to arrange your servicing. </p>",
             "button_label": "",
             "button_link": ""
           }
@@ -101,7 +101,7 @@
             "image": "shopify://shop_images/N6A7227.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>Storage + Travel</h2><p><br/>When not wearing your piece:</p><ul><li>Store it in its Lloyd Steven box or pouch<br/></li><li>Keep items separate to prevent scratching<br/></li><li>Avoid humid environments like bathrooms<br/></li></ul><p>Chains should be fastened to prevent tangling.</p><p>Jewellery is safest when carried with you, not in checked luggage. Use individual pouches and avoid letting pieces rub together.<br/></p><p></p>",
+            "text": "<h2>Storage + Travel</h2><p>When not wearing your piece:</p><ul><li>Store it in its Lloyd Steven box or pouch<br/></li><li>Keep items separate to prevent scratching<br/></li><li>Avoid humid environments like bathrooms<br/></li></ul><p>Chains should be fastened to prevent tangling.</p><p>Jewellery is safest when carried with you, not in checked luggage. Use individual pouches and avoid letting pieces rub together.<br/></p><p></p>",
             "button_label": "",
             "button_link": ""
           }
@@ -142,10 +142,22 @@
             "button_label": "",
             "button_link": ""
           }
+        },
+        "row_ij3P4i": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/N6A4769_fd71465d-1ac3-41cc-947f-0b5274db7f50.jpg",
+            "caption": "",
+            "heading": "",
+            "text": "<h2>WARRANTY</h2><p>Lloyd Steven offers a warranty against manufacturing faults under normal wear.</p><p>This does not cover:</p><ul><li>Accidental damage<br/></li><li>Impact<br/></li><li>General wear and tear<br/></li><li>Loss or theft<br/></li><li>Unauthorised repair or modification<br/></li></ul><p>If you believe your piece has a fault, contact us and our team will guide the next steps.</p><p></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\">CONTACT STUDIO</a></p>",
+            "button_label": "",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
-        "row_nrYAyF"
+        "row_nrYAyF",
+        "row_ij3P4i"
       ],
       "name": "t:sections.multirow.presets.name",
       "settings": {
