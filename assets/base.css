@@ -3309,6 +3309,7 @@ details-disclosure > details {
     color: rgba(var(--color-link), var(--alpha-link));
     transition: text-decoration-thickness var(--duration-short) ease;
     text-decoration: none;
+    font-family: DaVinci, serif;
 }
 
 .rte a:hover {
