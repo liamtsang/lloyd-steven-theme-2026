@@ -45,6 +45,7 @@
         margin-bottom: 1rem;
         display: grid;
         grid-template-rows: auto auto;
+        grid-template-columns: none;
     }
 }
 
