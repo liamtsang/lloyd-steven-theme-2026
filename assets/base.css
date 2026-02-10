@@ -3308,6 +3308,7 @@ details-disclosure > details {
 .rte a {
     color: rgba(var(--color-link), var(--alpha-link));
     transition: text-decoration-thickness var(--duration-short) ease;
+    text-decoration: none;
 }
 
 .rte a:hover {
