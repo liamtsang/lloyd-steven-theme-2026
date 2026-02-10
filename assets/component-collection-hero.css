@@ -65,11 +65,11 @@
     .collection-hero__title + .collection-hero__description {
         margin-top: 2rem;
         margin-bottom: 2.5rem;
-        max-width: 66.67%;
+        max-width: 60ch;
     }
 
     .collection-hero__description {
-        max-width: 66.67%;
+        max-width: 60ch;
     }
 
     .collection-hero--with-image .collection-hero__description {
