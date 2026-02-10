@@ -3313,7 +3313,7 @@ details-disclosure > details {
 }
 
 .rte a:hover {
-    color: rgb(var(--color-link));
+    color: rgba(0,0,255);
     text-decoration-thickness: 0.2rem;
 }
 
