@@ -3315,7 +3315,6 @@ details-disclosure > details {
 .rte a:hover {
     color: rgb(var(--color-link));
     text-decoration-thickness: 0.2rem;
-    text-decoration: underline;
 }
 
 .rte blockquote {
