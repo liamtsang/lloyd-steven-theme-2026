@@ -46,7 +46,7 @@
     font-size: calc(var(--font-heading-scale) * 2rem);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-family: "Kaisei Tokumin", serif;
+    font-family: "DaVinci", serif;
 }
 
 .collection-hero__title + .collection-hero__description {
@@ -55,7 +55,7 @@
     font-size: 1.1rem;
     line-height: 1.6;
     text-align: left;
-    font-family: "Kaisei Tokumin", serif;
+    font-family: "Libre Franklin", sans-serif
 }
 
 @media screen and (min-width: 750px) {
