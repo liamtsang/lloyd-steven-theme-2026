@@ -82,25 +82,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "none",
-            "content": "<p><strong>SHIPPING</strong><br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p><strong>RETURNS</strong><br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.<br/><br/>For more on these policies visit our Customer Support Page.<br/><br/><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>CUSTOMER SUPPORT</strong></a></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>INITIATE A RETURN</strong></a></p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_NPMeBK": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Customisation",
-            "icon": "none",
-            "content": "<p>Custom combinations of metals and stones are available.<br/><br/>Contact the studio to begin.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_XWBMFx": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "SIZING",
-            "icon": "none",
-            "content": "<p>Let us know how we can support.<br/><br/>Downloadable PDF guides are available below.</p><p>SIZE GUIDE- RING</p><p>SIZE GUIDE- BRACELETS</p>",
+            "content": "<p><strong>SHIPPING</strong><br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p><strong>RETURNS</strong><br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.</p><p><strong>All duties, tariffs, and import taxes are included at checkout.</strong><br/><br/>For more on these policies visit our Customer Support Page.<br/><br/><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>CUSTOMER SUPPORT</strong></a></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>INITIATE A RETURN</strong></a></p>",
             "page": ""
           }
         },
@@ -113,6 +95,15 @@
             "page": ""
           }
         },
+        "collapsible_tab_NPMeBK": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Customisation",
+            "icon": "none",
+            "content": "<p>Custom combinations of metals and stones are available.<br/><br/>Contact the studio to begin.</p>",
+            "page": ""
+          }
+        },
         "collapsible_tab_JErW8i": {
           "type": "collapsible_tab",
           "settings": {
@@ -122,12 +113,12 @@
             "page": ""
           }
         },
-        "collapsible_tab_HgVk9F": {
+        "collapsible_tab_XWBMFx": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "DUTIES + TAXES",
+            "heading": "SIZING ASSISTANCE",
             "icon": "none",
-            "content": "<p>All duties, tariffs, and import taxes are included at checkout.<br/></p>",
+            "content": "<p>Let us know how we can support.<br/><br/>Downloadable PDF guides are available below.</p><p>SIZE GUIDE- RING</p><p>SIZE GUIDE- BRACELETS</p>",
             "page": ""
           }
         }
@@ -144,11 +135,10 @@
         "collapsible_tab_FeMitJ",
         "collapsible_tab_feg3nz",
         "collapsible_tab_E7npwB",
-        "collapsible_tab_NPMeBK",
-        "collapsible_tab_XWBMFx",
         "collapsible_tab_cR3Ykr",
+        "collapsible_tab_NPMeBK",
         "collapsible_tab_JErW8i",
-        "collapsible_tab_HgVk9F"
+        "collapsible_tab_XWBMFx"
       ],
       "settings": {
         "enable_sticky_info": true,
