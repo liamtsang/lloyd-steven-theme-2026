@@ -68,6 +68,24 @@
             "page": ""
           }
         },
+        "collapsible_tab_feg3nz": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "LEAD TIMES",
+            "icon": "none",
+            "content": "<p>Ready to ship: <strong>3 business days</strong><br/>Made to order: <strong>up to 6 weeks</strong></p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_E7npwB": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "none",
+            "content": "<p><strong>Shipping</strong><br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p><strong>Returns</strong><br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.<br/><br/>For more on these policies visit our Customer Support Page.<br/><br/><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>CUSTOMER SUPPORT</strong></a></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>INITIATE A RETURN</strong></a></p>",
+            "page": ""
+          }
+        },
         "collapsible_tab_NPMeBK": {
           "type": "collapsible_tab",
           "settings": {
@@ -104,15 +122,6 @@
             "page": ""
           }
         },
-        "collapsible_tab_E7npwB": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "none",
-            "content": "<p><strong>Shipping</strong><br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p><strong>Returns</strong><br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.<br/><br/>For more on these policies visit our Customer Support Page.<br/><br/><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>CUSTOMER SUPPORT</strong></a></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>INITIATE A RETURN</strong></a></p>",
-            "page": ""
-          }
-        },
         "collapsible_tab_HgVk9F": {
           "type": "collapsible_tab",
           "settings": {
@@ -133,11 +142,12 @@
         "description",
         "collapsible_tab_7Gr8aR",
         "collapsible_tab_FeMitJ",
+        "collapsible_tab_feg3nz",
+        "collapsible_tab_E7npwB",
         "collapsible_tab_NPMeBK",
         "collapsible_tab_XWBMFx",
         "collapsible_tab_cR3Ykr",
         "collapsible_tab_JErW8i",
-        "collapsible_tab_E7npwB",
         "collapsible_tab_HgVk9F"
       ],
       "settings": {
