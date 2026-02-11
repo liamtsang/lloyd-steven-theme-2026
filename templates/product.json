@@ -118,7 +118,7 @@
           "settings": {
             "heading": "DUTIES + TAXES",
             "icon": "none",
-            "content": "<p>All duties, tariffs and import taxes are included at checkout. <br/></p>",
+            "content": "<p>All duties, tariffs, and import taxes are included at checkout.<br/></p>",
             "page": ""
           }
         }
