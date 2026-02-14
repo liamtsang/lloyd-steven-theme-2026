@@ -101,9 +101,9 @@
           loop: loop,
           playsinline: true,
           controls: false,
-          preload: 'auto'
+          preload: 'auto',
+          poster: media.preview_image | image_url
         }}
-
       {%- when 'model' -%}
         {{ media | media_tag: image_size: '2048x', toggleable: true }}
     {%- endcase -%}
