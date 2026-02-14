@@ -64,7 +64,7 @@
           "settings": {
             "heading": "Contact",
             "icon": "none",
-            "content": "<p>Contact the studio with any questions.<br/>We are available to assist.<br/><br/><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>CONTACT STUDIO</strong></a></p>",
+            "content": "<p>Contact the studio with any questions.<br/>We are available to assist.<br/><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\">Contact Studio</a></p>",
             "page": ""
           }
         },
@@ -73,7 +73,7 @@
           "settings": {
             "heading": "LEAD TIMES",
             "icon": "none",
-            "content": "<p>Ready to ship: <strong>3 business days</strong><br/>Made to order: <strong>up to 6 weeks</strong></p>",
+            "content": "<p>Ready to ship: 3 business days<br/>Made to order: up to 6 weeks</p>",
             "page": ""
           }
         },
@@ -82,7 +82,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "none",
-            "content": "<p><strong>SHIPPING</strong><br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p><strong>RETURNS</strong><br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.</p><p><strong>All duties, tariffs, and import taxes are included at checkout.</strong><br/><br/>For more on these policies visit our Customer Support Page.<br/><br/><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>CUSTOMER SUPPORT</strong></a></p><p><a href=\"mailto:info@lloydsteven.com\" target=\"_blank\" title=\"mailto:info@lloydsteven.com\"><strong>INITIATE A RETURN</strong></a></p>",
+            "content": "<p>SHIPPING<br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p>RETURNS<br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.</p><p>All duties, tariffs, and import taxes are included at checkout.<br/><br/>For more on these policies visit our Customer Support Page.<br/></p><p><a href=\"/pages/customer-support\" title=\"Customer Support\">Customer Support</a></p>",
             "page": ""
           }
         },
@@ -91,7 +91,7 @@
           "settings": {
             "heading": "AFTERCARE + REPAIRS",
             "icon": "none",
-            "content": "<p>LLOYD STEVEN jewellery is made for everyday wear. Store dry. Wipe with a soft cloth to clean.</p><p>The studio can clean, service, resize, and restore your piece as needed. </p>",
+            "content": "<p><em>Lloyd Steven</em> jewellery is made for everyday wear. Store dry. Wipe with a soft cloth to clean.</p><p>The studio can clean, service, resize, and restore your piece as needed. </p>",
             "page": ""
           }
         },
@@ -109,7 +109,7 @@
           "settings": {
             "heading": "WARRANTY",
             "icon": "none",
-            "content": "<p>Manufacturing faults under normal wear are covered for 24 months. Impact, misuse, wear, loss, theft, or outside repair are not.<br/><br/>Contact the studio directly if you have questions or read the full warranty. </p><p><a href=\"/pages/customer-support\" target=\"_blank\" title=\"Customer Support\"><strong>WARRANTY</strong></a><strong> </strong><br/></p>",
+            "content": "<p>Manufacturing faults under normal wear are covered for 24 months. Impact, misuse, wear, loss, theft, or outside repair are not.<br/><br/>Contact the studio directly if you have questions or read the full warranty. </p><p><a href=\"/pages/customer-support\" title=\"Customer Support\">Warranty</a><br/></p>",
             "page": ""
           }
         },
@@ -118,7 +118,7 @@
           "settings": {
             "heading": "SIZING ASSISTANCE",
             "icon": "none",
-            "content": "<p>Let us know how we can support.<br/><br/>Downloadable PDF guides are available below.</p><p><a href=\"https://cdn.shopify.com/s/files/1/0619/3250/3240/files/Lloyd_Steven_Rings_Guide.pdf?v=1770968943\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0619/3250/3240/files/Lloyd_Steven_Rings_Guide.pdf?v=1770968943\"><strong>SIZE GUIDE - RING</strong></a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0619/3250/3240/files/Lloyd_Steven_Bracelets_Guide.pdf?v=1770857908\" target=\"_blank\" title=\"SIZE GUIDE- BRACELETS\"><strong>SIZE GUIDE- BRACELETS</strong></a></p>",
+            "content": "<p>Let us know how we can support.<br/><br/>Downloadable PDF guides are available below.</p><p><a href=\"https://cdn.shopify.com/s/files/1/0619/3250/3240/files/Lloyd_Steven_Rings_Guide.pdf?v=1770968943\" target=\"_blank\" title=\"https://cdn.shopify.com/s/files/1/0619/3250/3240/files/Lloyd_Steven_Rings_Guide.pdf?v=1770968943\"><strong>Size Guide- Ring</strong></a></p><p><a href=\"https://cdn.shopify.com/s/files/1/0619/3250/3240/files/Lloyd_Steven_Bracelets_Guide.pdf?v=1770857908\" target=\"_blank\" title=\"SIZE GUIDE- BRACELETS\"><strong>Size Guide- Bracelets</strong></a></p>",
             "page": ""
           }
         }
