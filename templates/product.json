@@ -82,7 +82,7 @@
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "none",
-            "content": "<p>SHIPPING<br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p>RETURNS<br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.</p><p>All duties, tariffs, and import taxes are included at checkout.<br/><br/>For more on these policies visit our Customer Support Page.<br/></p><p><a href=\"/pages/customer-support\" title=\"Customer Support\">Customer Support</a></p>",
+            "content": "<p><br/>SHIPPING<br/>-Free domestic and international shipping.<br/>-All duties, tariffs, and import taxes included at checkout.<br/>-In-stock items dispatch within 3 business days.<br/>-Made-to-order items dispatch within 6 weeks.</p><p><br/>RETURNS<br/>-Returns accepted if initiated within 14 days of delivery.<br/>-Items must be unworn and accompanied by proof of purchase.<br/>-Returns can be shipped to our US or Australian address.</p><p>All duties, tariffs, and import taxes are included at checkout.<br/><br/>For more on these policies visit our Customer Support Page.<br/></p><p><a href=\"/pages/customer-support\" title=\"Customer Support\">Customer Support</a></p>",
             "page": ""
           }
         },
