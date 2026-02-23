@@ -141,7 +141,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__menu {
   display: flex;
   flex-direction: column;
-  gap: 42px !important;
+  gap: 35px !important;
 }
 
 @media screen and (max-width: 749px) {
