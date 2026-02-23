@@ -29,15 +29,3 @@
   padding: 0.25rem;
 }
 
-.list-menu--disclosure h2,
-.list-menu--disclosure h3,
-.list-menu--disclosure .list-menu__title {
-  margin-bottom: 0.3rem; /* was ~0.6rem */
-  margin-top: 0.6rem;   /* was ~1.2rem */
-  line-height: 1.2;
-}
-
-.list-menu--disclosure .list-menu__item {
-  padding: 0.15rem 0;
-  line-height: 1.25;
-}
