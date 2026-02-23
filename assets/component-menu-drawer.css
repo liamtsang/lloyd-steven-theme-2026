@@ -359,3 +359,21 @@ details[open].menu-opening > .menu-drawer__submenu {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
+
+.menu-drawer__utility-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-drawer__utility-links .custom-follow {
+  order: 1;
+  margin-bottom: 12px; /* spacing below FOLLOW */
+}
+
+.menu-drawer__utility-links .menu-drawer__account {
+  order: 2;
+}
+
+.menu-drawer__utility-links .menu-drawer__localization {
+  order: 3;
+}
