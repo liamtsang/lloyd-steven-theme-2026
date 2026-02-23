@@ -3883,24 +3883,18 @@ details-disclosure > details {
 }
 
 
-/* Reduce spacing between category blocks */
-.mega-menu__list > li {
-  margin-bottom: 0.8rem; /* default is usually ~1.6rem */
+/* Reduce vertical spacing between mega menu columns/items */
+.mega-menu__list {
+  row-gap: 1.2rem !important; /* 50% of default */
 }
 
-/* Reduce spacing between sub-items */
-.mega-menu__list ul li {
-  margin-bottom: 0.4rem;
-}
-
-/* Reduce link padding */
-.mega-menu__link {
-  padding-top: 0.3rem !important;
-  padding-bottom: 0.3rem !important;
-  line-height: 1.2;
-}
-
-/* Tighten space between main category and its children */
+/* Reduce spacing between sub-links */
 .mega-menu__list ul {
-  margin-top: 0.4rem;
+  row-gap: 0.6rem !important;
+}
+
+/* Tighten link text spacing */
+.mega-menu__link {
+  padding: 0.25rem 0 !important;
+  line-height: 1.2;
 }
