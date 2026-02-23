@@ -26,38 +26,5 @@
   max-height: 18rem;
   overflow: auto;
   width: 10rem;
-  padding: 0.1rem;
-}
-
-/* ===============================
-   GLOBAL MENU SPACING CONTROL
-   =============================== */
-
-/* 1. Section titles (SHOP BY CATEGORY, SHOP BY COLLECTION, INFO) */
-.list-menu__title,
-.list-menu h2,
-.list-menu h3 {
-  margin-top: 0rem !important;
-  margin-bottom: 0.1rem !important;
-}
-
-/* 2. UL containers (space between groups) */
-.list-menu {
-  margin-top: 0 !important;
-  margin-bottom: 0.1m !important; /* controls space between sections */
-  padding: 0 !important;
-}
-
-/* 3. List items (Rings, Necklaces, etc.) */
-.list-menu__item {
-  margin: 0 !important;
-}
-
-/* 4. Clickable links (actual vertical spacing) */
-.list-menu__item > a,
-.list-menu__item > span {
-  display: block;
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
-  line-height: 1.2 !important;
+  padding: 0.5rem;
 }
