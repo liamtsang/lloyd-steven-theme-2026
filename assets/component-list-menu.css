@@ -29,28 +29,35 @@
   padding: 0.5rem;
 }
 
-/* 1. Reduce spacing under headings (SHOP BY CATEGORY / COLLECTION) */
+/* ===============================
+   GLOBAL MENU SPACING CONTROL
+   =============================== */
+
+/* 1. Section titles (SHOP BY CATEGORY, SHOP BY COLLECTION, INFO) */
 .list-menu__title,
 .list-menu h2,
 .list-menu h3 {
-  margin-bottom: 0.6rem !important; /* was ~1.2rem+ */
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem !important;
 }
 
-/* 2. Reduce space above & below the lists */
+/* 2. UL containers (space between groups) */
 .list-menu {
-  margin-top: 0.4rem !important;
-  margin-bottom: 0.8rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important; /* controls space between sections */
   padding: 0 !important;
 }
 
-/* 3. Tighten spacing between items */
+/* 3. List items (Rings, Necklaces, etc.) */
 .list-menu__item {
   margin: 0 !important;
 }
 
-/* 4. Tighten spacing inside the clickable links */
-.list-menu__item a {
+/* 4. Clickable links (actual vertical spacing) */
+.list-menu__item > a,
+.list-menu__item > span {
+  display: block;
   padding-top: 4px !important;
   padding-bottom: 4px !important;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
 }
