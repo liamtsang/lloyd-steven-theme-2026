@@ -2932,6 +2932,26 @@ details[open] > .header__submenu {
     }
 }
 
+/* FORCE compact dropdown spacing */
+.header__submenu .header__menu-item,
+.header__submenu .list-menu__item,
+.header__submenu summary {
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
+  line-height: 1.15 !important;
+  min-height: unset !important;
+}
+
+/* Remove extra gaps between blocks */
+.header__submenu > li {
+  margin: 0 !important;
+}
+
+/* Reduce dropdown inner padding */
+.header__submenu.list-menu--disclosure {
+  padding: 0.5rem !important;
+}
+
 .header__menu {
     padding: 0 1rem;
 }
@@ -3827,26 +3847,6 @@ details-disclosure > details {
   right: 0;
   left: 0;
   margin: 0px auto; */
-}
-
-/* FORCE compact dropdown spacing */
-.header__submenu .header__menu-item,
-.header__submenu .list-menu__item,
-.header__submenu summary {
-  padding-top: 0.3rem !important;
-  padding-bottom: 0.3rem !important;
-  line-height: 1.15 !important;
-  min-height: unset !important;
-}
-
-/* Remove extra gaps between blocks */
-.header__submenu > li {
-  margin: 0 !important;
-}
-
-/* Reduce dropdown inner padding */
-.header__submenu.list-menu--disclosure {
-  padding: 0.5rem !important;
 }
 
 .custom-logo-wrapper-for-video .video-section .custom-bg-img-section {
