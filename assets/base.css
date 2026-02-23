@@ -3882,12 +3882,12 @@ details-disclosure > details {
     }
 }
 
-/* ===== TEST: DROPDOWN SHOULD TURN BLUE ===== */
+/* ===== TEST MEGA MENU ===== */
 
-.header__submenu {
+.mega-menu__content {
   background: blue !important;
 }
 
-.header__submenu a {
+.mega-menu__link {
   color: white !important;
 }
