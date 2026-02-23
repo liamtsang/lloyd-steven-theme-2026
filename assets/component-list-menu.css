@@ -44,7 +44,7 @@
 /* 2. UL containers (space between groups) */
 .list-menu {
   margin-top: 0 !important;
-  margin-bottom: 1rem !important; /* controls space between sections */
+  margin-bottom: 0.5m !important; /* controls space between sections */
   padding: 0 !important;
 }
 
