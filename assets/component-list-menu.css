@@ -26,7 +26,7 @@
   max-height: 18rem;
   overflow: auto;
   width: 10rem;
-  padding: 0.5rem;
+  padding: 0.1rem;
 }
 
 /* ===============================
@@ -38,13 +38,13 @@
 .list-menu h2,
 .list-menu h3 {
   margin-top: 0rem !important;
-  margin-bottom: 0rem !important;
+  margin-bottom: 0.1rem !important;
 }
 
 /* 2. UL containers (space between groups) */
 .list-menu {
   margin-top: 0 !important;
-  margin-bottom: 0.5m !important; /* controls space between sections */
+  margin-bottom: 0.1m !important; /* controls space between sections */
   padding: 0 !important;
 }
 
@@ -57,7 +57,7 @@
 .list-menu__item > a,
 .list-menu__item > span {
   display: block;
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
-  line-height: 1.25 !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  line-height: 1.2 !important;
 }
