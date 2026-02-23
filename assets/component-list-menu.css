@@ -29,4 +29,15 @@
   padding: 0.5rem;
 }
 
+/* Reduce vertical spacing between all menu items by ~50% */
+.list-menu__item {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  margin-bottom: 0 !important;
+  line-height: 1.2 !important;
+}
 
+/* Reduce spacing between groups (Category vs Collection) */
+.list-menu {
+  margin-bottom: 0.8rem !important;
+}
