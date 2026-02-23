@@ -3881,7 +3881,3 @@ details-disclosure > details {
         transform: translateX(40%);
     }
 }
-
-.header__submenu {
-  background: red !important;
-}
