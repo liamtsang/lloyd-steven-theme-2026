@@ -3882,12 +3882,4 @@ details-disclosure > details {
     }
 }
 
-/* ===== TEST MEGA MENU ===== */
 
-.mega-menu__content {
-  background: blue !important;
-}
-
-.mega-menu__link {
-  color: white !important;
-}
