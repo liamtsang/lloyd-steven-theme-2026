@@ -147,7 +147,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 @media screen and (max-width: 749px) {
   .menu-drawer__menu {
     gap: 40px !important;
-    margin-top: 16px;
+    margin-top: 100px;
   }
 }
 
