@@ -3881,3 +3881,13 @@ details-disclosure > details {
         transform: translateX(40%);
     }
 }
+
+/* ===== TEST: DROPDOWN SHOULD TURN BLUE ===== */
+
+.header__submenu {
+  background: blue !important;
+}
+
+.header__submenu a {
+  color: white !important;
+}
