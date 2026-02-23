@@ -3883,18 +3883,4 @@ details-disclosure > details {
 }
 
 
-/* Reduce vertical spacing between mega menu columns/items */
-.mega-menu__list {
-  row-gap: 1.2rem !important; /* 50% of default */
-}
 
-/* Reduce spacing between sub-links */
-.mega-menu__list ul {
-  row-gap: 0.6rem !important;
-}
-
-/* Tighten link text spacing */
-.mega-menu__link {
-  padding: 0.25rem 0 !important;
-  line-height: 1.2;
-}
