@@ -152,7 +152,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 @media screen and (max-width: 749px) {
   .menu-drawer__menu > li:first-child {
-    margin-top: 16px;
+    margin-top: 100px;
   }
 }
 
