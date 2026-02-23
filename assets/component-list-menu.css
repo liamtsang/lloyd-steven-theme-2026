@@ -27,34 +27,3 @@
   overflow: auto;
   width: 10rem;
   padding: 0 rem;
-}
-
-/* FORCE ULTRA-COMPACT DROPDOWN */
-
-.list-menu--disclosure,
-.list-menu--disclosure * {
-  margin: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-.list-menu--disclosure ul {
-  gap: 0 !important;
-}
-
-.list-menu--disclosure li {
-  line-height: 1.05 !important;
-}
-
-.list-menu--disclosure a {
-  padding: 2px 0 !important;
-  display: block;
-}
-
-.list-menu--disclosure h2,
-.list-menu--disclosure h3,
-.list-menu--disclosure .list-menu__title {
-  margin: 6px 0 2px 0 !important;
-  line-height: 1.1 !important;
-  font-size: 0.9rem;
-}
