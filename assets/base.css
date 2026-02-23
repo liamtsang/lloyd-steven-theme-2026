@@ -3883,25 +3883,4 @@ details-disclosure > details {
 }
 
 
-/* Tighten dropdown menu spacing (Dawn header dropdown) */
-.header__submenu .list-menu__item {
-  padding-top: 0.4rem !important;
-  padding-bottom: 0.4rem !important;
-  line-height: 1.2;
-}
 
-/* Reduce space between submenu groups */
-.header__submenu > li {
-  margin-bottom: 0.4rem;
-}
-
-/* Reduce indentation & gap for nested submenus */
-.header__submenu .header__submenu {
-  margin-top: 0.4rem;
-  padding-left: 0.8rem;
-}
-
-/* Reduce overall dropdown padding */
-.list-menu--disclosure {
-  padding: 0.6rem !important;
-}
