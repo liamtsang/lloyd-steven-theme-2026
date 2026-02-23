@@ -29,3 +29,38 @@
   padding: 0.25rem;
 }
 
+/* ULTRA TIGHT MENU SPACING */
+
+.list-menu--disclosure {
+  padding: 0.2rem 0.3rem !important;
+}
+
+.list-menu--disclosure ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.list-menu--disclosure li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Category titles */
+.list-menu--disclosure h2,
+.list-menu--disclosure h3,
+.list-menu--disclosure .list-menu__title {
+  margin: 0.4rem 0 0.2rem 0 !important;
+  line-height: 1.1 !important;
+  font-size: 0.9rem; /* optional: slightly tighter */
+}
+
+/* Subcategory items */
+.list-menu--disclosure .list-menu__item {
+  padding: 0.1rem 0 !important;
+  line-height: 1.1 !important;
+}
+
+/* Remove extra link spacing */
+.list-menu--disclosure a {
+  padding: 0 !important;
+}
