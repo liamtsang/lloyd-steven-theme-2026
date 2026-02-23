@@ -341,7 +341,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__inner-container .menu-drawer__navigation .list-menu {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 14px;
 }
 
 .header__icon--menu[aria-expanded="true"]:before {
