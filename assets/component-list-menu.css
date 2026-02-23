@@ -37,8 +37,8 @@
 .list-menu__title,
 .list-menu h2,
 .list-menu h3 {
-  margin-top: 0 !important;
-  margin-bottom: 0.5rem !important;
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
 }
 
 /* 2. UL containers (space between groups) */
