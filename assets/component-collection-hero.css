@@ -77,7 +77,7 @@
     }
 
     .collection-hero__description {
-        max-width: 100%;
+        max-width: 60ch;
     }
 
     .collection-hero--with-image .collection-hero__description {
@@ -144,19 +144,7 @@
 }
 
 @media screen and (max-width: 749px) {
-  .collection-hero__text-wrapper {
+  .custom-page-banner {
     grid-template-columns: 1fr;
   }
 }
-
-.collection-hero__text-wrapper {
-  grid-template-columns: 1fr;
-}
-
-.collection-hero__description p,
-.collection-hero__description h3 {
-  margin-left: 0;
-  padding-left: 0;
-}
-
-
