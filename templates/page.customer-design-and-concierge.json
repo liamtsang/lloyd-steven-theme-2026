@@ -70,47 +70,78 @@
         "padding_bottom": 52
       }
     },
-    "multirow_9fJdVY": {
-      "type": "multirow",
+    "rich_text_PVHizt": {
+      "type": "rich-text",
       "blocks": {
-        "row_XJfEE6": {
-          "type": "row",
+        "text_MYfiJd": {
+          "type": "text",
           "settings": {
-            "caption": "",
-            "heading": "",
-            "text": "<h2>STEP ONE : CONSULTATION<br/></h2><p><br/>In person or virtually. We’ll review references, preferences, and parameters, then define a clear design brief. Guidance is provided on design, materials, and stone selection. A curated selection of diamonds and gemstones are sourced for each commission and will be presented to you following the consultation.</p><p>Consultations typically run 30-45 mins.</p><p>*Timelines are confirmed prior to production.<br/>*No obligation to proceed.</p>",
-            "button_label": "",
-            "button_link": ""
+            "text": "<p>STEP ONE : CONSULTATION<br/></p><p><br/>In person or virtually. We’ll review references, preferences, and parameters, then define a clear design brief. Guidance is provided on design, materials, and stone selection. A curated selection of diamonds and gemstones are sourced for each commission and will be presented to you following the consultation.</p><p>Consultations typically run 30-45 mins.</p><p>*Timelines are confirmed prior to production.<br/>*No obligation to proceed.</p>"
           }
         },
-        "row_PBefte": {
-          "type": "row",
+        "text_Yztajc": {
+          "type": "text",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-12-18_at_11.00.35_am_a9931c2c-cded-4453-b85e-f03e09db4ea3.png",
-            "caption": "",
-            "heading": "",
-            "text": "<h2>STEP TWO : DESIGN VISUALIZATION</h2><p><br/>Your concept is translated into detailed CAD renderings, shared from all angles. <br/>We refine proportions and details are refined to resolution before production.<br/><br/>*High-fidelity 3D visualisation<br/>*Designs are refined to resolution before production.<br/>*A 50% deposit is taken once the design is approved.</p>",
-            "button_label": "",
-            "button_link": ""
+            "text": "<p>STEP TWO : DESIGN VISUALIZATION</p><p><br/>Your concept is translated into detailed CAD renderings, shared from all angles. <br/>We refine proportions and details are refined to resolution before production.<br/><br/>*High-fidelity 3D visualisation<br/>*Designs are refined to resolution before production.<br/>*A 50% deposit is taken once the design is approved.</p>"
           }
         },
-        "row_yRtciC": {
-          "type": "row",
+        "text_q68ehE": {
+          "type": "text",
           "settings": {
-            "image": "shopify://shop_images/N6A4769_fd71465d-1ac3-41cc-947f-0b5274db7f50.jpg",
-            "caption": "",
-            "heading": "",
-            "text": "<h2>STEP THREE : CRAFT</h2><p><br/>Following approval, production begins. Each piece is made with long-term wear, structure, and future resizing in mind. </p><p>*Ready in 4-8 weeks depending on design complexity and stone sourcing, expedited timelines are not offered.<br/>*GIA IFI Certification included where applicable.</p>",
-            "button_label": "",
-            "button_link": ""
+            "text": "<p>STEP THREE : CRAFT</p><p><br/>Following approval, production begins. Each piece is made with long-term wear, structure, and future resizing in mind. </p><p>*Ready in 4-8 weeks depending on design complexity and stone sourcing, expedited timelines are not offered.<br/>*GIA IFI Certification included where applicable.</p>"
           }
         }
       },
       "block_order": [
-        "row_XJfEE6",
-        "row_PBefte",
-        "row_yRtciC"
+        "text_MYfiJd",
+        "text_Yztajc",
+        "text_q68ehE"
       ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_7rXz7F": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kc8dcY": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_eprbxh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>STEP FOUR : COMPLETION & DELIVERY</p><p><br/>Once complete, we share detailed imagery and video for your review. <br/>The final balance is confirmed only once the piece is approved.</p><p>*Remaining 50% balance due upon completion.<br/>*Secure, insured DHL worldwide shipping is included.<br/>*Ongoing care and support and complimentary first resize, if required.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kc8dcY",
+        "text_eprbxh"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multirow_9fJdVY": {
+      "type": "multirow",
       "name": "t:sections.multirow.presets.name",
       "settings": {
         "image_height": "adapt",
@@ -130,22 +161,6 @@
     },
     "multirow_4qXczU": {
       "type": "multirow",
-      "blocks": {
-        "row_nrYAyF": {
-          "type": "row",
-          "settings": {
-            "image": "shopify://shop_images/N6A7227.jpg",
-            "caption": "",
-            "heading": "",
-            "text": "<h2>STEP FOUR : COMPLETION & DELIVERY</h2><p><br/>Once complete, we share detailed imagery and video for your review. <br/>The final balance is confirmed only once the piece is approved.</p><p>*Remaining 50% balance due upon completion.<br/>*Secure, insured DHL worldwide shipping is included.<br/>*Ongoing care and support and complimentary first resize, if required.</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "row_nrYAyF"
-      ],
       "name": "t:sections.multirow.presets.name",
       "settings": {
         "image_height": "adapt",
@@ -345,6 +360,8 @@
     "main",
     "shogun-optimizer",
     "rich_text_bYm7BH",
+    "rich_text_PVHizt",
+    "rich_text_7rXz7F",
     "multirow_9fJdVY",
     "multirow_4qXczU",
     "rich_text_YXj6ix",
