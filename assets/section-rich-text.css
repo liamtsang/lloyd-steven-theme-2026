@@ -235,3 +235,13 @@ h6 {
 #shopify-section-rich_text_YXj6ix .rich-text__text {
     padding-left: 0;
 }
+
+#shopify-section-rich_text_PVHizt .rich-text__wrapper,
+#shopify-section-rich_text_7rXz7F .rich-text__wrapper {
+    justify-content: flex-start;
+}
+
+#shopify-section-rich_text_PVHizt .rich-text__blocks,
+#shopify-section-rich_text_7rXz7F .rich-text__blocks {
+    max-width: 100%;
+}
