@@ -3882,4 +3882,8 @@ details-disclosure > details {
     }
 }
 
+.rich-text__wrapper {
+  padding-left: 0 !important;
+}
+
 
