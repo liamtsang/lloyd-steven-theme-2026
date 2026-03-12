@@ -101,8 +101,8 @@
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "anchor_id": "",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -133,8 +133,8 @@
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "anchor_id": "",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
@@ -215,8 +215,8 @@
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "anchor_id": "custom-gallery",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 100,
