@@ -77,7 +77,7 @@
     }
 
     .collection-hero__description {
-        max-width: 60ch;
+        max-width: 100%;
     }
 
     .collection-hero--with-image .collection-hero__description {
