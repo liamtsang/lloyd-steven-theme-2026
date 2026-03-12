@@ -142,3 +142,9 @@
         margin: 3rem 0;
     }
 }
+
+@media screen and (max-width: 749px) {
+  .collection-hero__text-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
