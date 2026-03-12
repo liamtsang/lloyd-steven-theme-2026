@@ -144,7 +144,7 @@
 }
 
 @media screen and (max-width: 749px) {
-  .custom-page-banner {
+  .collection-hero__inner {
     grid-template-columns: 1fr;
   }
 }
