@@ -232,11 +232,9 @@ h6 {
     justify-content: flex-end;
 }
 
-.rich-text__wrapper {
-    justify-content: flex-start;
-}
-
-.rich-text__blocks {
-    max-width: 110rem;
-    margin-left: 0;
+@media (min-width: 1080px) {
+  #shopify-section-rich_text_PVHizt .rich-text__text,
+  #shopify-section-rich_text_7rXz7F .rich-text__text {
+      padding-left: 0;
+  }
 }
