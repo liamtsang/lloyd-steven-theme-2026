@@ -11,6 +11,7 @@
   "sections": {
     "custom_page_banner_PjtPAq": {
       "type": "custom-page-banner",
+      "custom_css": [],
       "name": "Page Banner",
       "settings": {
         "title": "CUSTOM DESIGN AND CONCIERGE",
@@ -140,44 +141,6 @@
         "padding_bottom": 52
       }
     },
-    "multirow_9fJdVY": {
-      "type": "multirow",
-      "name": "t:sections.multirow.presets.name",
-      "settings": {
-        "image_height": "adapt",
-        "desktop_image_width": "small",
-        "heading_size": "h2",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "image_layout": "align-left",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 8
-      }
-    },
-    "multirow_4qXczU": {
-      "type": "multirow",
-      "name": "t:sections.multirow.presets.name",
-      "settings": {
-        "image_height": "adapt",
-        "desktop_image_width": "small",
-        "heading_size": "h2",
-        "text_style": "body",
-        "button_style": "secondary",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "image_layout": "align-left",
-        "section_color_scheme": "",
-        "row_color_scheme": "",
-        "mobile_content_alignment": "left",
-        "padding_top": 4,
-        "padding_bottom": 100
-      }
-    },
     "rich_text_YXj6ix": {
       "type": "rich-text",
       "blocks": {
@@ -269,7 +232,7 @@
             "image": "shopify://shop_images/MATT_CARO_Front_36e6871c-a167-4d7d-b7bc-f04e00d4809d.jpg",
             "caption": "",
             "heading": "",
-            "text": "<h2>BLACK DIAMOND ENGAGEMENT RING</h2><p>18k Gold<br/>Platnium<br/>1.5 ct Black Diamond<br/>0.3 ct VS Diamonds</p>",
+            "text": "<p>BLACK DIAMOND ENGAGEMENT RING</p><p>18k Gold<br/>Platnium<br/>1.5 ct Black Diamond<br/>0.3 ct VS Diamonds</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -280,7 +243,7 @@
             "image": "shopify://shop_images/PENDANT_SPIRIT_CROSS_806a78d0-53ed-4ba8-88c8-8e6635c6ed9a.png",
             "caption": "",
             "heading": "",
-            "text": "<h2>CROSS</h2><p>18k Polished and Sandblasted Gold<br/>0.5 ct VS Diamonds<br/>18k Gold Wheat Chain</p>",
+            "text": "<p>CROSS</p><p>18k Polished and Sandblasted Gold<br/>0.5 ct VS Diamonds<br/>18k Gold Wheat Chain</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -291,7 +254,7 @@
             "image": "shopify://shop_images/ALI_ORB_FRONT_e5ba4344-b35b-49da-933f-1c8426173693.png",
             "caption": "",
             "heading": "",
-            "text": "<h2>ORB WITH EMERALD AND PEARLS</h2><p>18k Sandblasted Gold<br/>Platnium<br/>Marquise Emerald<br/>Pearls</p>",
+            "text": "<p>ORB WITH EMERALD AND PEARLS</p><p>18k Sandblasted Gold<br/>Platnium<br/>Marquise Emerald<br/>Pearls</p>",
             "button_label": "",
             "button_link": ""
           }
@@ -362,8 +325,6 @@
     "rich_text_bYm7BH",
     "rich_text_PVHizt",
     "rich_text_7rXz7F",
-    "multirow_9fJdVY",
-    "multirow_4qXczU",
     "rich_text_YXj6ix",
     "slideshow_K3UYkQ",
     "rich_text_M4a6hn",
