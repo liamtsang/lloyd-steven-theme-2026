@@ -149,4 +149,14 @@
   }
 }
 
+.collection-hero__text-wrapper {
+  grid-template-columns: 1fr;
+}
+
+.collection-hero__description p,
+.collection-hero__description h3 {
+  margin-left: 0;
+  padding-left: 0;
+}
+
 
