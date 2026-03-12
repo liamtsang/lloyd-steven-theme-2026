@@ -88,6 +88,7 @@
         },
         "text_q68ehE": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>STEP THREE : CRAFT</p><p><br/>Following approval, production begins. Each piece is made with long-term wear, structure, and future resizing in mind. </p><p>*Ready in 4-8 weeks depending on design complexity and stone sourcing, expedited timelines are not offered.<br/>*GIA IFI Certification included where applicable.</p>"
           }
@@ -112,6 +113,12 @@
     "rich_text_7rXz7F": {
       "type": "rich-text",
       "blocks": {
+        "text_x7TRFP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>STEP THREE : CRAFT</p><p><br/>Following approval, production begins. Each piece is made with long-term wear, structure, and future resizing in mind. </p><p>*Ready in 4-8 weeks depending on design complexity and stone sourcing, expedited timelines are not offered.<br/>*GIA IFI Certification included where applicable.</p>"
+          }
+        },
         "text_eprbxh": {
           "type": "text",
           "settings": {
@@ -120,6 +127,7 @@
         }
       },
       "block_order": [
+        "text_x7TRFP",
         "text_eprbxh"
       ],
       "name": "t:sections.rich-text.presets.name",
@@ -173,7 +181,7 @@
         "content_alignment": "left",
         "color_scheme": "",
         "full_width": true,
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 52
       }
     },
