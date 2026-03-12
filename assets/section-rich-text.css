@@ -232,9 +232,4 @@ h6 {
     justify-content: flex-end;
 }
 
-@media (min-width: 1080px) {
-  #shopify-section-rich_text_PVHizt .rich-text__text,
-  #shopify-section-rich_text_7rXz7F .rich-text__text {
-      padding-left: 0;
-  }
-}
+
