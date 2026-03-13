@@ -1,6 +1,7 @@
 {% include 'shogun-content-handler' %}
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -316,6 +317,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&display=swap" rel="stylesheet">
 
     {% render 'shogun-head' %}
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    
   </head>
 
   <body class="{% if template == 'index' %} custom-home {% endif %} gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %} {% if template == 'product' %}custom-pdp{% endif %}">
