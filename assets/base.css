@@ -3884,5 +3884,10 @@ details-disclosure > details {
 
 
 .product-media-container {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 2 / 3 !important;
+}
+
+.product-media-container model-viewer {
+  width: 100%;
+  height: 100%;
 }
