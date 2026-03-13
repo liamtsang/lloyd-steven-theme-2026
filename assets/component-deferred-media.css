@@ -97,8 +97,6 @@
   margin-left: 0.2rem;
 }
 
-/* Force product media to 2:3 */
-.product__media-wrapper .media {
-  aspect-ratio: 2 / 3 !important;
+.product__media-wrapper .deferred-media {
+  padding-top: 150% !important;
 }
-
