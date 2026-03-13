@@ -96,3 +96,13 @@
 .deferred-media__poster-button .icon-play {
   margin-left: 0.2rem;
 }
+
+/* Force product media to 2:3 */
+.product__media-wrapper .media {
+  aspect-ratio: 2 / 3 !important;
+}
+
+.product__media-wrapper model-viewer {
+  width: 100%;
+  height: 100%;
+}
