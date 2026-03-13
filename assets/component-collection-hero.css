@@ -57,6 +57,7 @@
     font-family: "DaVinci", serif;
 }
 
+
 .collection-hero__title + .collection-hero__description {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
@@ -67,7 +68,7 @@
 
 @media screen and (min-width: 750px) {
     .collection-hero__title {
-        font-size: calc(var(--font-heading-scale) * 2.4rem);
+        font-size: calc(var(--font-heading-scale) * 2rem);
         margin: 2.5rem 0 2rem;
     }
     .collection-hero__title + .collection-hero__description {
