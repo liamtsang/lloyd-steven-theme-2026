@@ -3888,15 +3888,6 @@ details-disclosure > details {
   aspect-ratio: 2 / 3 !important;
 }
 
-.product__media-item .media {
-  height: 100% !important;
-}
-
-.product__media-item model-viewer {
-  width: 100%;
-  height: 100%;
-}
-
 .product__media-item .deferred-media {
   padding-top: 150% !important;
 }
