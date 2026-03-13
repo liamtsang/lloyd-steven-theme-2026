@@ -3883,7 +3883,6 @@ details-disclosure > details {
 }
 
 
-.product__media model-viewer {
-  width: 100%;
+.product-media-container {
   aspect-ratio: 2 / 3;
 }
