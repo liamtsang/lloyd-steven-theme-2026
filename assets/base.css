@@ -3883,11 +3883,3 @@ details-disclosure > details {
 }
 
 
-/* Force product gallery items to 2:3 */
-.product__media-item {
-  aspect-ratio: 2 / 3 !important;
-}
-
-.product__media-item .deferred-media {
-  padding-top: 150% !important;
-}
