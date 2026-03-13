@@ -51,7 +51,7 @@
 .collection-hero__title {
     margin: 2rem 0 1.5rem;
     text-align: left;
-    font-size: calc(var(--font-heading-scale) * 2rem);
+    font-size: calc(var(--font-heading-scale) * 2.4rem);
     text-transform: uppercase;
     letter-spacing: 0em;
     font-family: "DaVinci", serif;
