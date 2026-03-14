@@ -70,7 +70,6 @@
     .collection-hero__title {
         font-size: calc(var(--font-heading-scale) * 2rem);
         margin: 2.5rem 0 2rem;
-        padding-bottom: 0;
     }
     .collection-hero__title + .collection-hero__description {
         margin-top: 2rem;
@@ -92,7 +91,7 @@
 }
 
 .collection-hero--with-image .collection-hero__text-wrapper {
-    padding: 5rem 0 0;
+    padding: 5rem 0 4rem;
 }
 
 .collection-hero__image-container {
@@ -112,7 +111,7 @@
 
 @media screen and (min-width: 750px) {
     .collection-hero--with-image .collection-hero__text-wrapper {
-        padding: 4rem 2rem 1rem 0;
+        padding: 4rem 2rem 4rem 0;
         flex-basis: 50%;
     }
 

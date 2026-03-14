@@ -11,6 +11,11 @@
   "sections": {
     "banner": {
       "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero,.collection-hero.collection-hero--with-image {padding-bottom: 0 !important;}",
+        ".collection-hero__text-wrapper {padding-bottom: 0 !important; margin-bottom: 0 !important;}",
+        ".collection-hero__title {margin-bottom: 0 !important;}"
+      ],
       "settings": {
         "show_collection_description": true,
         "show_editorial_media": true,
