@@ -13,8 +13,8 @@
       "type": "main-collection-banner",
       "custom_css": [
     "/* Letter Pendants banner adjustments */",
-    ".collection-letter-pendants .collection-hero__title { font-size: 2rem !important; margin-bottom: 0.5rem !important; }",
-    ".collection-letter-pendants .collection-hero__text-wrapper { padding-bottom: 0.5rem !important; margin-bottom: 0 !important; }",
+    ".collection-letter-pendants .collection-hero__title { font-size: 2rem !important; margin-bottom: 0rem !important; }",
+    ".collection-letter-pendants .collection-hero__text-wrapper { padding-bottom: 0rem !important; margin-bottom: 0 !important; }",
     ".collection-letter-pendants .collection-hero__title + .collection-hero__description { margin-bottom: 0 !important; }",
     ".collection-letter-pendants .collection-hero.collection-hero--with-image { padding-bottom: 0 !important; }"
 
