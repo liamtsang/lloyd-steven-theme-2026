@@ -140,6 +140,9 @@
         "collapsible_tab_JErW8i",
         "collapsible_tab_XWBMFx"
       ],
+      "custom_css": [
+        ".product__title h2 {font-size: 2rem;}"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "gallery_layout": "stacked",
