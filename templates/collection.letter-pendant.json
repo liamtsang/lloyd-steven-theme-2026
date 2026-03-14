@@ -12,12 +12,8 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-    "/* Letter Pendants banner adjustments */",
-    ".collection-letter-pendants .collection-hero__title { font-size: 2rem !important; margin-bottom: 0rem !important; }",
-    ".collection-letter-pendants .collection-hero__text-wrapper { padding-bottom: 0rem !important; margin-bottom: 0 !important; }",
-    ".collection-letter-pendants .collection-hero__title + .collection-hero__description { margin-bottom: 0 !important; }",
-    ".collection-letter-pendants .collection-hero.collection-hero--with-image { padding-bottom: 0 !important; }"
-
+        "/* Custom styles for Letter Pendants collection page */.collection-letter-pendants .collection-hero__title {font-size: 2rem; /* change font size */ margin-bottom: 1rem; /* reduce bottom spacing */}",
+        ".collection-letter-pendants .collection-hero__text-wrapper {padding-bottom: 1rem; /* reduce bottom padding */}"
       ],
       "settings": {
         "show_collection_description": true,
