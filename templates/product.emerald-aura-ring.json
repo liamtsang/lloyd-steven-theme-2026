@@ -145,7 +145,7 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "stacked",
+        "gallery_layout": "thumbnail_slider",
         "media_size": "large",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
@@ -172,10 +172,54 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "shogun_custom_html_iP6air": {
+      "type": "shogun-custom-html",
+      "custom_css": [
+        ".iframe-container {display: flex; justify-content: center; /* horizontal */ align-items: center; /* vertical */ height: 100vh; /* full screen height */}"
+      ],
+      "name": "Shogun Custom HTML",
+      "settings": {
+        "html": "<div class=\"iframe-container\">\n  <iframe title=\"Cushion_Square.glb\" frameborder=\"0\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" xr-spatial-tracking=\"\" execution-while-out-of-viewport=\"\" execution-while-not-rendered=\"\" web-share=\"\" allow=\"camera; autoplay; fullscreen; xr-spatial-tracking; web-share\" width=\"800px\" height=\"800px\" src=\"https://ijewel3d.com/drive/files/KTNxr_shR4e2fiN7qBLd0g/embedded?slug=KTNxr_shR4e2fiN7qBLd0g&amp;isTitle=false&amp;isShowPrompt=false&amp;isAutoplay=true\">\n  </iframe>\n</div>"
+      }
+    },
+    "featured_collection_4geYMF": {
+      "type": "featured-collection",
+      "custom_css": [
+        "h2 {text-align: center;}"
+      ],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "More Like This",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "aura",
+        "products_to_show": 5,
+        "columns_desktop": 5,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "shogun_custom_html_iP6air",
+    "featured_collection_4geYMF"
   ]
 }
