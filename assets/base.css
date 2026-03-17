@@ -3883,25 +3883,20 @@ details-disclosure > details {
 }
 
 
+.mobile-product-header {
+  display: none;
+}
+
 @media (max-width: 749px) {
-  .product {
-    display: flex;
-    flex-direction: column;
+  .mobile-product-header {
+    display: block;
+    margin-bottom: 10px;
   }
 
-  /* 1. Title + Price (top) */
-  .product__info-wrapper {
-    order: 1;
-  }
-
-  /* 2. Images / media (middle) */
-  .product__media-wrapper {
-    order: 2;
-  }
-
-  /* 3. Everything inside info: keep natural flow */
-  .product__info-container > * {
-    order: unset;
+  /* Hide original title + price */
+  .product__info-wrapper .product__title,
+  .product__info-wrapper [id^="price-"] {
+    display: none;
   }
 }
 
