@@ -176,7 +176,8 @@
     "shogun_custom_html_iP6air": {
       "type": "shogun-custom-html",
       "custom_css": [
-        ".iframe-container {display: flex; justify-content: center; /* horizontal */ align-items: center; /* vertical */ height: 100vh; /* full screen height */}"
+        ".iframe-container {display: flex; justify-content: center; /* horizontal */ align-items: center; /* vertical */}",
+        "@media (max-width: 600px) {.iframe-container iframe {width: 800px; height: 400px; }}"
       ],
       "name": "Shogun Custom HTML",
       "settings": {
