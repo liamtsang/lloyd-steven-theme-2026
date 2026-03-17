@@ -3889,13 +3889,19 @@ details-disclosure > details {
     flex-direction: column;
   }
 
+  /* 1. Title + Price (top) */
   .product__info-wrapper {
-    order: -1;
-    margin-bottom: 10px; /* 👈 adds spacing */
+    order: 1;
   }
 
+  /* 2. Images / media (middle) */
   .product__media-wrapper {
-    order: 0;
+    order: 2;
+  }
+
+  /* 3. Everything inside info: keep natural flow */
+  .product__info-container > * {
+    order: unset;
   }
 }
 
