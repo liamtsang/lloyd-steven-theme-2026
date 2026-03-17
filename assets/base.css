@@ -3883,3 +3883,19 @@ details-disclosure > details {
 }
 
 
+@media (max-width: 749px) {
+  .product {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product__info-wrapper {
+    order: -1; /* 👈 moves title + price ABOVE media */
+  }
+
+  .product__media-wrapper {
+    order: 0;
+  }
+}
+
+
