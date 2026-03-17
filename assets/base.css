@@ -3882,6 +3882,7 @@ details-disclosure > details {
     }
 }
 
+/* Added this for mobile layout title and price first then product images  */
 
 .mobile-product-header {
   display: none;
