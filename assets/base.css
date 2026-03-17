@@ -3890,7 +3890,8 @@ details-disclosure > details {
   }
 
   .product__info-wrapper {
-    order: -1; /* 👈 moves title + price ABOVE media */
+    order: -1;
+    margin-bottom: 10px; /* 👈 adds spacing */
   }
 
   .product__media-wrapper {
