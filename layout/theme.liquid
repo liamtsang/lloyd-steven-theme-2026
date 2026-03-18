@@ -467,5 +467,25 @@
     subtree: true
   });
 </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  if (window.innerWidth <= 749) {
+
+    const slot = document.querySelector('.mobile-top-slot');
+    const title = document.querySelector('.product__title');
+    const price = document.querySelector('[id^="price-"]');
+
+    if (slot && title && price) {
+      slot.appendChild(title);
+      slot.appendChild(price);
+    }
+
+  }
+
+});
+</script>
   </body>
 </html>
