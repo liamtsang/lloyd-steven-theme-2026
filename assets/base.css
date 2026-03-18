@@ -3882,3 +3882,21 @@ details-disclosure > details {
     }
 }
 
+@media (max-width: 749px) {
+
+  /* Target Shopify grid layout safely */
+  .product.grid--1-col {
+    display: grid;
+  }
+
+  /* Move info (title, price, etc.) ABOVE */
+  .product__info-wrapper {
+    grid-row: 1;
+  }
+
+  /* Move image BELOW */
+  .product__media-wrapper {
+    grid-row: 2;
+  }
+
+}
