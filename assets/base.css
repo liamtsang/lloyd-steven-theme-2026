@@ -3903,11 +3903,10 @@ details-disclosure > details {
 
 /* Added this for Desktop layout thumbnails on the left product images  */
 
-/* DESKTOP ONLY */
 @media screen and (min-width: 990px) {
 
-  /* Force correct layout */
-  .product__media-wrapper media-gallery {
+  /* Force gallery into 2 columns */
+  media-gallery {
     display: grid !important;
     grid-template-columns: 90px 1fr;
     gap: 20px;
@@ -3915,47 +3914,43 @@ details-disclosure > details {
   }
 
   /* Thumbnails LEFT */
-  .product__media-wrapper .thumbnail-slider {
+  .thumbnail-slider {
     grid-column: 1;
     width: 90px;
   }
 
   /* Main image RIGHT */
-  .product__media-wrapper .slider-mobile-gutter {
+  #GalleryViewer-,
+  .slider-mobile-gutter {
     grid-column: 2;
+    width: 100%;
   }
 
   /* Stack thumbnails vertically */
-  .product__media-wrapper .thumbnail-list {
+  .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 14px;
+    gap: 16px;
   }
 
-  /* Thumbnail size */
-  .product__media-wrapper .thumbnail {
+  /* Thumbnail styling */
+  .thumbnail {
     width: 90px;
     height: 90px;
-    border-radius: 8px;
+    padding: 0;
+    border-radius: 10px;
     overflow: hidden;
     border: 1px solid #ddd;
   }
 
-  .product__media-wrapper .thumbnail img {
+  .thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  /* 🔥 ACTIVE = BLACK BORDER (fix your issue) */
-  .product__media-wrapper .thumbnail[aria-current="true"] {
-    border: 2px solid #000 !important;
-  }
-
-  /* Remove any white/outline effect Shopify adds */
-  .product__media-wrapper .thumbnail:focus,
-  .product__media-wrapper .thumbnail:active {
-    outline: none !important;
-    box-shadow: none !important;
+  /* Active thumbnail */
+  .thumbnail[aria-current="true"] {
+    border: 2px solid #000;
   }
 }
