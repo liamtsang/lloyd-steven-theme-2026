@@ -3893,40 +3893,24 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Keep Shopify layout intact */
-  .product__media-wrapper {
-    position: relative;
-  }
-
-  /* Move thumbnails to LEFT */
-  .product__media-wrapper .thumbnail-slider {
+  /* Move thumbnails left WITHOUT breaking layout */
+  .thumbnail-slider {
     position: absolute;
-    left: 0;
+    left: -120px; /* pushes it to the left side */
     top: 0;
     width: 100px;
   }
 
-.product__media-wrapper {
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 20px;
-}
-
-.product__media-wrapper .thumbnail-slider {
-  position: relative;
-  grid-column: 1;
-}
-
-.product__media-wrapper .slider-mobile-gutter {
-  grid-column: 2;
-  margin-left: 0 !important;
-}
+  /* Make sure parent allows positioning */
+  .product__media-wrapper {
+    position: relative;
+  }
 
   /* Vertical thumbnails */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px;
+    gap: 12px;
   }
 
   /* Thumbnail size */
