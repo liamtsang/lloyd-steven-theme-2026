@@ -3891,4 +3891,52 @@ details-disclosure > details {
 
 }
 
+@media screen and (min-width: 990px) {
 
+  /* Use grid like Dawn expects */
+  .product__media-gallery {
+    display: grid !important;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* LEFT thumbnails */
+  .thumbnail-slider {
+    grid-column: 1;
+  }
+
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px;
+  }
+
+  /* RIGHT main image */
+  .product__media-wrapper {
+    grid-column: 2;
+  }
+
+}
+
+@media screen and (min-width: 990px) {
+
+  /* Make the WHOLE media area horizontal */
+  .product__media {
+    display: grid !important;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* Thumbnails LEFT */
+  .thumbnail-slider {
+    grid-column: 1;
+  }
+
+  /* MAIN IMAGE RIGHT (THIS IS THE FIX) */
+  .product__media-wrapper {
+    grid-column: 2;
+  }
+
+}
