@@ -3942,3 +3942,16 @@ details-disclosure > details {
   }
 
 }
+
+.slider {
+  display: flex;
+}
+
+.slider-item {
+  display: none;
+  width: 100%;
+}
+
+.slider-item.active {
+  display: block;
+}
