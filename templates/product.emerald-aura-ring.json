@@ -141,7 +141,8 @@
         "collapsible_tab_XWBMFx"
       ],
       "custom_css": [
-        ".product__titleh2 {font-size: 2rem;}"
+        ".product__title h2 {font-size: 2rem;}",
+        ".product__media-wrapper {position: relative;}"
       ],
       "settings": {
         "enable_sticky_info": true,
