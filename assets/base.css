@@ -3893,18 +3893,17 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Make gallery horizontal */
+  /* Keep Dawn structure but control layout */
   .product__media-gallery {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start;
+    display: grid !important;
+    grid-template-columns: 90px 1fr;
     gap: 20px;
+    align-items: start;
   }
 
-  /* Thumbnails LEFT */
+  /* Thumbnails on LEFT */
   .thumbnail-slider {
-    width: 90px;
-    flex-shrink: 0;
+    grid-column: 1;
   }
 
   .thumbnail-list {
@@ -3913,9 +3912,9 @@ details-disclosure > details {
     gap: 12px;
   }
 
-  /* Main image RIGHT */
+  /* Main image on RIGHT */
   .product__media-list {
-    flex: 1;
+    grid-column: 2;
   }
 
 }
