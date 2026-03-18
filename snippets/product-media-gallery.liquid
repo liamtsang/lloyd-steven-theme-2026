@@ -1,51 +1,44 @@
-<div class="custom-product-layout">
-
-  <!-- LEFT: thumbnails -->
-  <div class="custom-thumbnails">
+<div class="slider-container">
+  <div class="slider">
     {%- for image in product.images -%}
-      <div class="custom-thumb" data-index="{{ forloop.index0 }}">
-        <img src="{{ image | img_url: '100x' }}">
+      {%- assign color = null -%}
+      {%- for variant in product.variants -%}
+        {%- if variant.featured_image.src == image.src -%}
+          {%- for option in product.options_with_values -%}
+            {% if option.name == 'CHOOSE METAL'
+              or option.name == 'Color'
+              or option.name == 'COLOR'
+              or option.name == 'METAL'
+              or option.name == 'Metal'
+            %}
+              {%- assign color_index = forloop.index0 -%}
+              {%- assign color = variant.options[color_index] -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      <div class="slider-item">
+        <img
+          src="{{ image | img_url: 'master' }}"
+          alt="{{ image.alt | escape }}"
+          data-index="{{ forloop.index0 }}"
+          data-color="{{ color | escape }}"
+        >
       </div>
     {%- endfor -%}
+    
+  <div class="slider-controls">
+    <button type="button" class="slide-m-prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <path d="M10 20A10 10 0 1 0 0 10a10 10 0 0 0 10 10zm1.289-15.7 1.422 1.4-4.3 4.344 4.289 4.245-1.4 1.422-5.714-5.648z"/>
+      </svg>
+    </button>
+    <button type="button" class="slide-m-next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+        <path d="M10 20A10 10 0 1 0 0 10a10 10 0 0 0 10 10zM8.711 4.3l5.7 5.766L8.7 15.711l-1.4-1.422 4.289-4.242-4.3-4.347z"/>
+      </svg>
+    </button>
   </div>
-
-  <!-- RIGHT: your EXISTING slider (UNCHANGED) -->
-  <div class="custom-main">
-    <div class="slider">
-      {%- for image in product.images -%}
-        {%- assign color = null -%}
-        {%- for variant in product.variants -%}
-          {%- if variant.featured_image.src == image.src -%}
-            {%- for option in product.options_with_values -%}
-              {% if option.name == 'CHOOSE METAL'
-                or option.name == 'Color'
-                or option.name == 'COLOR'
-                or option.name == 'METAL'
-                or option.name == 'Metal'
-              %}
-                {%- assign color_index = forloop.index0 -%}
-                {%- assign color = variant.options[color_index] -%}
-                {%- break -%}
-              {%- endif -%}
-            {%- endfor -%}
-            {%- break -%}
-          {%- endif -%}
-        {%- endfor -%}
-
-        <div class="slider-item">
-          <img
-            src="{{ image | img_url: 'master' }}"
-            alt="{{ image.alt | escape }}"
-            data-index="{{ forloop.index0 }}"
-            data-color="{{ color | escape }}"
-          >
-        </div>
-      {%- endfor -%}
-
-      <div class="slider-controls">
-        <!-- buttons unchanged -->
-      </div>
-    </div>
-  </div>
-
 </div>
