@@ -28,49 +28,7 @@
         >
       </div>
     {%- endfor -%}
-
-
-    {% comment %} EDITED FOR LEFT THUMBNAILS {% endcomment %}
-  </div>
-  <div class="custom-thumbnails">
-  {% for image in product.images %}
-    <img 
-      src="{{ image | img_url: '100x100' }}" 
-      data-index="{{ forloop.index0 }}"
-      class="custom-thumb"
-    >
-  {% endfor %}
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  const thumbs = document.querySelectorAll('.custom-thumb');
-  const slides = document.querySelectorAll('.slider-item');
-
-  // show first image by default
-  if (slides.length > 0) {
-    slides[0].classList.add('active');
-  }
-
-  thumbs.forEach((thumb, index) => {
-    thumb.addEventListener('click', function () {
-
-      // remove active from all
-      slides.forEach(s => s.classList.remove('active'));
-      thumbs.forEach(t => t.classList.remove('active'));
-
-      // activate clicked
-      slides[index].classList.add('active');
-      thumb.classList.add('active');
-
-    });
-  });
-
-});
-</script>
-
-{% comment %} EDITED FOR LEFT THUMBNAILS {% endcomment %}
+    
   <div class="slider-controls">
     <button type="button" class="slide-m-prev">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
