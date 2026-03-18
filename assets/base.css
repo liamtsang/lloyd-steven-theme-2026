@@ -3906,10 +3906,21 @@ details-disclosure > details {
     width: 100px;
   }
 
-  /* Push main image to the right */
-  .product__media-wrapper .slider-mobile-gutter {
-    margin-left: 120px;
-  }
+.product__media-wrapper {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+}
+
+.product__media-wrapper .thumbnail-slider {
+  position: relative;
+  grid-column: 1;
+}
+
+.product__media-wrapper .slider-mobile-gutter {
+  grid-column: 2;
+  margin-left: 0 !important;
+}
 
   /* Vertical thumbnails */
   .thumbnail-list {
