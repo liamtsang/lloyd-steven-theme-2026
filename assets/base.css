@@ -3947,7 +3947,7 @@ details-disclosure > details {
 
   /* Active border = BLACK */
   .thumbnail[aria-current="true"] {
-    border: 1px solid #FFF !important;
+    border: 1px solid #000 !important;
   }
 
 }
