@@ -3892,6 +3892,7 @@ details-disclosure > details {
   .mobile-product-header {
     display: block;
     margin-bottom: 10px;
+    font-family: "Liberty Franklin", sans-serif;
   }
 
   /* Hide original title + price */
@@ -3902,56 +3903,3 @@ details-disclosure > details {
 }
 
 /* Added this for Desktop layout thumbnails on the left product images  */
-@media screen and (min-width: 990px) {
-
-  .slider-container {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-  }
-
-  /* LEFT thumbnails */
-  .custom-thumbnails {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 80px;
-  }
-
-  .custom-thumb {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 1px solid #ddd;
-  }
-
-  .custom-thumb.active {
-    border: 2px solid #000;
-  }
-
-  /* MAIN IMAGE */
-  .slider {
-    flex: 1;
-  }
-
-  .slider-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-}
-
-.slider {
-  display: flex;
-}
-
-.slider-item {
-  display: none;
-  width: 100%;
-}
-
-.slider-item.active {
-  display: block;
-}
