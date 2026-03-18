@@ -3891,27 +3891,4 @@ details-disclosure > details {
 
 }
 
-@media screen and (min-width: 990px) {
 
-  /* Only adjust inside media area */
-  .product__media {
-    display: flex !important;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  /* Thumbnails LEFT */
-  .thumbnail-slider {
-    width: 90px;
-    flex-shrink: 0;
-    order: 1;
-  }
-
-  /* Main image RIGHT */
-  .product__media-wrapper {
-    flex: 1;
-    order: 2;
-  }
-
-}
