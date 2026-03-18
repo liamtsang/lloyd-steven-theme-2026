@@ -28,6 +28,9 @@
         >
       </div>
     {%- endfor -%}
+
+
+    {% comment %} EDITED FOR LEFT THUMBNAILS {% endcomment %}
   </div>
   <div class="custom-thumbnails">
   {% for image in product.images %}
@@ -38,6 +41,30 @@
     >
   {% endfor %}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  document.querySelectorAll('.custom-thumb').forEach((thumb) => {
+    thumb.addEventListener('click', function () {
+      const index = this.dataset.index;
+
+      const slider = document.querySelector('.slider');
+
+      slider.scrollTo({
+        left: index * slider.offsetWidth,
+        behavior: 'smooth'
+      });
+
+      document.querySelectorAll('.custom-thumb').forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+});
+</script>
+
+{% comment %} EDITED FOR LEFT THUMBNAILS {% endcomment %}
   <div class="slider-controls">
     <button type="button" class="slide-m-prev">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
