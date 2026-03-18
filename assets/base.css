@@ -3884,19 +3884,14 @@ details-disclosure > details {
 
 @media (max-width: 749px) {
 
-  /* Keep grid working, just reorder */
-  .product.grid {
-    display: flex !important;
-    flex-direction: column;
-  }
-
-  .product__info-wrapper {
-    order: -1;
-    width: 100%;
-  }
-
   .product__media-wrapper {
-    order: 0;
+    display: block !important;
+    position: relative;
+  }
+
+  .product__media-list,
+  .product__media-item {
+    display: block !important;
     width: 100%;
   }
 
