@@ -3893,36 +3893,42 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 OVERRIDE Dawn media wrapper */
-  .product__media-wrapper {
+  /* 🔥 Force parent to allow horizontal layout */
+  .product__media-wrapper,
+  .product__media {
     display: block !important;
+    width: 100% !important;
   }
 
-  /* Your custom layout */
+  /* Your layout */
   .custom-product-layout {
     display: flex !important;
-    flex-direction: row !important;
     align-items: flex-start;
     gap: 24px;
+    width: 100%;
   }
 
   /* LEFT thumbnails */
   .custom-thumbnails {
     width: 90px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-shrink: 0;
   }
 
   /* RIGHT main image */
   .custom-main {
     flex: 1;
+    max-width: 100%;
   }
 
-  /* Make slider behave */
+  /* 🔥 THIS IS THE KEY FIX */
   .slider {
-    display: block !important;
+    display: flex !important;
+    overflow: hidden;
     width: 100%;
+  }
+
+  .slider-item {
+    min-width: 100%;
   }
 
   .slider-item img {
