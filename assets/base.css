@@ -3925,3 +3925,32 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  /* FIX: stop thumbnails from stretching */
+  .thumbnail-list {
+    align-items: flex-start !important;
+  }
+
+  .thumbnail {
+    width: 100px !important;
+    height: 100px !important;
+    flex: none !important;
+    display: block !important;
+  }
+
+  /* VERY IMPORTANT: override Shopify button width */
+  .thumbnail.global-media-settings {
+    width: 100px !important;
+    max-width: 100px !important;
+  }
+
+  /* Ensure image fills properly */
+  .thumbnail img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+}
