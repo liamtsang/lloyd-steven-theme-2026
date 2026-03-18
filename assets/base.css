@@ -3891,3 +3891,43 @@ details-disclosure > details {
 
 }
 
+@media screen and (min-width: 990px) {
+
+  /* 🔥 OVERRIDE Dawn media wrapper */
+  .product__media-wrapper {
+    display: block !important;
+  }
+
+  /* Your custom layout */
+  .custom-product-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  /* LEFT thumbnails */
+  .custom-thumbnails {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* RIGHT main image */
+  .custom-main {
+    flex: 1;
+  }
+
+  /* Make slider behave */
+  .slider {
+    display: block !important;
+    width: 100%;
+  }
+
+  .slider-item img {
+    width: 100%;
+    display: block;
+  }
+
+}
