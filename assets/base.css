@@ -3882,17 +3882,3 @@ details-disclosure > details {
     }
 }
 
-@media (max-width: 749px) {
-
-  .product__media-wrapper {
-    display: block !important;
-    position: relative;
-  }
-
-  .product__media-list,
-  .product__media-item {
-    display: block !important;
-    width: 100%;
-  }
-
-}
