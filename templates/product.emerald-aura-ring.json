@@ -142,8 +142,7 @@
       ],
       "custom_css": [
         ".product__title h2 {font-size: 2rem;}",
-        ".product__media-wrapper {position: relative;}",
-        "@media screen and (min-width: 990px) {/* Make the whole media section horizontal */ .product__media-wrapper {display: flex; flex-direction: row; align-items: flex-start; gap: 15px; } /* Thumbnails column (LEFT SIDE) */ .thumbnail-slider {order: 1; width: 80px; display: flex; flex-direction: column; gap: 10px; } /* Main image (RIGHT SIDE) */ .product__media {order: 2; flex: 1; } /* Make thumbnails clean + consistent */ .thumbnail-slider .thumbnail {width: 100%; cursor: pointer; }}"
+        ".product__media-wrapper {position: relative;}"
       ],
       "settings": {
         "enable_sticky_info": true,
