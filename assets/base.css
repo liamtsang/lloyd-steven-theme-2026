@@ -3893,24 +3893,29 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Move thumbnails left WITHOUT breaking layout */
-  .thumbnail-slider {
+  /* Keep Shopify layout intact */
+  .product__media-wrapper {
+    position: relative;
+  }
+
+  /* Move thumbnails to LEFT */
+  .product__media-wrapper .thumbnail-slider {
     position: absolute;
-    left: -120px; /* pushes it to the left side */
+    left: 0;
     top: 0;
     width: 100px;
   }
 
-  /* Make sure parent allows positioning */
-  .product__media-wrapper {
-    position: relative;
+  /* Push main image to the right */
+  .product__media-wrapper .slider-mobile-gutter {
+    margin-left: 120px;
   }
 
   /* Vertical thumbnails */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px;
+    gap: 16px;
   }
 
   /* Thumbnail size */
