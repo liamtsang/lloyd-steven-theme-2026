@@ -52,12 +52,13 @@
     Added this to change Product Title and Price position for mobile layout to be on top
     {% endcomment %} 
     <div class="mobile-top-slot"></div>
-    {% comment %} 
+
+     {% comment %} 
     Added this to change Product Title and Price position for mobile layout to be on top
-    {% endcomment %}    
+    {% endcomment %} 
     <div class="grid__item product__media-wrapper">
 
-      
+        {% comment %} 
       <media-gallery
         id="MediaGallery-{{ section.id }}"
         role="region"
@@ -67,6 +68,8 @@
         aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
         data-desktop-layout="{{ section.settings.gallery_layout }}"
       >
+
+       {% endcomment %} 
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
           <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
