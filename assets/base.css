@@ -3884,19 +3884,16 @@ details-disclosure > details {
 
 @media (max-width: 749px) {
 
-  /* Target Shopify grid layout safely */
-  .product.grid--1-col {
-    display: grid;
+  .product {
+    display: grid !important;
   }
 
-  /* Move info (title, price, etc.) ABOVE */
   .product__info-wrapper {
-    grid-row: 1;
+    grid-row: 1 !important;
   }
 
-  /* Move image BELOW */
   .product__media-wrapper {
-    grid-row: 2;
+    grid-row: 2 !important;
   }
 
 }
