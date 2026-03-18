@@ -3905,39 +3905,37 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Force gallery into 2 columns */
   media-gallery {
     display: grid !important;
     grid-template-columns: 90px 1fr;
     gap: 20px;
-    align-items: start;
+    align-items: start; /* important */
   }
 
   /* Thumbnails LEFT */
   .thumbnail-slider {
     grid-column: 1;
     width: 90px;
+    align-self: start; /* 🔥 THIS FIXES THE ISSUE */
   }
 
   /* Main image RIGHT */
-  #GalleryViewer-,
   .slider-mobile-gutter {
     grid-column: 2;
     width: 100%;
   }
 
-  /* Stack thumbnails vertically */
+  /* Stack vertically */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px;
   }
 
-  /* Thumbnail styling */
+  /* Thumbnail size */
   .thumbnail {
     width: 90px;
     height: 90px;
-    padding: 0;
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid #ddd;
@@ -3949,7 +3947,7 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Active thumbnail */
+  /* Active border FIX */
   .thumbnail[aria-current="true"] {
     border: 2px solid #000;
   }
