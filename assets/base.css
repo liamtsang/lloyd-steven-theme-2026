@@ -3884,16 +3884,16 @@ details-disclosure > details {
 
 @media (max-width: 749px) {
 
-  .product {
-    display: grid !important;
+  /* Create top section */
+  .mobile-top-info {
+    display: block;
+    margin-bottom: 10px;
   }
 
-  .product__info-wrapper {
-    grid-row: 1 !important;
-  }
-
-  .product__media-wrapper {
-    grid-row: 2 !important;
+  /* Hide original title + price */
+  .product__info-wrapper .product__title,
+  .product__info-wrapper [id^="price-"] {
+    display: none;
   }
 
 }
