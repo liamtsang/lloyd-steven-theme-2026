@@ -3891,39 +3891,3 @@ details-disclosure > details {
 
 }
 
-@media screen and (min-width: 990px) {
-
-  /* Make media wrapper horizontal */
-  .product__media-wrapper {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  /* Thumbnail container (LEFT side) */
-  .product__media-wrapper .thumbnail-slider {
-    position: relative !important;
-    width: 100px;
-    flex-shrink: 0;
-  }
-
-  /* Stack thumbnails vertically */
-  .thumbnail-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px;
-  }
-
-  /* Thumbnail size */
-  .thumbnail {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* Main image takes remaining space */
-  .product__media-wrapper .slider-mobile-gutter {
-    margin-left: 0 !important;
-    flex: 1;
-  }
-
-}
