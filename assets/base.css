@@ -3890,3 +3890,37 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  /* Make media section horizontal */
+  .product__media-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  /* Thumbnails (LEFT SIDE) */
+  .product__media-wrapper .thumbnail-slider {
+    width: 90px;
+    flex-shrink: 0;
+  }
+
+  .product__media-wrapper .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Main image (RIGHT SIDE) */
+  .product__media-wrapper .media-gallery {
+    flex: 1;
+  }
+
+  /* Clean thumbnail sizing */
+  .thumbnail-list__item {
+    width: 100%;
+  }
+
+}
