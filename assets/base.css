@@ -3893,30 +3893,32 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Use grid like Dawn expects */
-  .product__media-gallery {
+  .product {
     display: grid !important;
-    grid-template-columns: 90px 1fr;
-    gap: 20px;
-    align-items: start;
-  }
-
-  /* LEFT thumbnails */
-  .thumbnail-slider {
-    grid-column: 1;
-  }
-
-  .thumbnail-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px;
-  }
-
-  /* RIGHT main image */
-  .product__media-wrapper {
-    grid-column: 2;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px;
   }
 
 }
 
+@media screen and (min-width: 990px) {
 
+  .product__media {
+    display: flex !important;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  /* thumbnails */
+  .thumbnail-slider {
+    width: 90px;
+    flex-shrink: 0;
+  }
+
+  /* main image */
+  .product__media-wrapper {
+    flex: 1;
+  }
+
+}
