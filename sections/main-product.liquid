@@ -48,18 +48,13 @@
   {%- endif -%}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}{% else %}product--no-media{% endif %}">
-    {% comment %} 
-    Added this to change Product Title and Price position for mobile layout to be on top
-    {% endcomment %} 
-    <div class="mobile-top-slot"></div>
+    
+    {% comment  %}  Added this to change Product Title and Price position for mobile layout to be on top {% endcomment  %}
+     <div class="mobile-top-slot"></div>
+   {% comment  %}  Added this to change Product Title and Price position for mobile layout to be on top {% endcomment  %}
 
-     {% comment %} 
-    Added this to change Product Title and Price position for mobile layout to be on top
-    {% endcomment %} 
     <div class="grid__item product__media-wrapper">
-
-        {% comment %} 
-      <media-gallery
+     <media-gallery
         id="MediaGallery-{{ section.id }}"
         role="region"
         {% if section.settings.enable_sticky_info %}
@@ -68,8 +63,6 @@
         aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
         data-desktop-layout="{{ section.settings.gallery_layout }}"
       >
-
-       {% endcomment %} 
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
           <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
