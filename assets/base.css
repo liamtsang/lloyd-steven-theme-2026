@@ -3881,24 +3881,3 @@ details-disclosure > details {
         transform: translateX(40%);
     }
 }
-
-/* Added this for mobile layout title and price first then product images  */
-
-.mobile-product-header {
-  display: none;
-}
-
-@media (max-width: 749px) {
-  .mobile-product-header {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  /* Hide original title + price */
-  .product__info-wrapper .product__title,
-  .product__info-wrapper [id^="price-"] {
-    display: none;
-  }
-}
-
-/* Added this for Desktop layout thumbnails on the left product images  */
