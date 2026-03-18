@@ -3903,39 +3903,59 @@ details-disclosure > details {
 
 /* Added this for Desktop layout thumbnails on the left product images  */
 
-/* Desktop only */
 @media screen and (min-width: 990px) {
 
-  /* Make gallery layout horizontal */
+  /* Layout: thumbnails left, image right */
   .product__media-gallery {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  /* Thumbnails on the LEFT */
+  /* LEFT thumbnails column */
   .thumbnail-slider {
     order: -1;
-    width: 80px;
+    width: 90px; /* controls column width */
     flex-shrink: 0;
   }
 
-  /* Stack thumbnails vertically */
+  /* Vertical stack */
   .thumbnail-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px; /* spacing between thumbnails */
   }
 
-  /* Main image takes remaining space */
-  .slider-mobile-gutter {
-    flex: 1;
+  /* Thumbnail size */
+  .thumbnail {
+    width: 90px;
+    height: 90px;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
   }
 
-  /* Optional: make thumbnails nicer */
+  /* Image inside thumbnail */
   .thumbnail img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* Active thumbnail (black border like your screenshot) */
+  .thumbnail[aria-current="true"] {
+    border: 2px solid #000;
+  }
+
+  /* Inactive thumbnails (light border) */
+  .thumbnail {
+    border: 1px solid #ddd;
+  }
+
+  /* Main image takes rest */
+  .slider-mobile-gutter {
+    flex: 1;
   }
 }
