@@ -3891,32 +3891,3 @@ details-disclosure > details {
 
 }
 
-@media (min-width: 990px) {
-
-  .product {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-  }
-
-  /* LEFT: thumbnails */
-  .custom-thumbnails {
-    grid-column: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 80px;
-  }
-
-  /* CENTER: main image */
-  .slider-container {
-    grid-column: 2;
-  }
-
-  /* RIGHT: product info */
-  .product__info-wrapper {
-    grid-column: 3;
-  }
-
-}
