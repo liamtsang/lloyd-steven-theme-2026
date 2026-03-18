@@ -143,7 +143,7 @@
       "custom_css": [
         ".product__title h2 {font-size: 2rem;}",
         ".product__media-wrapper {position: relative;}",
-        "@media screen and (min-width: 990px) {.custom-product-layout {display: flex; flex-direction: row; align-items: flex-start; gap: 20px; } /* LEFT thumbnails */ .custom-thumbnails {width: 90px; display: flex; flex-direction: column; gap: 12px; } /* RIGHT main image */ .slider {flex: 1; } .custom-thumb img {width: 100%; cursor: pointer; }}"
+        "@media screen and (min-width: 990px) {.custom-product-layout {display: flex !important; flex-direction: row !important; gap: 24px; } /* LEFT thumbnails */ .custom-thumbnails {width: 90px; display: flex; flex-direction: column; gap: 12px; } .custom-thumb img {width: 100%; cursor: pointer; border: 1px solid #ddd; } /* RIGHT main image */ .custom-main {flex: 1; } .slider-item img {width: 100%; display: block; }}"
       ],
       "settings": {
         "enable_sticky_info": true,
