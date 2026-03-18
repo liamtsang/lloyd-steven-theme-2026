@@ -3920,8 +3920,8 @@ details-disclosure > details {
 
   /* Thumbnail size */
   .thumbnail {
-    width: 90px;
-    height: 90px;
+    width: 200px;
+    height: 200px;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #ddd;
