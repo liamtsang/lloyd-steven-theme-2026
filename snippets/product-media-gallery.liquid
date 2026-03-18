@@ -1,25 +1,4 @@
 <div class="slider-container">
-  <div class="custom-product-layout">
-
-  <!-- LEFT: thumbnails -->
-  <div class="custom-thumbnails">
-    {%- for image in product.images -%}
-      <div class="custom-thumb" data-index="{{ forloop.index0 }}">
-        <img src="{{ image | img_url: '100x' }}" alt="">
-      </div>
-    {%- endfor -%}
-  </div>
-
-  <!-- RIGHT: main slider -->
-  <div class="slider">
-    {%- for image in product.images -%}
-      <div class="slider-item">
-        <img src="{{ image | img_url: 'master' }}">
-      </div>
-    {%- endfor -%}
-  </div>
-
-</div>
   <div class="slider">
     {%- for image in product.images -%}
       {%- assign color = null -%}
