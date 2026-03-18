@@ -49,9 +49,18 @@
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}{% else %}product--no-media{% endif %}">
      {% comment %} Added this for mobile layout title and price first then product images  */   {% endcomment %}
+   
+   <div class="mobile-product-header">
+  <h2>{{ product.title }}</h2>
 
+  {% render 'price',
+    product: product,
+    use_variant: true,
+    show_badges: true,
+    price_class: 'price--medium'
+  %}
+</div>
 
-     {% comment %} Added this for mobile layout title and price first then product images  */   {% endcomment %}
     <div class="grid__item product__media-wrapper">
       <media-gallery
         id="MediaGallery-{{ section.id }}"
