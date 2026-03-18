@@ -3881,3 +3881,35 @@ details-disclosure > details {
         transform: translateX(40%);
     }
 }
+
+@media (max-width: 749px) {
+
+  /* Show custom overlay */
+  .mobile-product-overlay {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    right: 15px;
+    z-index: 5;
+    color: #000;
+  }
+
+  /* Style title */
+  .mobile-product-overlay .product__title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* Style price */
+  .mobile-product-overlay .price {
+    font-size: 16px;
+    margin-top: 4px;
+  }
+
+  /* Hide original title + price below */
+  .product__info-wrapper .product__title,
+  .product__info-wrapper [id^="price-"] {
+    display: none;
+  }
+}
