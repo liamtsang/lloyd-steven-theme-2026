@@ -3891,30 +3891,4 @@ details-disclosure > details {
 
 }
 
-@media screen and (min-width: 990px) {
 
-  /* Keep Dawn structure but control layout */
-  .product__media-gallery {
-    display: grid !important;
-    grid-template-columns: 90px 1fr;
-    gap: 20px;
-    align-items: start;
-  }
-
-  /* Thumbnails on LEFT */
-  .thumbnail-slider {
-    grid-column: 1;
-  }
-
-  .thumbnail-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  /* Main image on RIGHT */
-  .product__media-list {
-    grid-column: 2;
-  }
-
-}
