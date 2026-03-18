@@ -3904,46 +3904,41 @@ details-disclosure > details {
 /* Added this for Desktop layout thumbnails on the left product images  */
 @media screen and (min-width: 990px) {
 
-  /* TARGET THE CORRECT WRAPPER */
-  .product__media-gallery {
-    display: flex !important;
-    flex-direction: row;
-    align-items: flex-start;
+  .slider-container {
+    display: flex;
     gap: 20px;
+    align-items: flex-start;
   }
 
-  /* THUMBNAILS LEFT */
-  .product__media-gallery .thumbnail-slider {
-    order: -1;
-    width: 90px;
-    flex-shrink: 0;
-  }
-
-  /* STACK THUMBNAILS */
-  .product__media-gallery .thumbnail-list {
-    display: flex !important;
-    flex-direction: column !important;
+  /* LEFT thumbnails */
+  .custom-thumbnails {
+    display: flex;
+    flex-direction: column;
     gap: 12px;
+    width: 80px;
   }
 
-  /* THUMBNAIL SIZE */
-  .product__media-gallery .thumbnail {
-    width: 90px;
-    height: 90px;
-    border-radius: 8px;
-    overflow: hidden;
+  .custom-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
     border: 1px solid #ddd;
   }
 
-  .product__media-gallery .thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .custom-thumb.active {
+    border: 2px solid #000;
   }
 
-  /* ACTIVE BORDER */
-  .product__media-gallery .thumbnail[aria-current="true"] {
-    border: 2px solid #000 !important;
+  /* MAIN IMAGE */
+  .slider {
+    flex: 1;
+  }
+
+  .slider-item img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
 }
