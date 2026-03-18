@@ -3902,36 +3902,32 @@ details-disclosure > details {
 }
 
 /* Added this for Desktop layout thumbnails on the left product images  */
-
 @media screen and (min-width: 990px) {
 
-  /* Make container relative */
-  .product__media-wrapper {
-    position: relative;
+  /* TARGET THE CORRECT WRAPPER */
+  .product__media-gallery {
+    display: flex !important;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  /* Move thumbnails to LEFT side */
-  .product__media-wrapper .thumbnail-slider {
-    position: absolute;
-    left: 0;
-    top: 0;
+  /* THUMBNAILS LEFT */
+  .product__media-gallery .thumbnail-slider {
+    order: -1;
     width: 90px;
+    flex-shrink: 0;
   }
 
-  /* Push main image to the right */
-  .product__media-wrapper .slider-mobile-gutter {
-    margin-left: 110px; /* space for thumbnails */
-  }
-
-  /* Stack thumbnails vertically */
-  .thumbnail-list {
+  /* STACK THUMBNAILS */
+  .product__media-gallery .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 12px;
   }
 
-  /* Thumbnail size */
-  .thumbnail {
+  /* THUMBNAIL SIZE */
+  .product__media-gallery .thumbnail {
     width: 90px;
     height: 90px;
     border-radius: 8px;
@@ -3939,15 +3935,15 @@ details-disclosure > details {
     border: 1px solid #ddd;
   }
 
-  .thumbnail img {
+  .product__media-gallery .thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  /* Active border = BLACK */
-  .thumbnail[aria-current="true"] {
-    border: 1px solid #000 !important;
+  /* ACTIVE BORDER */
+  .product__media-gallery .thumbnail[aria-current="true"] {
+    border: 2px solid #000 !important;
   }
 
 }
