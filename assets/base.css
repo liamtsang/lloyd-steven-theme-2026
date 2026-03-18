@@ -3893,38 +3893,36 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  media-gallery {
-    display: grid !important;
-    grid-template-columns: 90px 1fr;
-    gap: 20px;
-    align-items: start; /* important */
+  /* Make container relative */
+  .product__media-wrapper {
+    position: relative;
   }
 
-  /* Thumbnails LEFT */
-  .thumbnail-slider {
-    grid-column: 1;
+  /* Move thumbnails to LEFT side */
+  .product__media-wrapper .thumbnail-slider {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 90px;
-    align-self: start; /* 🔥 THIS FIXES THE ISSUE */
   }
 
-  /* Main image RIGHT */
-  .slider-mobile-gutter {
-    grid-column: 2;
-    width: 100%;
+  /* Push main image to the right */
+  .product__media-wrapper .slider-mobile-gutter {
+    margin-left: 110px; /* space for thumbnails */
   }
 
-  /* Stack vertically */
+  /* Stack thumbnails vertically */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px;
+    gap: 12px;
   }
 
   /* Thumbnail size */
   .thumbnail {
     width: 90px;
     height: 90px;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     border: 1px solid #ddd;
   }
@@ -3935,8 +3933,9 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Active border FIX */
+  /* Active border = BLACK */
   .thumbnail[aria-current="true"] {
-    border: 2px solid #000;
+    border: 2px solid #000 !important;
   }
+
 }
