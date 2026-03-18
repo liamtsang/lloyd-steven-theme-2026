@@ -142,7 +142,8 @@
       ],
       "custom_css": [
         ".product__title h2 {font-size: 2rem;}",
-        ".product__media-wrapper {position: relative;}"
+        ".product__media-wrapper {position: relative;}",
+        "@media screen and (min-width: 990px) {/* FORCE parent into 2 columns */ .product__media {display: flex !important; flex-direction: row !important; align-items: flex-start; gap: 20px; } /* Thumbnails LEFT */ .thumbnail-slider {width: 90px !important; order: 1; } /* Main image RIGHT */ .product__media-wrapper {flex: 1 !important; order: 2; }}"
       ],
       "settings": {
         "enable_sticky_info": true,
