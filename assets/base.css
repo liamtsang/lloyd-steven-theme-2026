@@ -3890,3 +3890,32 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  /* Make gallery horizontal */
+  .product__media-gallery {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  /* Thumbnails LEFT */
+  .thumbnail-slider {
+    width: 90px;
+    flex-shrink: 0;
+  }
+
+  .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Main image RIGHT */
+  .product__media-list {
+    flex: 1;
+  }
+
+}
