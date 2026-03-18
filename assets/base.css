@@ -3901,4 +3901,41 @@ details-disclosure > details {
   }
 }
 
+/* Added this for Desktop layout thumbnails on the left product images  */
 
+/* Desktop only */
+@media screen and (min-width: 990px) {
+
+  /* Make gallery layout horizontal */
+  .product__media-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  /* Thumbnails on the LEFT */
+  .thumbnail-slider {
+    order: -1;
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  /* Stack thumbnails vertically */
+  .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Main image takes remaining space */
+  .slider-mobile-gutter {
+    flex: 1;
+  }
+
+  /* Optional: make thumbnails nicer */
+  .thumbnail img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
