@@ -3905,26 +3905,30 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Layout: thumbnails left, image right */
-  .product__media-gallery {
+  /* Make the WHOLE media section horizontal */
+  .product__media-wrapper {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
   }
 
-  /* LEFT thumbnails column */
+  media-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+  }
+
+  /* LEFT thumbnails */
   .thumbnail-slider {
     order: -1;
-    width: 90px; /* controls column width */
+    width: 90px;
     flex-shrink: 0;
   }
 
-  /* Vertical stack */
+  /* Vertical thumbnails */
   .thumbnail-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* spacing between thumbnails */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
   }
 
   /* Thumbnail size */
@@ -3934,27 +3938,25 @@ details-disclosure > details {
     padding: 0;
     border-radius: 10px;
     overflow: hidden;
+    border: 1px solid #ddd;
   }
 
-  /* Image inside thumbnail */
   .thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
   }
 
-  /* Active thumbnail (black border like your screenshot) */
+  /* Active */
   .thumbnail[aria-current="true"] {
     border: 2px solid #000;
   }
 
-  /* Inactive thumbnails (light border) */
-  .thumbnail {
-    border: 1px solid #ddd;
+  /* Main image area */
+  #GalleryViewer- {
+    flex: 1;
   }
 
-  /* Main image takes rest */
   .slider-mobile-gutter {
     flex: 1;
   }
