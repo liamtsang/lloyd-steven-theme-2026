@@ -3893,14 +3893,7 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Fix main product layout (2 columns) */
-  .product {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 40px;
-  }
-
-  /* Make media area horizontal */
+  /* Only adjust inside media area */
   .product__media {
     display: flex !important;
     flex-direction: row;
