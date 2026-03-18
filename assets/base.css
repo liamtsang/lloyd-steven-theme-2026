@@ -3884,32 +3884,22 @@ details-disclosure > details {
 
 @media (max-width: 749px) {
 
-  /* Show custom overlay */
-  .mobile-product-overlay {
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    right: 15px;
-    z-index: 5;
-    color: #000;
+  /* Move title + price above image */
+  .product {
+    display: flex;
+    flex-direction: column;
   }
 
-  /* Style title */
-  .mobile-product-overlay .product__title {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
+  .product__info-wrapper {
+    order: 1;
   }
 
-  /* Style price */
-  .mobile-product-overlay .price {
-    font-size: 16px;
-    margin-top: 4px;
+  .product__media-wrapper {
+    order: 2;
   }
 
-  /* Hide original title + price below */
-  .product__info-wrapper .product__title,
-  .product__info-wrapper [id^="price-"] {
-    display: none;
+  /* Optional spacing */
+  .product__info-wrapper {
+    margin-bottom: 10px;
   }
 }
