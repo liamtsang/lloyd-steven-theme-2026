@@ -3882,6 +3882,7 @@ details-disclosure > details {
     }
 }
 
+/* Added this to change Product Title and Price position for mobile layout to be on top */
 @media (max-width: 749px) {
 
   .mobile-top-slot {
