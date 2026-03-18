@@ -3905,42 +3905,34 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Layout */
   media-gallery {
     display: grid !important;
     grid-template-columns: 90px 1fr;
     gap: 20px;
-    align-items: start;
+    align-items: start; /* important */
   }
 
-  /* 🔥 KEY FIX: remove spacing pushing thumbnails down */
+  /* Thumbnails LEFT */
   .thumbnail-slider {
     grid-column: 1;
     width: 90px;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    align-self: start;
+    align-self: start; /* 🔥 THIS FIXES THE ISSUE */
   }
 
-  /* MAIN IMAGE */
+  /* Main image RIGHT */
   .slider-mobile-gutter {
     grid-column: 2;
+    width: 100%;
   }
 
-  /* REMOVE hidden spacing from slider */
-  #GalleryViewer-{{ section.id }} {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Stack thumbnails */
+  /* Stack vertically */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px;
   }
 
-  /* Thumbnail style */
+  /* Thumbnail size */
   .thumbnail {
     width: 90px;
     height: 90px;
@@ -3955,9 +3947,8 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Active border */
+  /* Active border FIX */
   .thumbnail[aria-current="true"] {
     border: 2px solid #000;
   }
-
 }
