@@ -3893,16 +3893,14 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
+  /* Fix main product layout (2 columns) */
   .product {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 40px;
   }
 
-}
-
-@media screen and (min-width: 990px) {
-
+  /* Make media area horizontal */
   .product__media {
     display: flex !important;
     flex-direction: row;
@@ -3910,15 +3908,17 @@ details-disclosure > details {
     gap: 20px;
   }
 
-  /* thumbnails */
+  /* Thumbnails LEFT */
   .thumbnail-slider {
     width: 90px;
     flex-shrink: 0;
+    order: 1;
   }
 
-  /* main image */
+  /* Main image RIGHT */
   .product__media-wrapper {
     flex: 1;
+    order: 2;
   }
 
 }
