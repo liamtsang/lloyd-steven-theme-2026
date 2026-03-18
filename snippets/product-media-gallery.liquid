@@ -10,15 +10,13 @@
     {%- endfor -%}
   </div>
 
-  <!-- CENTER: main image -->
-  <div class="slider-container">
-    <div class="slider">
-      {%- for image in product.images -%}
-        <div class="slider-item">
-          <img src="{{ image | img_url: 'master' }}">
-        </div>
-      {%- endfor -%}
-    </div>
+  <!-- RIGHT: main slider -->
+  <div class="slider">
+    {%- for image in product.images -%}
+      <div class="slider-item">
+        <img src="{{ image | img_url: 'master' }}">
+      </div>
+    {%- endfor -%}
   </div>
 
 </div>
