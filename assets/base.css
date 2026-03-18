@@ -3912,7 +3912,6 @@ details-disclosure > details {
 
   /* Move thumbnails to LEFT side */
   .product__media-wrapper .thumbnail-slider {
-    position: absolute;
     left: 0;
     top: 0;
     width: 90px;
@@ -3949,5 +3948,30 @@ details-disclosure > details {
   .thumbnail[aria-current="true"] {
     border: 1px solid #000 !important;
   }
+
+  /* Restore gallery height */
+.product__media-wrapper {
+  display: flex;
+}
+
+/* Keep thumbnails on left */
+.product__media-wrapper .thumbnail-slider {
+  width: 90px;
+  flex-shrink: 0;
+}
+
+/* Main image wrapper */
+.product__media-wrapper .slider-mobile-gutter {
+  flex: 1;
+  margin-left: 20px;
+}
+
+/* 🔥 CRITICAL: restore image height */
+.product__media-wrapper .slider,
+.product__media-wrapper .slider__slide,
+.product__media-wrapper .product__media-item {
+  height: auto !important;
+  position: relative !important;
+}
 
 }
