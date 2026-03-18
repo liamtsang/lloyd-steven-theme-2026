@@ -3925,20 +3925,3 @@ details-disclosure > details {
   }
 
 }
-
-@media screen and (min-width: 990px) {
-
-  /* FORCE thumbnail button size */
-  .thumbnail {
-    width: 100px !important;
-    height: 100px !important;
-    padding: 0 !important;
-  }
-
-  /* Make image fill button */
-  .thumbnail img {
-
-    object-fit: cover;
-  }
-
-}
