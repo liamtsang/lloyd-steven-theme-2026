@@ -3893,22 +3893,18 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Make container relative */
+  /* Make media wrapper horizontal */
   .product__media-wrapper {
-    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  /* Move thumbnails to LEFT side */
+  /* Thumbnail container (LEFT side) */
   .product__media-wrapper .thumbnail-slider {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 90px;
-  }
-
-  /* Push main image to the right */
-  .product__media-wrapper .slider-mobile-gutter {
-    margin-left: 110px; /* space for thumbnails */
+    position: relative !important;
+    width: 100px;
+    flex-shrink: 0;
   }
 
   /* Stack thumbnails vertically */
@@ -3920,22 +3916,14 @@ details-disclosure > details {
 
   /* Thumbnail size */
   .thumbnail {
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #ddd;
+    width: 100px;
+    height: 100px;
   }
 
-  .thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Active border = BLACK */
-  .thumbnail[aria-current="true"] {
-    border: 2px solid #000 !important;
+  /* Main image takes remaining space */
+  .product__media-wrapper .slider-mobile-gutter {
+    margin-left: 0 !important;
+    flex: 1;
   }
 
 }
