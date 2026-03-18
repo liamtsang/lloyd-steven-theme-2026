@@ -3905,33 +3905,35 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Make the WHOLE media section horizontal */
-  .product__media-wrapper {
-    display: flex;
+  /* Force gallery into 2 columns */
+  media-gallery {
+    display: grid !important;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    align-items: start;
   }
 
-  media-gallery {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  /* Thumbnails LEFT */
+  .thumbnail-slider {
+    grid-column: 1;
+    width: 90px;
+  }
+
+  /* Main image RIGHT */
+  #GalleryViewer-,
+  .slider-mobile-gutter {
+    grid-column: 2;
     width: 100%;
   }
 
-  /* LEFT thumbnails */
-  .thumbnail-slider {
-    order: -1;
-    width: 90px;
-    flex-shrink: 0;
-  }
-
-  /* Vertical thumbnails */
+  /* Stack thumbnails vertically */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px;
   }
 
-  /* Thumbnail size */
+  /* Thumbnail styling */
   .thumbnail {
     width: 90px;
     height: 90px;
@@ -3947,17 +3949,8 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Active */
+  /* Active thumbnail */
   .thumbnail[aria-current="true"] {
     border: 2px solid #000;
-  }
-
-  /* Main image area */
-  #GalleryViewer- {
-    flex: 1;
-  }
-
-  .slider-mobile-gutter {
-    flex: 1;
   }
 }
