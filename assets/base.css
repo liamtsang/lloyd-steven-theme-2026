@@ -3884,22 +3884,20 @@ details-disclosure > details {
 
 @media (max-width: 749px) {
 
-  /* Move title + price above image */
-  .product {
-    display: flex;
+  /* Keep grid working, just reorder */
+  .product.grid {
+    display: flex !important;
     flex-direction: column;
   }
 
   .product__info-wrapper {
-    order: 1;
+    order: -1;
+    width: 100%;
   }
 
   .product__media-wrapper {
-    order: 2;
+    order: 0;
+    width: 100%;
   }
 
-  /* Optional spacing */
-  .product__info-wrapper {
-    margin-bottom: 10px;
-  }
 }
