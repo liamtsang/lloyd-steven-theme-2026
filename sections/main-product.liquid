@@ -50,6 +50,14 @@
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}{% else %}product--no-media{% endif %}">
 
     <div class="grid__item product__media-wrapper">
+
+      <div class="mobile-top-info">
+  <h1 class="product__title">{{ product.title }}</h1>
+  <div class="price">
+    {{ product.price | money }}
+  </div>
+</div>
+
       <media-gallery
         id="MediaGallery-{{ section.id }}"
         role="region"
