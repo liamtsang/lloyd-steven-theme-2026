@@ -45,19 +45,25 @@
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-  document.querySelectorAll('.custom-thumb').forEach((thumb) => {
+  const thumbs = document.querySelectorAll('.custom-thumb');
+  const slides = document.querySelectorAll('.slider-item');
+
+  // show first image by default
+  if (slides.length > 0) {
+    slides[0].classList.add('active');
+  }
+
+  thumbs.forEach((thumb, index) => {
     thumb.addEventListener('click', function () {
-      const index = this.dataset.index;
 
-      const slider = document.querySelector('.slider');
+      // remove active from all
+      slides.forEach(s => s.classList.remove('active'));
+      thumbs.forEach(t => t.classList.remove('active'));
 
-      slider.scrollTo({
-        left: index * slider.offsetWidth,
-        behavior: 'smooth'
-      });
+      // activate clicked
+      slides[index].classList.add('active');
+      thumb.classList.add('active');
 
-      document.querySelectorAll('.custom-thumb').forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
     });
   });
 
