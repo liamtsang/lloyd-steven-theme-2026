@@ -3891,3 +3891,52 @@ details-disclosure > details {
 
 }
 
+@media screen and (min-width: 990px) {
+
+  media-gallery {
+    display: grid !important;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    align-items: start; /* important */
+  }
+
+  /* Thumbnails LEFT */
+  .thumbnail-slider {
+    grid-column: 1;
+    width: 90px;
+    align-self: start; /* 🔥 THIS FIXES THE ISSUE */
+  }
+
+  /* Main image RIGHT */
+  .slider-mobile-gutter {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  /* Stack vertically */
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+  }
+
+  /* Thumbnail size */
+  .thumbnail {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Active border FIX */
+  .thumbnail[aria-current="true"] {
+    border: 2px solid #000;
+  }
+}
