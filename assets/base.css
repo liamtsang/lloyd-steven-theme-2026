@@ -3919,3 +3919,18 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  .thumbnail-slider {
+    position: absolute !important;
+    left: -140px; /* adjust if needed */
+    top: 0; /* 🔥 THIS fixes the vertical alignment */
+    width: 120px;
+  }
+
+  .product__media-wrapper {
+    position: relative;
+  }
+
+}
