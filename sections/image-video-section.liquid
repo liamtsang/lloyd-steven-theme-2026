@@ -57,15 +57,23 @@
 
   <!-- RIGHT VIDEO -->
   <div class="custom-split__video">
-    <video 
-      autoplay 
-      muted 
-      loop 
-      playsinline 
-      preload="metadata"
-    >
-      <source src="https://cdn.shopify.com/videos/c/o/v/318f2106fa564dceaee05ba6dee84be3.mp4" type="video/mp4">
-    </video>
+
+    {% if section.settings.video != blank %}
+      {{
+        section.settings.video
+        | video_tag:
+          autoplay: true,
+          muted: true,
+          loop: true,
+          controls: false
+      }}
+
+    {% elsif section.settings.video_url != blank %}
+      <video autoplay muted loop playsinline>
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+
   </div>
 
 </div>
@@ -78,6 +86,16 @@
       "type": "image_picker",
       "id": "image",
       "label": "Left Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video (Upload in Shopify)"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Fallback MP4 URL (optional)"
     }
   ],
   "presets": [
