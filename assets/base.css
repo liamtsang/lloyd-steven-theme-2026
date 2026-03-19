@@ -3963,4 +3963,15 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  .thumbnail-slider {
+    position: fixed !important;
+    top: 140px;   /* adjust to header */
+    left: 40px;   /* distance from screen edge */
+    width: 140px;
+  }
+
+}
 /* Added this to change Product Image Thumbnails to the left */
