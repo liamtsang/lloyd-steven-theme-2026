@@ -3896,27 +3896,20 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Stable layout */
+  /* Anchor container */
   .product__media-wrapper {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 24px;
-    align-items: start;
+    position: relative;
   }
 
-  /* Thumbnails LEFT */
+  /* Thumbnails LEFT (stable) */
   .thumbnail-slider {
-    position: sticky;
-    top: 120px; /* adjust to header */
+    position: absolute;
+    left: -110px;
+    top: 0;
     width: 120px;
   }
 
-  /* Main image */
-  .product__media-list {
-    width: 100%;
-  }
-
-  /* Vertical thumbnails */
+  /* Vertical layout */
   .thumbnail-list {
     display: flex;
     flex-direction: column;
