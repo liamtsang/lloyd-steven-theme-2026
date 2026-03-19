@@ -3894,36 +3894,37 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Create 2-column layout: thumbnails | main image */
+  /* Make the WHOLE media area a row */
   .product__media-wrapper {
-    display: grid !important;
-    grid-template-columns: 90px 1fr !important;
-    align-items: start;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start;
     gap: 20px;
   }
 
-  /* Thumbnails on LEFT */
+  /* Move thumbnails LEFT */
   .thumbnail-slider {
-    grid-column: 1;
-  }
-
-  /* Main image stays RIGHT */
-  .product__media-list {
-    grid-column: 2;
+    order: -1 !important;
+    width: 90px;
+    flex-shrink: 0;
   }
 
   /* Stack thumbnails vertically */
-  .thumbnail-list {
+  .thumbnail-slider .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 12px;
   }
 
-  /* Thumbnail sizing */
-  .thumbnail-list img {
+  /* Fix thumbnail size */
+  .thumbnail-slider img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+  }
+
+  /* Main image container */
+  .product__media-list {
+    flex: 1;
   }
 
 }
