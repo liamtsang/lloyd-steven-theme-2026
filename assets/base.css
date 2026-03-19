@@ -3892,7 +3892,8 @@ details-disclosure > details {
 }
 
 
-/* Added this to change Product Image Thumbnails to the left
+/* Added this to change Product Image Thumbnails to the left */
+
 @media screen and (min-width: 990px) {
 
   /* Keep thumbnails on the left (your previous working layout assumed) */
@@ -3962,4 +3963,4 @@ details-disclosure > details {
   }
 
 }
-/* Added this to change Product Image Thumbnails to the left
+/* Added this to change Product Image Thumbnails to the left */
