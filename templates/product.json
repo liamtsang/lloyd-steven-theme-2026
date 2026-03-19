@@ -142,7 +142,7 @@
       ],
       "custom_css": [
         ".product__title h2 {font-size: 2rem;}",
-        ".product__description {margin-top: 70px;}"
+        ".product__description {margin-top: 60px;}"
       ],
       "settings": {
         "enable_sticky_info": true,
