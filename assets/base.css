@@ -3968,7 +3968,7 @@ details-disclosure > details {
 
   .thumbnail-slider {
     position: sticky !important;
-    top: 100px; /* adjust based on your header height */
+  
   }
 
 }
