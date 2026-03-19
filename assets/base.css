@@ -3939,5 +3939,26 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  /* Increase column width */
+  .thumbnail-slider {
+    width: 140px; /* increase from 120 → 140 */
+    left: -130px; /* adjust to match new width */
+  }
+
+  /* Remove Shopify size limits */
+  .thumbnail {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* Ensure full fill */
+  .thumbnail-list li {
+    width: 100% !important;
+  }
+
+}
 /* Added this to change Product Image Thumbnails to the left */
 
