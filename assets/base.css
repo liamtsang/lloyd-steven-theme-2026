@@ -3892,39 +3892,3 @@ details-disclosure > details {
 }
 
 
-@media screen and (min-width: 990px) {
-
-  /* Make media container horizontal */
-  .product__media-wrapper {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  /* Move thumbnails to left */
-  .thumbnail-slider,
-  .product__media-list + .thumbnail-slider {
-    order: -1;
-    width: 80px; /* control thumbnail column width */
-  }
-
-  /* Stack thumbnails vertically */
-  .thumbnail-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px;
-  }
-
-  /* Make thumbnails consistent size */
-  .thumbnail-list img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  /* Main image takes remaining space */
-  .product__media {
-    flex: 1;
-  }
-}
