@@ -3892,6 +3892,7 @@ details-disclosure > details {
 }
 
 
+/* Added this to change Product Image Thumbnails to the left
 @media screen and (min-width: 990px) {
 
   /* Keep thumbnails on the left (your previous working layout assumed) */
@@ -3924,8 +3925,8 @@ details-disclosure > details {
 
   .thumbnail-slider {
     position: absolute !important;
-    left: -5px; /* adjust if needed */
-    top: 0; /* 🔥 THIS fixes the vertical alignment */
+    left: -5px; 
+    top: 0; 
     width: 120px;
   }
 
@@ -3943,7 +3944,6 @@ details-disclosure > details {
     width: 100% !important;
   }
 
-  /* Make image fill nicely */
   .thumbnail-list img {
     width: 100%;
     height: 100%;
@@ -3956,11 +3956,10 @@ details-disclosure > details {
     box-shadow: 0 0 0 1px #e5e5e5; /* subtle outline */
   }
 
-  /* Active thumbnail (optional nicer style) */
   .thumbnail[aria-current="true"] {
     border: 2px solid #fff !important;
     box-shadow: 0 0 0 1.5px #000;
   }
 
 }
-
+/* Added this to change Product Image Thumbnails to the left
