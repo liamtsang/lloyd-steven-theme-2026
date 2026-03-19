@@ -3924,14 +3924,24 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  .thumbnail-slider {
-    left: -5px; 
-    top: 0; 
-    width: 120px;
+  /* Make layout side-by-side properly */
+  .product__media-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
   }
 
-  .product__media-wrapper {
-    position: relative;
+  /* Thumbnails LEFT */
+  .thumbnail-slider {
+    position: sticky;
+    top: 100px;
+    width: 120px;
+    align-self: flex-start;
+  }
+
+  /* Main image RIGHT */
+  .product__media-list {
+    flex: 1;
   }
 
 }
