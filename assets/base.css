@@ -3894,8 +3894,8 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Target the INNER media container */
-  .product__media-wrapper > * {
+  /* Make the correct parent a grid */
+  .product__media-wrapper {
     display: grid !important;
     grid-template-columns: 100px 1fr !important;
     gap: 24px;
@@ -3912,17 +3912,16 @@ details-disclosure > details {
     grid-column: 2 !important;
   }
 
-  /* Vertical thumbnails */
+  /* Stack thumbnails vertically */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px;
   }
 
-  /* Clean thumbnail sizing */
-  .thumbnail-list img {
-    width: 100%;
-    height: auto;
+  /* Thumbnail size */
+  .thumbnail-slider {
+    width: 100px;
   }
 
 }
