@@ -187,10 +187,11 @@
     },
     "image_video_section_jb8bc7": {
       "type": "image-video-section",
-      "disabled": true,
       "name": "Image + Video Split",
       "settings": {
-        "image": "shopify://shop_images/250624_LSt_StillLife3891.jpg"
+        "image": "shopify://shop_images/250624_LSt_StillLife3891.jpg",
+        "video": "shopify://files/videos/NEW EMERALD AURA RING - GALLERY.mp4",
+        "video_url": ""
       }
     },
     "featured_collection_4geYMF": {
