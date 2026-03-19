@@ -3896,30 +3896,53 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Anchor container */
+  /* Keep thumbnails on the left (your previous working layout assumed) */
+  .thumbnail-slider {
+    width: 120px !important;
+  }
+
+  /* 🔥 THIS is the missing piece */
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+  }
+
+  /* Each thumbnail fills column width */
+  .thumbnail-list li {
+    width: 100% !important;
+  }
+
+  /* Image fills container */
+  .thumbnail-list img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+  }
+
+}
+
+@media screen and (min-width: 990px) {
+
+  .thumbnail-slider {
+    position: absolute !important;
+    left: -5px; 
+    top: 0; 
+    width: 120px;
+  }
+
   .product__media-wrapper {
     position: relative;
   }
 
-  /* Thumbnails LEFT (stable) */
-  .thumbnail-slider {
-    position: absolute;
-    left: -110px;
-    top: 0;
-    width: 120px;
-  }
+}
 
-  /* Vertical layout */
-  .thumbnail-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
+@media screen and (min-width: 990px) {
 
-  /* 2:3 ratio */
+  /* Make thumbnails 2:3 ratio */
   .thumbnail-list li {
     aspect-ratio: 2 / 3;
-    width: 100%;
+    width: 100% !important;
   }
 
   .thumbnail-list img {
@@ -3928,37 +3951,16 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Clean borders */
+  /* Change border to white */
   .thumbnail {
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 1px #e5e5e5;
+    border: 2px solid #fff !important;
+    box-shadow: 0 0 0 1px #e5e5e5; /* subtle outline */
   }
 
   .thumbnail[aria-current="true"] {
+    border: 2px solid #fff !important;
     box-shadow: 0 0 0 1.5px #000;
   }
 
 }
-
-@media screen and (min-width: 990px) {
-
-  /* Increase column width */
-  .thumbnail-slider {
-    width: 140px; /* increase from 120 → 140 */
-    left: -130px; /* adjust to match new width */
-  }
-
-  /* Remove Shopify size limits */
-  .thumbnail {
-    max-width: none !important;
-    width: 100% !important;
-  }
-
-  /* Ensure full fill */
-  .thumbnail-list li {
-    width: 100% !important;
-  }
-
-}
 /* Added this to change Product Image Thumbnails to the left */
-
