@@ -3894,21 +3894,20 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  .product__media-wrapper {
-    position: relative;
-  }
-
+  /* Increase thumbnail column width */
   .thumbnail-slider {
-    position: absolute;
-    left: -120px;
-    top: 0;
-    width: 100px;
+    width: 120px !important; /* try 120–140px */
   }
 
-  .thumbnail-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  /* Make each thumbnail bigger */
+  .thumbnail-list li {
+    width: 100% !important;
+  }
+
+  .thumbnail-list img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
   }
 
 }
