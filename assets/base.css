@@ -3925,7 +3925,6 @@ details-disclosure > details {
 @media screen and (min-width: 990px) {
 
   .thumbnail-slider {
-    position: absolute !important;
     left: -5px; 
     top: 0; 
     width: 120px;
