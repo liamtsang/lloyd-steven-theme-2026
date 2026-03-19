@@ -3894,34 +3894,21 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Make the correct parent a grid */
   .product__media-wrapper {
-    display: grid !important;
-    grid-template-columns: 100px 1fr !important;
-    gap: 24px;
-    align-items: start;
+    position: relative;
   }
 
-  /* Thumbnails LEFT */
   .thumbnail-slider {
-    grid-column: 1 !important;
-  }
-
-  /* Main image RIGHT */
-  .product__media-list {
-    grid-column: 2 !important;
-  }
-
-  /* Stack thumbnails vertically */
-  .thumbnail-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px;
-  }
-
-  /* Thumbnail size */
-  .thumbnail-slider {
+    position: absolute;
+    left: -120px;
+    top: 0;
     width: 100px;
+  }
+
+  .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
 }
