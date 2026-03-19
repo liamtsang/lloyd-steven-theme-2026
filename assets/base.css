@@ -3928,3 +3928,25 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  .product__media-wrapper {
+    position: relative;
+  }
+
+  /* Force thumbnails to left side */
+  .thumbnail-slider {
+    position: absolute !important;
+    left: -110px;
+    top: 0;
+    width: 90px;
+  }
+
+  .thumbnail-slider .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+}
