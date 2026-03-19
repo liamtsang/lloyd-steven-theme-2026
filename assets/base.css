@@ -3894,16 +3894,24 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Increase thumbnail column width */
+  /* Keep thumbnails on the left (your previous working layout assumed) */
   .thumbnail-slider {
-    width: 120px !important; /* try 120–140px */
+    width: 120px !important;
   }
 
-  /* Make each thumbnail bigger */
+  /* 🔥 THIS is the missing piece */
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+  }
+
+  /* Each thumbnail fills column width */
   .thumbnail-list li {
     width: 100% !important;
   }
 
+  /* Image fills container */
   .thumbnail-list img {
     width: 100% !important;
     height: auto;
