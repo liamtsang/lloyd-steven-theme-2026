@@ -3924,7 +3924,7 @@ details-disclosure > details {
 
   .thumbnail-slider {
     position: absolute !important;
-    left: 10px; /* adjust if needed */
+    left: 0px; /* adjust if needed */
     top: 0; /* 🔥 THIS fixes the vertical alignment */
     width: 120px;
   }
