@@ -3896,62 +3896,37 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Keep thumbnails on the left (your previous working layout assumed) */
-  .thumbnail-slider {
-    width: 120px !important;
-  }
-
-  /* 🔥 THIS is the missing piece */
-  .thumbnail-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px;
-  }
-
-  /* Each thumbnail fills column width */
-  .thumbnail-list li {
-    width: 100% !important;
-  }
-
-  /* Image fills container */
-  .thumbnail-list img {
-    width: 100% !important;
-    height: auto;
-    object-fit: cover;
-  }
-
-}
-
-@media screen and (min-width: 990px) {
-
-  /* Make layout side-by-side properly */
+  /* Stable layout */
   .product__media-wrapper {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 120px 1fr;
     gap: 24px;
+    align-items: start;
   }
 
   /* Thumbnails LEFT */
   .thumbnail-slider {
     position: sticky;
-    top: 100px;
+    top: 120px; /* adjust to header */
     width: 120px;
-    align-self: flex-start;
   }
 
-  /* Main image RIGHT */
+  /* Main image */
   .product__media-list {
-    flex: 1;
+    width: 100%;
   }
 
-}
+  /* Vertical thumbnails */
+  .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-@media screen and (min-width: 990px) {
-
-  /* Make thumbnails 2:3 ratio */
+  /* 2:3 ratio */
   .thumbnail-list li {
     aspect-ratio: 2 / 3;
-    width: 100% !important;
+    width: 100%;
   }
 
   .thumbnail-list img {
@@ -3960,24 +3935,14 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Change border to white */
+  /* Clean borders */
   .thumbnail {
-    border: 2px solid #fff !important;
-    box-shadow: 0 0 0 1px #e5e5e5; /* subtle outline */
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #e5e5e5;
   }
 
   .thumbnail[aria-current="true"] {
-    border: 2px solid #fff !important;
     box-shadow: 0 0 0 1.5px #000;
-  }
-
-}
-
-@media screen and (min-width: 990px) {
-
-  .thumbnail-slider {
-    position: sticky !important;
-  
   }
 
 }
