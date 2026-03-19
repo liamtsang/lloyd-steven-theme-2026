@@ -3964,20 +3964,3 @@ details-disclosure > details {
 
 }
 
-@media screen and (min-width: 990px) {
-
-  /* Force ALL thumbnail containers to 2:3 */
-  .thumbnail,
-  .thumbnail-list li {
-    aspect-ratio: 2 / 3 !important;
-    height: auto !important;
-  }
-
-  /* Make images fill container */
-  .thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-}
