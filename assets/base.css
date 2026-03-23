@@ -3894,52 +3894,26 @@ details-disclosure > details {
 
 /* Added this to change Product Image Thumbnails to the left */
 
+/* Desktop only */
 @media screen and (min-width: 990px) {
 
-  /* Keep thumbnails on the left (your previous working layout assumed) */
+  /* Thumbnail container FIXED on screen */
   .thumbnail-slider {
-    width: 120px !important;
+    position: fixed !important;  /* 🔥 key change */
+    left: 20px;                  /* adjust spacing from screen edge */
+    top: 120px;                 /* adjust vertical position */
+    width: 120px;
+    z-index: 10;
   }
 
-  /* 🔥 THIS is the missing piece */
+  /* Stack thumbnails vertically */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px;
   }
 
-  /* Each thumbnail fills column width */
-  .thumbnail-list li {
-    width: 100% !important;
-  }
-
-  /* Image fills container */
-  .thumbnail-list img {
-    width: 100% !important;
-    height: auto;
-    object-fit: cover;
-  }
-
-}
-
-@media screen and (min-width: 990px) {
-
-  .thumbnail-slider {
-    position: absolute !important;
-    left: -5px; 
-    top: 0; 
-    width: 120px;
-  }
-
-  .product__media-wrapper {
-    position: relative;
-  }
-
-}
-
-@media screen and (min-width: 990px) {
-
-  /* Make thumbnails 2:3 ratio */
+  /* 2:3 ratio thumbnails */
   .thumbnail-list li {
     aspect-ratio: 2 / 3;
     width: 100% !important;
@@ -3951,10 +3925,10 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Change border to white */
+  /* Borders */
   .thumbnail {
     border: 2px solid #fff !important;
-    box-shadow: 0 0 0 1px #e5e5e5; /* subtle outline */
+    box-shadow: 0 0 0 1px #e5e5e5;
   }
 
   .thumbnail[aria-current="true"] {
