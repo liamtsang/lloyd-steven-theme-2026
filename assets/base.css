@@ -4005,3 +4005,16 @@ details-disclosure > details {
   }
 
 }
+
+/* ✅ Make main product image responsive */
+.product__media-wrapper .media {
+  height: auto !important;
+  padding-bottom: 0 !important; /* remove aspect ratio lock */
+}
+
+.product__media-wrapper .media img {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
