@@ -3969,20 +3969,26 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* Use flex safely */
+  /* ✅ Use GRID instead of flex (safe for Shopify slider) */
   .product__media-wrapper {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 100px 1fr;
     gap: 20px;
+    align-items: start;
   }
 
-  /* Thumbnails on the left */
+  /* Thumbnails LEFT */
   .thumbnail-slider {
-    width: 100px;
-    flex-shrink: 0;
+    grid-column: 1;
   }
 
-  /* Stack vertically */
+  /* Main image RIGHT */
+  slider-component {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  /* Stack thumbnails */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column;
@@ -3992,15 +3998,6 @@ details-disclosure > details {
   /* Limit to 3 thumbnails */
   .thumbnail-list__item:nth-child(n+4) {
     display: none;
-  }
-
-  /* 🔥 FIX: force slider to behave inside flex */
-  slider-component {
-    width: 100%;
-  }
-
-  .product__media-list {
-    width: 100%;
   }
 
 }
