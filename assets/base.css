@@ -3969,52 +3969,45 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 Layout container */
+  /* Layout */
   .product__media-wrapper media-gallery {
-    display: flex !important;
+    display: flex;
+    gap: 20px;
     align-items: flex-start;
-    gap: 24px;
   }
 
-  /* 🔥 MAIN IMAGE */
-  .slider-component {
-    flex: 1;
-    order: 2;
-  }
-
-  /* 🔥 THUMBNAILS CONTAINER */
+  /* LEFT thumbnails */
   .thumbnail-slider {
     width: 110px;
     flex-shrink: 0;
     order: 1;
-
-    /* 💀 KILL slider behavior */
-    overflow: visible !important;
   }
 
-  /* 🔥 THIS IS THE KEY FIX */
+  /* 👉 ONLY target thumbnails slider */
   .thumbnail-slider .slider {
     display: flex !important;
     flex-direction: column !important;
-    transform: none !important;
   }
 
-  /* REMOVE SLIDE BEHAVIOR */
   .thumbnail-slider .slider__slide {
     width: 100% !important;
-    transform: none !important;
   }
 
-  /* REMOVE ALL BUTTONS / NAV */
+  /* remove arrows */
   .thumbnail-slider .slider-button {
     display: none !important;
   }
 
-  /* CLEAN SPACING */
+  /* spacing fix */
   .thumbnail-list {
     gap: 12px;
     margin: 0 !important;
-    padding: 0 !important;
+  }
+
+  /* RIGHT main image */
+  .slider-component {
+    order: 2;
+    flex: 1;
   }
 
 }
