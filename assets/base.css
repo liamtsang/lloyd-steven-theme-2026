@@ -3932,9 +3932,7 @@ details-disclosure > details {
     z-index: 10;
   }
 
-  .thumbnail-slider {
-  left: calc((100vw - 1200px)/2); /* aligns with centered layout */
-}
+  
 }
 
 @media screen and (min-width: 990px) {
