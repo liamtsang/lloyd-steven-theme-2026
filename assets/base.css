@@ -3966,3 +3966,36 @@ details-disclosure > details {
 
 
 /* Added this to change Product Image Thumbnails to the left */
+
+@media screen and (min-width: 990px) {
+
+  .product__media-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  /* Move thumbnails to left */
+  .thumbnail-slider {
+    order: -1;
+    width: 100px;
+  }
+
+  /* Stack thumbnails vertically */
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Limit to 3 thumbnails only */
+  .thumbnail-list__item:nth-child(n+4) {
+    display: none;
+  }
+
+  /* Main image takes full space */
+  .product__media-list {
+    flex: 1;
+  }
+
+}
