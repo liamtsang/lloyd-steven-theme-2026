@@ -3896,96 +3896,73 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 TURN OFF SLIDER SYSTEM */
-  .slider,
-  .slider--mobile,
-  slider-component {
-    all: unset;
-    display: block;
+  /* Keep thumbnails on the left (your previous working layout assumed) */
+  .thumbnail-slider {
+    width: 120px !important;
   }
 
-  /* GRID LAYOUT */
-  media-gallery {
-    display: grid !important;
-    grid-template-columns: 100px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-
-  /* LEFT THUMBNAILS */
-  #GalleryThumbnails-{{ section.id }} {
-    grid-column: 1;
-    display: block !important;
-  }
-
+  /* 🔥 THIS is the missing piece */
   .thumbnail-list {
     display: flex !important;
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: column !important;
+    gap: 16px;
   }
 
-  /* RIGHT MAIN IMAGE */
-  #GalleryViewer-{{ section.id }} {
-    grid-column: 2;
-    width: 100%;
+  /* Each thumbnail fills column width */
+  .thumbnail-list li {
+    width: 100% !important;
   }
 
-  /* SHOW ONLY ACTIVE IMAGE */
-  .product__media-list {
-    display: block !important;
-  }
-
-  .product__media-item {
-    display: none;
-    width: 100%;
-  }
-
-  .product__media-item.is-active {
-    display: block;
+  /* Image fills container */
+  .thumbnail-list img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
   }
 
 }
 
 @media screen and (min-width: 990px) {
 
-  /* FORCE full width container */
+  .thumbnail-slider {
+    position: absolute !important;
+    left: -5px; 
+    top: 0; 
+    width: 120px;
+  }
+
   .product__media-wrapper {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  media-gallery {
-    display: grid !important;
-    grid-template-columns: 110px minmax(0, 1fr);
-    width: 100%;
-    max-width: 100%;
-    align-items: start;
-    column-gap: 24px;
-  }
-
-  /* LEFT thumbnails */
-  #GalleryThumbnails-{{ section.id }} {
-    grid-column: 1;
-    width: 110px;
-  }
-
-  /* RIGHT main image */
-  #GalleryViewer-{{ section.id }} {
-    grid-column: 2;
-    width: 100%;
-    min-width: 0; /* 🔥 THIS FIXES ZOOM BREAK */
-  }
-
-  /* 🔥 CRITICAL: prevent wrapping */
-  .product__media-list {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .product__media-item {
-    width: 100%;
+    position: relative;
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  /* Make thumbnails 2:3 ratio */
+  .thumbnail-list li {
+    aspect-ratio: 2 / 3;
+    width: 100% !important;
+  }
+
+  .thumbnail-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Change border to white */
+  .thumbnail {
+    border: 2px solid #fff !important;
+    box-shadow: 0 0 0 1px #e5e5e5; /* subtle outline */
+  }
+
+  .thumbnail[aria-current="true"] {
+    border: 2px solid #fff !important;
+    box-shadow: 0 0 0 1.5px #000;
+  }
+
+}
+
 
 /* Added this to change Product Image Thumbnails to the left */
