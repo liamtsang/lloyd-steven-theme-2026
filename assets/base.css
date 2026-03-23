@@ -3969,7 +3969,6 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* ✅ Use GRID instead of flex (safe for Shopify slider) */
   .product__media-wrapper {
     display: grid;
     grid-template-columns: 100px 1fr;
@@ -3977,14 +3976,30 @@ details-disclosure > details {
     align-items: start;
   }
 
-  /* Thumbnails LEFT */
+  /* LEFT thumbnails */
   .thumbnail-slider {
     grid-column: 1;
+    grid-row: 1;
   }
 
-  /* Main image RIGHT */
+  /* RIGHT main image */
   slider-component {
     grid-column: 2;
+    grid-row: 1;
+
+    /* 🔥 KEY FIX */
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* 🔥 VERY IMPORTANT: fix slider inner behavior */
+  .product__media-list {
+    width: 100%;
+    margin: 0;
+  }
+
+  .product__media-item {
     width: 100%;
   }
 
@@ -3995,7 +4010,7 @@ details-disclosure > details {
     gap: 10px;
   }
 
-  /* Limit to 3 thumbnails */
+  /* Limit to 3 */
   .thumbnail-list__item:nth-child(n+4) {
     display: none;
   }
