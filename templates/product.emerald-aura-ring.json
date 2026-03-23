@@ -178,8 +178,8 @@
       "type": "shogun-custom-html",
       "custom_css": [
         ".iframe-container {display: flex; justify-content: center; align-items: center;}",
-        "/* Control size here */.iframe-container iframe {width: 80%; /* 👈 not full width */ max-width: 900px; /* 👈 limit size */ height: 500px;}",
-        "/* Mobile */@media (max-width: 600px) {.iframe-container iframe {width: 100%; max-width: 100%; height: 300px; }}"
+        " /* Control size here */.iframe-container iframe {width: 95%; max-width: 1600px; height: 500px;}",
+        " /* Mobile */@media (max-width: 600px) {.iframe-container iframe {width: 100%; max-width: 100%; height: 300px; }}"
       ],
       "name": "Shogun Custom HTML",
       "settings": {
