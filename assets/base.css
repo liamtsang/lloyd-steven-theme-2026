@@ -3966,3 +3966,61 @@ details-disclosure > details {
 
 
 /* Added this to change Product Image Thumbnails to the left */
+
+
+@media screen and (min-width: 990px) {
+
+  /* Make media wrapper grid */
+  .product__media-wrapper {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* Thumbnails LEFT */
+  .thumbnail-slider {
+    grid-column: 1;
+    width: 90px;
+  }
+
+  .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Main image RIGHT */
+  #GalleryViewer-{{ section.id }} {
+    grid-column: 2;
+  }
+
+  /* Make thumbnails scroll if many */
+  .thumbnail-slider {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+}
+
+@media screen and (min-width: 990px) {
+
+  .slider-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 120px; /* adjust based on thumbnail width */
+    right: 20px;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .slider-counter {
+    background: rgba(255,255,255,0.8);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  .slider-button {
+    pointer-events: all;
+  }
+}
