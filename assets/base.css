@@ -3924,25 +3924,30 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
+  /* 🔥 LOCK THE WHOLE LAYOUT */
+  .product__media-wrapper {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* LEFT: thumbnails */
   .thumbnail-slider {
-    position: absolute !important;
-    left: -5px; 
-    top: 0; 
+    position: relative !important; /* remove absolute */
     width: 120px;
   }
 
-  .product__media-wrapper {
-    position: relative;
+  .thumbnail-list {
+    display: grid !important;
+    grid-template-rows: repeat(3, 1fr); /* EXACTLY 3 thumbnails */
+    gap: 16px;
   }
 
-}
-
-@media screen and (min-width: 990px) {
-
-  /* Make thumbnails 2:3 ratio */
+  /* Each thumbnail slot */
   .thumbnail-list li {
     aspect-ratio: 2 / 3;
-    width: 100% !important;
+    width: 100%;
   }
 
   .thumbnail-list img {
@@ -3950,6 +3955,13 @@ details-disclosure > details {
     height: 100%;
     object-fit: cover;
   }
+
+  /* RIGHT: main image stays fixed */
+  .product__media {
+    width: 100%;
+  }
+
+}
 
   /* Change border to white */
   .thumbnail {
