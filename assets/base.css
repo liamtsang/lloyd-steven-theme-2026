@@ -3980,3 +3980,13 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  .product__media-item .media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
