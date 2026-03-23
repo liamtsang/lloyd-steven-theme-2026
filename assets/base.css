@@ -3937,48 +3937,6 @@ details-disclosure > details {
 
 }
 
-
-@media screen and (min-width: 990px) {
-
-  /* 🔥 LOCK THE WHOLE LAYOUT */
-  .product__media-wrapper {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-
-  /* LEFT: thumbnails */
-  .thumbnail-slider {
-    position: relative !important; /* remove absolute */
-    width: 120px;
-  }
-
-  .thumbnail-list {
-    display: grid !important;
-    grid-template-rows: repeat(3, 1fr); /* EXACTLY 3 thumbnails */
-    gap: 16px;
-  }
-
-  /* Each thumbnail slot */
-  .thumbnail-list li {
-    aspect-ratio: 2 / 3;
-    width: 100%;
-  }
-
-  .thumbnail-list img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* RIGHT: main image stays fixed */
-  .product__media {
-    width: 100%;
-  }
-
-}
-
 @media screen and (min-width: 990px) {
 
   /* Make thumbnails 2:3 ratio */
@@ -4005,8 +3963,6 @@ details-disclosure > details {
   }
 
 }
-
-
 
 
 /* Added this to change Product Image Thumbnails to the left */
