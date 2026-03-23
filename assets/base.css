@@ -3993,12 +3993,6 @@ details-disclosure > details {
     max-width: 650px;
   }
 
-  /* 🔥 CRITICAL: restore Shopify ratio system */
-  .product__media-item .media {
-    padding-bottom: 100% !important; /* keeps structure stable */
-    height: auto !important;
-  }
-
   /* 🔥 image inside */
   .product__media-item img {
     object-fit: contain !important;
@@ -4008,12 +4002,6 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* ✅ Keep container responsive BUT not locked weirdly */
-  .product__media-wrapper .media {
-    padding-bottom: 100% !important; /* restore structure */
-    height: auto !important;
-  }
-
   /* ✅ Fix image scaling */
   .product__media-wrapper .media img {
     position: absolute !important;
@@ -4022,6 +4010,29 @@ details-disclosure > details {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important; /* 🔥 key fix */
+  }
+
+}
+
+@media screen and (min-width: 990px) {
+
+  /* 🚀 Remove Shopify square ratio ONLY for PDP */
+  .product__media-wrapper .media--square {
+    padding-bottom: 0 !important;
+    height: auto !important;
+  }
+
+  /* 🚀 Let container shrink to image */
+  .product__media-wrapper .media {
+    height: auto !important;
+  }
+
+  /* 🚀 Image behaves naturally */
+  .product__media-wrapper .media img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
 
 }
