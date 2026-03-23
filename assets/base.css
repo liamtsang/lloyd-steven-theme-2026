@@ -3969,16 +3969,22 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
+  /* Keep Shopify layout intact */
   .product__media-wrapper {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    position: relative;
   }
 
-  /* Move thumbnails to left */
+  /* Move thumbnails to left WITHOUT breaking slider */
   .thumbnail-slider {
-    order: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100px;
+  }
+
+  /* Push main image to the right */
+  .product__media-list {
+    margin-left: 120px;
   }
 
   /* Stack thumbnails vertically */
@@ -3988,14 +3994,9 @@ details-disclosure > details {
     gap: 10px;
   }
 
-  /* Limit to 3 thumbnails only */
+  /* Limit to 3 thumbnails */
   .thumbnail-list__item:nth-child(n+4) {
     display: none;
-  }
-
-  /* Main image takes full space */
-  .product__media-list {
-    flex: 1;
   }
 
 }
