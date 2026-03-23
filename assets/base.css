@@ -4018,3 +4018,8 @@ details-disclosure > details {
   height: auto !important;
   object-fit: contain !important;
 }
+
+.product__media-wrapper,
+.product__media {
+  height: auto !important;
+}
