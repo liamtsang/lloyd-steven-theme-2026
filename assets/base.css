@@ -3892,3 +3892,116 @@ details-disclosure > details {
 }
 
 
+/* Added this to change Product Image Thumbnails to the left */
+
+@media screen and (min-width: 990px) {
+
+  /* Keep thumbnails on the left (your previous working layout assumed) */
+  .thumbnail-slider {
+    width: 120px !important;
+  }
+
+  /* 🔥 THIS is the missing piece */
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+  }
+
+  /* Each thumbnail fills column width */
+  .thumbnail-list li {
+    width: 100% !important;
+  }
+
+  /* Image fills container */
+  .thumbnail-list img {
+    width: 100% !important;
+    height: auto;
+    object-fit: cover;
+  }
+
+}
+
+@media screen and (min-width: 990px) {
+
+  .thumbnail-slider {
+    position: absolute !important;
+    left: -5px; 
+    top: 0; 
+    width: 120px;
+  }
+
+  .product__media-wrapper {
+    position: relative;
+  }
+
+}
+
+@media screen and (min-width: 990px) {
+
+  /* Make thumbnails 2:3 ratio */
+  .thumbnail-list li {
+    aspect-ratio: 2 / 3;
+    width: 100% !important;
+  }
+
+  .thumbnail-list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Change border to white */
+  .thumbnail {
+    border: 2px solid #fff !important;
+    box-shadow: 0 0 0 1px #e5e5e5; /* subtle outline */
+  }
+
+  .thumbnail[aria-current="true"] {
+    border: 2px solid #fff !important;
+    box-shadow: 0 0 0 1.5px #000;
+  }
+
+}
+
+
+/* Added this to change Product Image Thumbnails to the left */
+
+@media screen and (min-width: 990px) {
+
+  /* 🔥 FIX WRAPPER ALIGNMENT */
+  .product__media-wrapper media-gallery {
+    display: flex;
+    align-items: flex-start; /* prevents vertical drifting */
+    gap: 24px;
+  }
+
+  /* 🔥 THUMBNAILS */
+  .thumbnail-slider {
+    width: 110px;
+    flex-shrink: 0;
+  }
+
+  /* 🔥 MAIN IMAGE AREA */
+  .product__media {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .product__media-list {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  /* 🔥 CRITICAL: restore Shopify ratio system */
+  .product__media-item .media {
+    padding-bottom: 100% !important; /* keeps structure stable */
+    height: auto !important;
+  }
+
+  /* 🔥 image inside */
+  .product__media-item img {
+    object-fit: contain !important;
+  }
+
+}
