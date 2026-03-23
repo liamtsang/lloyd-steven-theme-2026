@@ -4017,15 +4017,4 @@ details-disclosure > details {
   object-fit: contain !important; /* prevents cropping */
   display: block;
 }
-
-/* Prevent Shopify forcing weird aspect ratios */
-.media {
-  padding-bottom: 0 !important;
-  height: auto !important;
-}
-
-/* Remove absolute positioning that breaks zoom */
-.media > img {
-  position: relative !important;
-  height: auto !important;
 }
