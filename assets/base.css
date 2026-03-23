@@ -3924,15 +3924,19 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  .thumbnail-slider {
-    position: fixed !important;
-    left: 40px;   /* adjust based on your layout */
-    top: 120px;   /* adjust to align with main image */
-    width: 120px;
-    z-index: 10;
+  .product__media-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  
+  .thumbnail-slider {
+    position: sticky;
+    top: 120px; /* controls how far from top when scrolling */
+    width: 120px;
+    flex-shrink: 0;
+  }
+
 }
 
 @media screen and (min-width: 990px) {
