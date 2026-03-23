@@ -3894,122 +3894,56 @@ details-disclosure > details {
 
 /* Added this to change Product Image Thumbnails to the left */
 
-
-
-/* Added this to change Product Image Thumbnails to the left */
-
 @media screen and (min-width: 990px) {
 
-  /* LOCK the whole gallery layout */
-  .product__media-wrapper {
-    display: grid;
-    grid-template-columns: 100px minmax(0, 1fr);
-    align-items: start;
-    column-gap: 24px;
+  /* 🔥 TURN OFF SLIDER SYSTEM */
+  .slider,
+  .slider--mobile,
+  slider-component {
+    all: unset;
+    display: block;
   }
 
-  /* LEFT thumbnails */
-  .thumbnail-slider {
+  /* GRID LAYOUT */
+  media-gallery {
+    display: grid !important;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  /* LEFT THUMBNAILS */
+  #GalleryThumbnails-{{ section.id }} {
     grid-column: 1;
-    width: 100px;
-    position: sticky;
-    top: 100px; /* optional: keeps it aligned nicely */
+    display: block !important;
   }
 
   .thumbnail-list {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     gap: 12px;
   }
 
-  /* RIGHT main image */
+  /* RIGHT MAIN IMAGE */
   #GalleryViewer-{{ section.id }} {
     grid-column: 2;
     width: 100%;
-    max-width: 100%;
   }
 
-  /* 🔥 CRITICAL FIX: prevent shrink/overflow issues */
+  /* SHOW ONLY ACTIVE IMAGE */
   .product__media-list {
-    width: 100% !important;
-    max-width: 100% !important;
+    display: block !important;
   }
 
   .product__media-item {
-    width: 100%;
-  }
-
-  /* Remove weird slider constraints */
-  .slider--mobile {
-    display: block;
-  }
-
-  /* Prevent image from jumping */
-  .product__media img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-
-@media screen and (min-width: 990px) {
-
-  .slider-buttons {
-    position: absolute;
-    bottom: 20px;
-    left: 120px; /* adjust based on thumbnail width */
-    right: 20px;
-    justify-content: center;
-    pointer-events: none;
-  }
-
-  .slider-counter {
-    background: rgba(255,255,255,0.8);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-  }
-
-  .slider-button {
-    pointer-events: all;
-  }
-}
-
-
-@media screen and (min-width: 990px) {
-
-  /* Make the WHOLE gallery a grid */
-  media-gallery {
-    display: grid;
-    grid-template-columns: 100px minmax(0, 1fr);
-    column-gap: 24px;
-    align-items: start;
-  }
-
-  /* Thumbnails LEFT */
-  #GalleryThumbnails-{{ section.id }} {
-    grid-column: 1;
-  }
-
-  /* Main viewer RIGHT */
-  #GalleryViewer-{{ section.id }} {
-    grid-column: 2;
-    width: 100%;
-  }
-
-  /* REMOVE slider behavior (this is why it's breaking) */
-  #GalleryViewer-{{ section.id }} .slider {
-    display: block !important;
-    overflow: visible !important;
-  }
-
-  #GalleryViewer-{{ section.id }} .slider__slide {
     display: none;
+    width: 100%;
   }
 
-  #GalleryViewer-{{ section.id }} .slider__slide.is-active {
+  .product__media-item.is-active {
     display: block;
   }
 
 }
 
+/* Added this to change Product Image Thumbnails to the left */
