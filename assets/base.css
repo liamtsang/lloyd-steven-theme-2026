@@ -3969,7 +3969,6 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* ✅ Use GRID instead of flex (safe for Shopify slider) */
   .product__media-wrapper {
     display: grid;
     grid-template-columns: 100px 1fr;
@@ -3977,15 +3976,16 @@ details-disclosure > details {
     align-items: start;
   }
 
-  /* Thumbnails LEFT */
-  .thumbnail-slider {
-    grid-column: 1;
-  }
-
-  /* Main image RIGHT */
+  /* 🔥 FORCE both to same row */
   slider-component {
     grid-column: 2;
+    grid-row: 1;
     width: 100%;
+  }
+
+  .thumbnail-slider {
+    grid-column: 1;
+    grid-row: 1;
   }
 
   /* Stack thumbnails */
