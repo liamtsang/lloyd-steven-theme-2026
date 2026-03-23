@@ -3924,12 +3924,9 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  .thumbnail-slider {
-    position: fixed !important;
-    left: 40px;   /* adjust based on your layout */
-    top: 120px;   /* adjust to align with main image */
-    width: 120px;
-    z-index: 10;
+.thumbnail-slider {
+  position: sticky;
+  top: 120px;
   }
 }
 
