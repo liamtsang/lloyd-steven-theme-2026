@@ -3997,4 +3997,27 @@ details-disclosure > details {
 
 }
 
+@media screen and (min-width: 990px) {
+
+  .product__media-wrapper {
+    display: grid !important;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+}
+
+
+@media screen and (min-width: 990px) {
+
+  .thumbnail-slider {
+    position: sticky !important;
+    top: 120px; /* adjust depending on header */
+    align-self: start; /* 🔥 important fix */
+    height: fit-content;
+    width: 120px;
+  }
+
+}
 /* Added this to change Product Image Thumbnails to the left */
