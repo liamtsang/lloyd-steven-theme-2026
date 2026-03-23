@@ -4020,3 +4020,26 @@ details-disclosure > details {
     display: block;
   }
 }
+
+@media screen and (min-width: 990px) {
+
+  .slider-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 120px; /* adjust based on thumbnail width */
+    right: 20px;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .slider-counter {
+    background: rgba(255,255,255,0.8);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+  }
+
+  .slider-button {
+    pointer-events: all;
+  }
+}
