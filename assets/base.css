@@ -4039,3 +4039,32 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  /* 🔥 FIX IMAGE SYSTEM */
+  .product__media-item .media {
+    position: relative !important;
+    padding-bottom: 0 !important; /* kill ratio hack */
+    height: auto !important;
+  }
+
+  .product__media-item .media > img {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* 🔥 FIX CONTAINER */
+  .product__media-list {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  /* OPTIONAL CENTER */
+  .product__media-wrapper media-gallery {
+    align-items: flex-start;
+  }
+
+}
