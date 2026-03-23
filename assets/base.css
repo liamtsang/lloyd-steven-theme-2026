@@ -3969,52 +3969,52 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* FLEX layout */
+  /* 🔥 Layout container */
   .product__media-wrapper media-gallery {
-    display: flex;
+    display: flex !important;
     align-items: flex-start;
-    gap: 20px;
+    gap: 24px;
   }
 
-  /* 🔥 MAIN IMAGE - remove extra height behavior */
+  /* 🔥 MAIN IMAGE */
   .slider-component {
-    order: 2;
     flex: 1;
-    align-self: flex-start; /* IMPORTANT */
+    order: 2;
   }
 
-  /* 🔥 THUMBNAILS - stick to top */
+  /* 🔥 THUMBNAILS CONTAINER */
   .thumbnail-slider {
-    order: 1;
     width: 110px;
     flex-shrink: 0;
+    order: 1;
 
-    align-self: flex-start; /* IMPORTANT */
-    margin-top: 0 !important;
+    /* 💀 KILL slider behavior */
+    overflow: visible !important;
+  }
 
-    position: relative !important;
+  /* 🔥 THIS IS THE KEY FIX */
+  .thumbnail-slider .slider {
+    display: flex !important;
+    flex-direction: column !important;
     transform: none !important;
   }
 
-  /* Stack thumbnails */
-  .thumbnail-list {
-    display: flex !important;
-    flex-direction: column;
-    gap: 12px;
+  /* REMOVE SLIDE BEHAVIOR */
+  .thumbnail-slider .slider__slide {
+    width: 100% !important;
+    transform: none !important;
+  }
 
+  /* REMOVE ALL BUTTONS / NAV */
+  .thumbnail-slider .slider-button {
+    display: none !important;
+  }
+
+  /* CLEAN SPACING */
+  .thumbnail-list {
+    gap: 12px;
     margin: 0 !important;
     padding: 0 !important;
-  }
-
-  /* 🔥 REMOVE hidden spacing from Shopify */
-  .thumbnail-slider.slider-mobile-gutter {
-    margin-top: 0 !important;
-  }
-
-  /* Kill slider transforms */
-  .slider,
-  .slider__slide {
-    transform: none !important;
   }
 
 }
