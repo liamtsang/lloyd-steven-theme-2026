@@ -4014,34 +4014,6 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 constrain main image container */
-  .product__media-list {
-    width: 100%;
-    max-width: 600px; /* adjust if needed */
-  }
-
-  /* 🔥 each slide */
-  .product__media-item {
-    width: 100%;
-  }
-
-  /* 🔥 image wrapper */
-  .product__media-item .media {
-    width: 100%;
-    height: auto;
-  }
-
-  /* 🔥 actual image */
-  .product__media-item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-}
-
-@media screen and (min-width: 990px) {
-
   /* 🔥 FIX IMAGE SYSTEM */
   .product__media-item .media {
     position: relative !important;
