@@ -4012,8 +4012,6 @@ details-disclosure > details {
 
 /* 🔥 THIS IS THE KEY FIX */
 .product__media img {
-  width: 100% !important;
-  height: auto !important;
   object-fit: contain !important; /* prevents cropping */
   display: block;
 }
