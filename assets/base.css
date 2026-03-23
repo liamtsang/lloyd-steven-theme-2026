@@ -3962,7 +3962,6 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 CLEAN GRID LAYOUT */
   .product__media-wrapper {
     display: grid;
     grid-template-columns: 120px 1fr;
@@ -3970,10 +3969,8 @@ details-disclosure > details {
     align-items: start;
   }
 
-  /* thumbnails LEFT */
   .thumbnail-slider {
     grid-column: 1;
-    position: relative !important; /* NOT absolute */
   }
 
   .thumbnail-list {
@@ -3982,44 +3979,10 @@ details-disclosure > details {
     gap: 12px;
   }
 
-  /* main image RIGHT */
-  .product__media-list {
-    grid-column: 2;
-    width: 100%;
-    max-width: 650px;
-  }
-
-  /* 🔥 FIX SHOPIFY MEDIA SYSTEM */
-  .product__media-item .media {
-    position: relative !important;
-    padding-bottom: 0 !important;
-    height: auto !important;
-  }
-
-  .product__media-item .media > * {
-    position: relative !important;
-    height: auto !important;
-  }
-
-  .product__media-item img {
+  .product__media-wrapper img {
     width: 100%;
     height: auto;
-    object-fit: contain;
     display: block;
-  }
-
-}
-
-@media screen and (min-width: 990px) {
-
-  /* 🔥 FORCE all images visible (disable slider hiding) */
-  .product__media-list .product__media-item {
-    display: block !important;
-  }
-
-  /* stack properly */
-  .product__media-list {
-    display: block !important;
   }
 
 }
