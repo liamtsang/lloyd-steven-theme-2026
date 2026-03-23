@@ -3967,60 +3967,56 @@ details-disclosure > details {
 
 /* Added this to change Product Image Thumbnails to the left */
 
-
 @media screen and (min-width: 990px) {
 
-  /* Make media wrapper grid */
+  /* LOCK the whole gallery layout */
   .product__media-wrapper {
     display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 20px;
+    grid-template-columns: 100px minmax(0, 1fr);
     align-items: start;
+    column-gap: 24px;
   }
 
-  /* Thumbnails LEFT */
+  /* LEFT thumbnails */
   .thumbnail-slider {
     grid-column: 1;
-    width: 90px;
+    width: 100px;
+    position: sticky;
+    top: 100px; /* optional: keeps it aligned nicely */
   }
 
   .thumbnail-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
-  /* Main image RIGHT */
+  /* RIGHT main image */
   #GalleryViewer-{{ section.id }} {
     grid-column: 2;
+    width: 100%;
+    max-width: 100%;
   }
 
-  /* Make thumbnails scroll if many */
-  .thumbnail-slider {
-    max-height: 600px;
-    overflow-y: auto;
-  }
-}
-
-@media screen and (min-width: 990px) {
-
-  .slider-buttons {
-    position: absolute;
-    bottom: 20px;
-    left: 120px; /* adjust based on thumbnail width */
-    right: 20px;
-    justify-content: center;
-    pointer-events: none;
+  /* 🔥 CRITICAL FIX: prevent shrink/overflow issues */
+  .product__media-list {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  .slider-counter {
-    background: rgba(255,255,255,0.8);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
+  .product__media-item {
+    width: 100%;
   }
 
-  .slider-button {
-    pointer-events: all;
+  /* Remove weird slider constraints */
+  .slider--mobile {
+    display: block;
+  }
+
+  /* Prevent image from jumping */
+  .product__media img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 }
