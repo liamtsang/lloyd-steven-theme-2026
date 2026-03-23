@@ -4005,14 +4005,3 @@ details-disclosure > details {
   }
 
 }
-
-/* ✅ FIX: Main product image responsive scaling (zoom-safe) */
-
-
-
-/* 🔥 THIS IS THE KEY FIX */
-.product__media img {
-  object-fit: contain !important; /* prevents cropping */
-  display: block;
-}
-}
