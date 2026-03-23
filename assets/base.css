@@ -3969,37 +3969,49 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 Use FLEX on the REAL container */
+  /* FLEX layout */
   .product__media-wrapper media-gallery {
     display: flex;
     align-items: flex-start;
     gap: 20px;
   }
 
-  /* LEFT thumbnails */
+  /* 🔥 MAIN IMAGE - remove extra height behavior */
+  .slider-component {
+    order: 2;
+    flex: 1;
+    align-self: flex-start; /* IMPORTANT */
+  }
+
+  /* 🔥 THUMBNAILS - stick to top */
   .thumbnail-slider {
+    order: 1;
     width: 110px;
     flex-shrink: 0;
-    order: 1;
+
+    align-self: flex-start; /* IMPORTANT */
+    margin-top: 0 !important;
 
     position: relative !important;
     transform: none !important;
   }
 
-  /* Stack thumbnails vertically */
+  /* Stack thumbnails */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column;
     gap: 12px;
+
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* RIGHT main image */
-  .slider-component {
-    order: 2;
-    flex: 1;
+  /* 🔥 REMOVE hidden spacing from Shopify */
+  .thumbnail-slider.slider-mobile-gutter {
+    margin-top: 0 !important;
   }
 
-  /* 🔥 Stop Shopify shifting */
+  /* Kill slider transforms */
   .slider,
   .slider__slide {
     transform: none !important;
