@@ -3925,16 +3925,12 @@ details-disclosure > details {
 @media screen and (min-width: 990px) {
 
   .thumbnail-slider {
-    position: absolute !important;
-    left: -5px; 
-    top: 0; 
+    position: fixed !important;
+    left: 40px;   /* adjust based on your layout */
+    top: 120px;   /* adjust to align with main image */
     width: 120px;
+    z-index: 10;
   }
-
-  .product__media-wrapper {
-    position: relative;
-  }
-
 }
 
 @media screen and (min-width: 990px) {
