@@ -3894,26 +3894,26 @@ details-disclosure > details {
 
 /* Added this to change Product Image Thumbnails to the left */
 
-/* Desktop only */
 @media screen and (min-width: 990px) {
 
-  /* Thumbnail container FIXED on screen */
-  .thumbnail-slider {
-    position: fixed !important;  /* 🔥 key change */
-    left: 20px;                  /* adjust spacing from screen edge */
-    top: 120px;                 /* adjust vertical position */
-    width: 120px;
-    z-index: 10;
+  .product__media-wrapper {
+    display: flex;
+    gap: 20px;
   }
 
-  /* Stack thumbnails vertically */
+  .thumbnail-slider {
+    position: sticky !important;  /* 🔥 key fix */
+    top: 120px;                   /* adjust based on header height */
+    width: 120px;
+    height: fit-content;
+  }
+
   .thumbnail-list {
     display: flex !important;
     flex-direction: column !important;
     gap: 16px;
   }
 
-  /* 2:3 ratio thumbnails */
   .thumbnail-list li {
     aspect-ratio: 2 / 3;
     width: 100% !important;
@@ -3923,17 +3923,6 @@ details-disclosure > details {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  /* Borders */
-  .thumbnail {
-    border: 2px solid #fff !important;
-    box-shadow: 0 0 0 1px #e5e5e5;
-  }
-
-  .thumbnail[aria-current="true"] {
-    border: 2px solid #fff !important;
-    box-shadow: 0 0 0 1.5px #000;
   }
 
 }
