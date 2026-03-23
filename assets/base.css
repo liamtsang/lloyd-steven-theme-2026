@@ -4082,22 +4082,3 @@ details-disclosure > details {
 
 }
 
-@media screen and (min-width: 990px) {
-
-  .product__media-list {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  .product__media-item {
-    width: 100%;
-  }
-
-  .product__media img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-}
