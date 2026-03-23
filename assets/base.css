@@ -3894,55 +3894,33 @@ details-disclosure > details {
 
 /* Added this to change Product Image Thumbnails to the left */
 
-@media screen and (min-width: 990px) {
-
-  /* Keep thumbnails on the left (your previous working layout assumed) */
-  .thumbnail-slider {
-    width: 120px !important;
-  }
-
-  /* 🔥 THIS is the missing piece */
-  .thumbnail-list {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px;
-  }
-
-  /* Each thumbnail fills column width */
-  .thumbnail-list li {
-    width: 100% !important;
-  }
-
-  /* Image fills container */
-  .thumbnail-list img {
-    width: 100% !important;
-    height: auto;
-    object-fit: cover;
-  }
-
-}
 
 @media screen and (min-width: 990px) {
 
-  .thumbnail-slider {
-    position: absolute !important;
-    left: -5px; 
-    top: 0; 
-    width: 120px;
-  }
+  /* ================================
+     THUMBNAILS (LEFT SIDE)
+  ================================= */
 
   .product__media-wrapper {
     position: relative;
   }
 
-}
+  .thumbnail-slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 110px;
+  }
 
-@media screen and (min-width: 990px) {
+  .thumbnail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-  /* Make thumbnails 2:3 ratio */
   .thumbnail-list li {
+    width: 100%;
     aspect-ratio: 2 / 3;
-    width: 100% !important;
   }
 
   .thumbnail-list img {
@@ -3951,41 +3929,29 @@ details-disclosure > details {
     object-fit: cover;
   }
 
-  /* Change border to white */
   .thumbnail {
-    border: 2px solid #fff !important;
-    box-shadow: 0 0 0 1px #e5e5e5; /* subtle outline */
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #e5e5e5;
   }
 
   .thumbnail[aria-current="true"] {
-    border: 2px solid #fff !important;
     box-shadow: 0 0 0 1.5px #000;
   }
 
-}
 
+  /* ================================
+     MAIN LAYOUT
+  ================================= */
 
-/* Added this to change Product Image Thumbnails to the left */
-
-@media screen and (min-width: 990px) {
-
-  /* 🔥 FIX WRAPPER ALIGNMENT */
   .product__media-wrapper media-gallery {
     display: flex;
-    align-items: flex-start; /* prevents vertical drifting */
     gap: 24px;
-  }
-
-  /* 🔥 THUMBNAILS */
-  .thumbnail-slider {
-    width: 110px;
-    flex-shrink: 0;
-  }
-
-  /* 🔥 MAIN IMAGE AREA */
-  .product__media {
-    display: flex;
     align-items: flex-start;
+  }
+
+  .product__media {
+    margin-left: 130px; /* space for thumbnails */
+    display: flex;
   }
 
   .product__media-list {
@@ -3993,46 +3959,24 @@ details-disclosure > details {
     max-width: 650px;
   }
 
-  /* 🔥 image inside */
-  .product__media-item img {
-    object-fit: contain !important;
+
+  /* ================================
+     🔥 MAIN IMAGE FIX (IMPORTANT)
+  ================================= */
+
+  .product__media-item .media {
+    aspect-ratio: 4 / 5; /* 🔥 controls height properly */
+    position: relative;
+    height: auto;
   }
 
-}
-
-@media screen and (min-width: 990px) {
-
-  /* ✅ Fix image scaling */
-  .product__media-wrapper .media img {
-    position: absolute !important;
+  .product__media-item img {
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important; /* 🔥 key fix */
-  }
-
-}
-
-@media screen and (min-width: 990px) {
-
-  /* 🚀 Remove Shopify square ratio ONLY for PDP */
-  .product__media-wrapper .media--square {
-    padding-bottom: 0 !important;
-    height: auto !important;
-  }
-
-  /* 🚀 Let container shrink to image */
-  .product__media-wrapper .media {
-    height: auto !important;
-  }
-
-  /* 🚀 Image behaves naturally */
-  .product__media-wrapper .media img {
-    position: relative !important;
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* keeps product nice */
   }
 
 }
