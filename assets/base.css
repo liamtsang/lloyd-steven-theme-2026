@@ -4043,3 +4043,61 @@ details-disclosure > details {
     pointer-events: all;
   }
 }
+
+
+@media screen and (min-width: 990px) {
+
+  /* Make the WHOLE gallery a grid */
+  media-gallery {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    column-gap: 24px;
+    align-items: start;
+  }
+
+  /* Thumbnails LEFT */
+  #GalleryThumbnails-{{ section.id }} {
+    grid-column: 1;
+  }
+
+  /* Main viewer RIGHT */
+  #GalleryViewer-{{ section.id }} {
+    grid-column: 2;
+    width: 100%;
+  }
+
+  /* REMOVE slider behavior (this is why it's breaking) */
+  #GalleryViewer-{{ section.id }} .slider {
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  #GalleryViewer-{{ section.id }} .slider__slide {
+    display: none;
+  }
+
+  #GalleryViewer-{{ section.id }} .slider__slide.is-active {
+    display: block;
+  }
+
+}
+
+@media screen and (min-width: 990px) {
+
+  .product__media-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .product__media-item {
+    width: 100%;
+  }
+
+  .product__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+}
