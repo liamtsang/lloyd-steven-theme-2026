@@ -3969,40 +3969,37 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 LOCK layout */
-  .product__media-wrapper {
-    display: grid !important;
-    grid-template-columns: 110px 1fr;
+  /* 🔥 Use FLEX on the REAL container */
+  .product__media-wrapper media-gallery {
+    display: flex;
+    align-items: flex-start;
     gap: 20px;
-    align-items: start;
   }
 
   /* LEFT thumbnails */
   .thumbnail-slider {
-    grid-column: 1;
-    position: relative !important; /* prevent weird shifting */
+    width: 110px;
+    flex-shrink: 0;
+    order: 1;
+
+    position: relative !important;
     transform: none !important;
   }
 
-  /* Remove slider behavior */
+  /* Stack thumbnails vertically */
   .thumbnail-list {
     display: flex !important;
     flex-direction: column;
     gap: 12px;
-    transform: none !important;
-  }
-
-  /* Each thumbnail */
-  .thumbnail-list__item {
-    width: 100%;
   }
 
   /* RIGHT main image */
-  .product__media-list {
-    grid-column: 2;
+  .slider-component {
+    order: 2;
+    flex: 1;
   }
 
-  /* 🔥 IMPORTANT: kill slider shifting */
+  /* 🔥 Stop Shopify shifting */
   .slider,
   .slider__slide {
     transform: none !important;
