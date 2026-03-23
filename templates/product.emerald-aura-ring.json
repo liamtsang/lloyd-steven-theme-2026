@@ -177,12 +177,13 @@
     "shogun_custom_html_iP6air": {
       "type": "shogun-custom-html",
       "custom_css": [
-        ".iframe-container {display: flex; justify-content: center; /* horizontal */ align-items: center; /* vertical */}",
-        "@media (max-width: 600px) {.iframe-container iframe {width: 600px; height: 400px; }}"
+        ".iframe-container {display: flex; justify-content: center; align-items: center;}",
+        "/* Control size here */.iframe-container iframe {width: 80%; /* 👈 not full width */ max-width: 900px; /* 👈 limit size */ height: 500px;}",
+        "/* Mobile */@media (max-width: 600px) {.iframe-container iframe {width: 100%; max-width: 100%; height: 300px; }}"
       ],
       "name": "Shogun Custom HTML",
       "settings": {
-        "html": "<div class=\"iframe-container\">\n  <iframe title=\"Cushion_Square.glb\" frameborder=\"0\" mozallowfullscreen=\"true\" webkitallowfullscreen=\"true\" xr-spatial-tracking=\"\" execution-while-out-of-viewport=\"\" execution-while-not-rendered=\"\" web-share=\"\" allow=\"camera; autoplay; fullscreen; xr-spatial-tracking; web-share\" width=\"1800px\" height=\"800px\" src=\"https://ijewel3d.com/drive/files/KTNxr_shR4e2fiN7qBLd0g/embedded?slug=KTNxr_shR4e2fiN7qBLd0g&amp;isTitle=false&amp;isShowPrompt=false&amp;isAutoplay=true\">\n  </iframe>\n</div>"
+        "html": "<div class=\"iframe-container\">\n  <iframe title=\"Cushion_Square.glb\" frameborder=\"0\" allow=\"camera; autoplay; fullscreen; xr-spatial-tracking; web-share\" src=\"https://ijewel3d.com/drive/files/KTNxr_shR4e2fiN7qBLd0g/embedded?slug=KTNxr_shR4e2fiN7qBLd0g&amp;isTitle=false&amp;isShowPrompt=false&amp;isAutoplay=true\">\n  </iframe>\n</div>"
       }
     },
     "image_video_section_jb8bc7": {
