@@ -3924,13 +3924,6 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  .thumbnail-slider {
-    position: absolute !important;
-    left: -5px; 
-    top: 0; 
-    width: 120px;
-  }
-
   .product__media-wrapper {
     position: relative;
   }
@@ -3969,46 +3962,45 @@ details-disclosure > details {
 
 @media screen and (min-width: 990px) {
 
-  /* 🔥 layout */
+  /* 🔥 CLEAN GRID LAYOUT */
   .product__media-wrapper {
-    display: grid !important;
-    grid-template-columns: 110px 1fr;
+    display: grid;
+    grid-template-columns: 120px 1fr;
     gap: 24px;
     align-items: start;
   }
 
-  /* thumbnails */
+  /* thumbnails LEFT */
   .thumbnail-slider {
     grid-column: 1;
+    position: relative !important; /* NOT absolute */
   }
 
   .thumbnail-list {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     gap: 12px;
   }
 
-  /* main image column */
+  /* main image RIGHT */
   .product__media-list {
     grid-column: 2;
     width: 100%;
     max-width: 650px;
   }
 
-  /* 🔥 DESTROY Shopify aspect ratio system */
+  /* 🔥 FIX SHOPIFY MEDIA SYSTEM */
   .product__media-item .media {
     position: relative !important;
     padding-bottom: 0 !important;
     height: auto !important;
   }
 
-  /* 🔥 VERY IMPORTANT: reset absolute positioning */
   .product__media-item .media > * {
     position: relative !important;
     height: auto !important;
   }
 
-  /* image */
   .product__media-item img {
     width: 100%;
     height: auto;
