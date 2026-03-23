@@ -3946,4 +3946,46 @@ details-disclosure > details {
 
 }
 
+@media screen and (min-width: 990px) {
+
+  /* FORCE full width container */
+  .product__media-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  media-gallery {
+    display: grid !important;
+    grid-template-columns: 110px minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    align-items: start;
+    column-gap: 24px;
+  }
+
+  /* LEFT thumbnails */
+  #GalleryThumbnails-{{ section.id }} {
+    grid-column: 1;
+    width: 110px;
+  }
+
+  /* RIGHT main image */
+  #GalleryViewer-{{ section.id }} {
+    grid-column: 2;
+    width: 100%;
+    min-width: 0; /* 🔥 THIS FIXES ZOOM BREAK */
+  }
+
+  /* 🔥 CRITICAL: prevent wrapping */
+  .product__media-list {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .product__media-item {
+    width: 100%;
+  }
+
+}
+
 /* Added this to change Product Image Thumbnails to the left */
