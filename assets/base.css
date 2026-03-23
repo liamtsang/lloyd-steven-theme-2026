@@ -4009,3 +4009,17 @@ details-disclosure > details {
   }
 
 }
+
+@media screen and (min-width: 990px) {
+
+  /* 🔥 FORCE all images visible (disable slider hiding) */
+  .product__media-list .product__media-item {
+    display: block !important;
+  }
+
+  /* stack properly */
+  .product__media-list {
+    display: block !important;
+  }
+
+}
