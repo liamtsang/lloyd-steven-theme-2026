@@ -197,7 +197,7 @@
     "featured_collection_4geYMF": {
       "type": "featured-collection",
       "custom_css": [
-        "h2 {text-align: center;}"
+        "h2 {text-align: center; font-family: DaVinci;}"
       ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
