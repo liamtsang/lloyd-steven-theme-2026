@@ -3979,7 +3979,6 @@ details-disclosure > details {
 
 }
 
-
 @media screen and (min-width: 990px) {
 
   /* Make thumbnails 2:3 ratio */
@@ -4006,6 +4005,8 @@ details-disclosure > details {
   }
 
 }
+
+
 
 
 /* Added this to change Product Image Thumbnails to the left */
