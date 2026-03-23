@@ -4005,3 +4005,36 @@ details-disclosure > details {
   }
 
 }
+
+/* ✅ FIX: Main product image responsive scaling (zoom-safe) */
+
+.product__media-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Target the main product image container */
+.product__media {
+  width: 100%;
+  height: auto !important;
+}
+
+/* 🔥 THIS IS THE KEY FIX */
+.product__media img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important; /* prevents cropping */
+  display: block;
+}
+
+/* Prevent Shopify forcing weird aspect ratios */
+.media {
+  padding-bottom: 0 !important;
+  height: auto !important;
+}
+
+/* Remove absolute positioning that breaks zoom */
+.media > img {
+  position: relative !important;
+  height: auto !important;
+}
