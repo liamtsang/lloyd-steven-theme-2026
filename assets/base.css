@@ -3966,3 +3966,46 @@ details-disclosure > details {
 
 
 /* Added this to change Product Image Thumbnails to the left */
+
+@media screen and (min-width: 990px) {
+
+  /* 🔥 LOCK layout */
+  .product__media-wrapper {
+    display: grid !important;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* LEFT thumbnails */
+  .thumbnail-slider {
+    grid-column: 1;
+    position: relative !important; /* prevent weird shifting */
+    transform: none !important;
+  }
+
+  /* Remove slider behavior */
+  .thumbnail-list {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    transform: none !important;
+  }
+
+  /* Each thumbnail */
+  .thumbnail-list__item {
+    width: 100%;
+  }
+
+  /* RIGHT main image */
+  .product__media-list {
+    grid-column: 2;
+  }
+
+  /* 🔥 IMPORTANT: kill slider shifting */
+  .slider,
+  .slider__slide {
+    transform: none !important;
+  }
+
+}
