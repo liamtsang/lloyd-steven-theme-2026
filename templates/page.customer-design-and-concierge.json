@@ -15,7 +15,7 @@
       "name": "Page Banner",
       "settings": {
         "title": "THE LLOYD STEVEN WORLD, APPROACHED PERSONALLY.",
-        "description": "<p>Engagement rings, personal jewellery and objects.<br/><br/>Begin with a core collection piece, or create something entirely new. Each commission is guided end to end, from consultation to final delivery with a limited amount of commissions accepted each month.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\">START YOUR CUSTOM PIECE<strong><br/><br/><br/><br/><br/><br/></strong></a></p>",
+        "description": "<p>Engagement rings, personal jewellery and objects.<br/><br/>Begin with a core collection piece, or create something entirely new. Each commission is guided end to end, from consultation to final delivery with a limited amount of commissions accepted each month.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\">START A CUSTOM PIECE<br/><br/><br/><br/><br/></a></p>",
         "show_description": true,
         "show_editorial_media": false,
         "show_image": false,
@@ -127,7 +127,7 @@
         "text_eprbxh": {
           "type": "text",
           "settings": {
-            "text": "<p>STEP FOUR : COMPLETION & DELIVERY</p><p><br/>Once complete, we share detailed imagery and video for your review. <br/>The final balance is confirmed only once the piece is approved.</p><p>*Remaining 50% balance due upon completion.<br/>*Secure, insured DHL worldwide shipping is included.<br/>*Ongoing care and support and complimentary first resize, if required.<br/><br/><br/></p>"
+            "text": "<p>STEP FOUR : COMPLETION & DELIVERY</p><p><br/>Once complete, we share detailed imagery and video for your review. <br/>The final balance is confirmed only once the piece is approved.</p><p>*Remaining 50% balance due upon completion.<br/>*Secure, insured DHL worldwide shipping is included.<br/>*Ongoing care and support and complimentary first resize, if required.<br/></p>"
           }
         }
       },
@@ -164,7 +164,7 @@
         "text_mdkX9J": {
           "type": "text",
           "settings": {
-            "text": "<p>Contact us to disuss. </p><p><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\">START YOUR CUSTOM PIECE</a></p>"
+            "text": "<p><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\">START A CUSTOM PIECE.</a></p>"
           }
         },
         "button_zKNrVK": {
