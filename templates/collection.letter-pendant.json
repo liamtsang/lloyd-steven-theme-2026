@@ -21,33 +21,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "blocks": {
-        "disrupter_CbnnxH": {
-          "type": "disrupter",
-          "settings": {
-            "image": "shopify://shop_images/TEST_IMAGE.jpg",
-            "row": 3,
-            "grid_alignment": "left",
-            "column_span": 2,
-            "row_span": 4,
-            "heading": "LETTER PENDANTS FOR MOTHERS DAY",
-            "subheading": "",
-            "link_url": "shopify://collections/letter-pendants",
-            "link_text": "",
-            "text_color": "#ffffff",
-            "text_alignment": "center",
-            "heading_size": "2rem",
-            "heading_weight": "400",
-            "subheading_size": "1.2rem",
-            "subheading_weight": "400",
-            "link_size": "1.5rem",
-            "link_weight": "300"
-          }
-        }
-      },
-      "block_order": [
-        "disrupter_CbnnxH"
-      ],
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 3,
