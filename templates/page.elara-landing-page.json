@@ -1,0 +1,350 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_page_banner_PjtPAq": {
+      "type": "custom-page-banner",
+      "custom_css": [],
+      "name": "Page Banner",
+      "settings": {
+        "title": "THE LLOYD STEVEN WORLD, APPROACHED PERSONALLY.",
+        "description": "<p>Engagement rings, personal jewellery and objects. Select a core collection piece, or create something new. <br/><br/>Commissions are guided end to end, from consultation to final delivery with a limited amount of commissions accepted each month.<br/><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><br/>BEGIN YOUR CUSTOM PIECE<br/><br/><br/><br/><br/></a></p>",
+        "show_description": true,
+        "show_editorial_media": false,
+        "show_image": false,
+        "color_scheme": ""
+      }
+    },
+    "shogun-helper": {
+      "type": "shogun-helper",
+      "settings": {}
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "shogun-optimizer": {
+      "type": "shogun-optimizer",
+      "settings": {}
+    },
+    "rich_text_bYm7BH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_eX7cqY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>CUSTOMS AND CONCIERGE</p>",
+            "heading_size": "h2"
+          }
+        },
+        "text_GakFTT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Custom engagement rings, personal jewelry and objects.</p><p>Each commission is guided end to end, from initial consultation to final delivery </p><p>and follows a defined design process, with a limited number accepted each month.</p><p><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\"><strong>REQUEST AN APPOINTMENT</strong></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_eX7cqY",
+        "text_GakFTT"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_PVHizt": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MYfiJd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>STEP ONE : CONSULTATION<br/></p><p><br/>In person or virtually. We’ll review references, preferences, and parameters, then define a clear design brief. Guidance is provided on design, materials, and stone selection. A curated selection of diamonds and gemstones are sourced for each commission and will be presented to you following the consultation.</p><p>Consultations typically run 30-45 mins.</p><p>*Timelines are confirmed prior to production.<br/>*No obligation to proceed.<br/><br/><br/><br/></p>"
+          }
+        },
+        "text_Yztajc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>STEP TWO : DESIGN VISUALIZATION</p><p><br/>Your concept is translated into detailed CAD renderings, shared from all angles. <br/>We refine proportions and details are refined to resolution before production.<br/><br/>*High-fidelity 3D visualisation<br/>*Designs are refined to resolution before production.<br/>*A 50% deposit is taken once the design is approved.<br/><br/><br/><br/></p>"
+          }
+        },
+        "text_q68ehE": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>STEP THREE : CRAFT</p><p><br/>Following approval, production begins. Each piece is made with long-term wear, structure, and future resizing in mind. </p><p>*Ready in 4-8 weeks depending on design complexity and stone sourcing, expedited timelines are not offered.<br/>*GIA IFI Certification included where applicable.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_MYfiJd",
+        "text_Yztajc",
+        "text_q68ehE"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {justify-content: flex-start !important;}",
+        ".rich-text__blocks {max-width: 100% !important; margin-left: 0 !important;}",
+        ".rich-text__text {padding-left: 0 !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_7rXz7F": {
+      "type": "rich-text",
+      "blocks": {
+        "text_x7TRFP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>STEP THREE : CRAFT</p><p><br/>Following approval, production begins. Each piece is made with long-term wear, structure, and future resizing in mind. <br/><br/>Complimentary engraving is available on all custom rings. </p><p>*Ready in 4-8 weeks depending on design complexity and stone sourcing, expedited timelines are not offered.<br/>*GIA IFI Certification included where applicable.<br/><br/><br/><br/></p>"
+          }
+        },
+        "text_eprbxh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>STEP FOUR : COMPLETION & DELIVERY</p><p><br/>Once complete, we share detailed imagery and video for your review. <br/>The final balance is confirmed only once the piece is approved.</p><p>*Remaining 50% balance due upon completion.<br/>*Secure, insured DHL worldwide shipping is included.<br/>*Ongoing care and support and complimentary first resize, if required.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_x7TRFP",
+        "text_eprbxh"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {justify-content: flex-start !important;}",
+        ".rich-text__blocks {max-width: 100% !important; margin-left: 0 !important;}",
+        ".rich-text__text {padding-left: 0 !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_YXj6ix": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YPRTVa": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_mdkX9J": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Each piece begins with a conversation.<br/>Reach out to start your custom piece.<br/><br/><a href=\"mailto:info@lloydsteven.com\" title=\"mailto:info@lloydsteven.com\">START YOUR CUSTOM PIECE.</a></p>"
+          }
+        },
+        "button_zKNrVK": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YPRTVa",
+        "text_mdkX9J",
+        "button_zKNrVK"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {justify-content: flex-start !important;}",
+        ".rich-text__blocks {max-width: 100% !important; margin-left: 0 !important;}",
+        ".rich-text__text {padding-left: 0 !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "slideshow_K3UYkQ": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_M4a6hn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pFtTPw": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>CUSTOM GALLERY</p>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pFtTPw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "custom-gallery",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 40
+      }
+    },
+    "multirow_CKDeiK": {
+      "type": "multirow",
+      "blocks": {
+        "row_BYipxi": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/MATT_CARO_Front_36e6871c-a167-4d7d-b7bc-f04e00d4809d.jpg",
+            "caption": "",
+            "heading": "",
+            "text": "<p>BLACK DIAMOND ENGAGEMENT RING</p><p>18k Gold<br/>Platnium<br/>1.5 ct Black Diamond<br/>0.3 ct VS Diamonds</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_jPxN8U": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/PENDANT_SPIRIT_CROSS_806a78d0-53ed-4ba8-88c8-8e6635c6ed9a.png",
+            "caption": "",
+            "heading": "",
+            "text": "<p>CROSS</p><p>18k Polished and Sandblasted Gold<br/>0.5 ct VS Diamonds<br/>18k Gold Wheat Chain</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_AYLdbU": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/ALI_ORB_FRONT_e5ba4344-b35b-49da-933f-1c8426173693.png",
+            "caption": "",
+            "heading": "",
+            "text": "<p>ORB WITH EMERALD AND PEARLS</p><p>18k Sandblasted Gold<br/>Platnium<br/>Marquise Emerald<br/>Pearls</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_BYipxi",
+        "row_jPxN8U",
+        "row_AYLdbU"
+      ],
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "adapt",
+        "desktop_image_width": "small",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "align-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 100,
+        "padding_bottom": 12
+      }
+    },
+    "multirow_yrzXEb": {
+      "type": "multirow",
+      "disabled": true,
+      "name": "t:sections.multirow.presets.name",
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_3XqX4t": {
+      "type": "rich-text",
+      "disabled": true,
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "anchor_id": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "custom_page_banner_PjtPAq",
+    "shogun-helper",
+    "main",
+    "shogun-optimizer",
+    "rich_text_bYm7BH",
+    "rich_text_PVHizt",
+    "rich_text_7rXz7F",
+    "rich_text_YXj6ix",
+    "slideshow_K3UYkQ",
+    "rich_text_M4a6hn",
+    "multirow_CKDeiK",
+    "multirow_yrzXEb",
+    "rich_text_3XqX4t"
+  ]
+}
