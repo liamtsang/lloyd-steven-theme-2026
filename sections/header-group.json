@@ -54,10 +54,21 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "image_section_NAT7da": {
+      "type": "image-section",
+      "name": "Image Section",
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.22_am_0f30293e-0d18-4d46-98af-a83421c51742.png",
+        "alt_text": "Alt text for the image",
+        "image_link": "https://",
+        "image_max_width": 500
+      }
     }
   },
   "order": [
     "announcement-bar",
-    "header"
+    "header",
+    "image_section_NAT7da"
   ]
 }
