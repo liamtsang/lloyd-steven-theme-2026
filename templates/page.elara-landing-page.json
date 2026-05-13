@@ -46,6 +46,7 @@
         "heading_eX7cqY",
         "text_GakFTT"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "anchor_id": "",
