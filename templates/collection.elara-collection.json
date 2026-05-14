@@ -23,6 +23,14 @@
         "color_scheme": "scheme-1"
       }
     },
+    "upload_video_file_KAc9iz": {
+      "type": "upload-video-file",
+      "name": "Upload Video Banner",
+      "settings": {
+        "desktop_video": "shopify://files/videos/598D60F0-F297-4BD8-9F82-E6ECB4D5530BIMG_2122.mov",
+        "video_link": ""
+      }
+    },
     "image_video_section_KdxnaR": {
       "type": "image-video-section",
       "name": "Image + Video Split",
@@ -182,6 +190,7 @@
   },
   "order": [
     "banner",
+    "upload_video_file_KAc9iz",
     "image_video_section_KdxnaR",
     "image_banner_nXNwMd",
     "rich_text_4GmaYX",
