@@ -1,0 +1,105 @@
+{% comment %}
+  Responsive video section with optional clickable link
+{% endcomment %}
+
+{% liquid
+  assign desktop_video = section.settings.desktop_video
+  assign mobile_video = section.settings.mobile_video
+  assign video_link = section.settings.video_link
+%}
+
+<div class="responsive-video-wrapper">
+
+  {% if desktop_video != blank %}
+    {% if video_link != blank %}
+      <a href="{{ video_link }}" class="responsive-video responsive-video--desktop">
+        {{ desktop_video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: false }}
+      </a>
+    {% else %}
+      <div class="responsive-video responsive-video--desktop">
+        {{ desktop_video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: false }}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% if mobile_video != blank %}
+    {% if video_link != blank %}
+      <a href="{{ video_link }}" class="responsive-video responsive-video--mobile">
+        {{ mobile_video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: false }}
+      </a>
+    {% else %}
+      <div class="responsive-video responsive-video--mobile">
+        {{ mobile_video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, controls: false }}
+      </div>
+    {% endif %}
+  {% endif %}
+
+</div>
+
+<style>
+  #shopify-section-{{ section.id }} .responsive-video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Base video container */
+  #shopify-section-{{ section.id }} .responsive-video {
+    display: block;
+  }
+
+  /* Only show pointer if clickable */
+  #shopify-section-{{ section.id }} a.responsive-video {
+    cursor: pointer;
+  }
+
+  #shopify-section-{{ section.id }} .responsive-video video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  /* Desktop: show desktop video */
+  #shopify-section-{{ section.id }} .responsive-video--mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    /* Mobile: show mobile video */
+    #shopify-section-{{ section.id }} .responsive-video--desktop {
+      display: none;
+    }
+    #shopify-section-{{ section.id }} .responsive-video--mobile {
+      display: block;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Upload Video Banner",
+  "settings": [
+    {
+      "type": "video",
+      "id": "desktop_video",
+      "label": "Desktop video"
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "Mobile video"
+    },
+    {
+      "type": "url",
+      "id": "video_link",
+      "label": "Video Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Upload Video Banner"
+    }
+  ]
+}
+{% endschema %}
