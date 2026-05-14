@@ -11,6 +11,9 @@ This file can be re-written at any time.
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&display=swap" rel="stylesheet">
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -375,23 +378,23 @@ This file can be re-written at any time.
 <script>
   const observer = new MutationObserver((mutations, obs) => {
     console.log('mutation observer')
-    
+
     const video = document.getElementById('autoplay-video');
     if (video) {
       console.log('found video')
-      
+
       obs.disconnect();
-      
+
       video.setAttribute('playsinline', '');
       video.setAttribute('autoplay', 'true');
       video.muted = true;
-      
+
       let hasPlayed = false;
-      
+
       const playVideo = async () => {
         console.log('trying to play video')
         if (hasPlayed) return;
-        
+
         try {
           await video.play();
           hasPlayed = true;
@@ -401,7 +404,7 @@ This file can be re-written at any time.
           // playButton.textContent = 'Play';
           // playButton.className = 'play-button';
           // video.insertAdjacentElement('afterend', playButton);
-          
+
           // playButton.addEventListener('click', () => {
           //   video.play();
           //   playButton.remove();
@@ -410,7 +413,7 @@ This file can be re-written at any time.
       };
 
       playVideo()
-      
+
 
       // Find the slider element (assuming it's a parent of the video)
       const slider = video.closest('.slider');
@@ -419,13 +422,13 @@ This file can be re-written at any time.
         slider.addEventListener('scroll', () => {
           // Clear any existing timeout
           clearTimeout(scrollTimeout);
-          
+
           // Set a new timeout to ensure scroll has finished
           scrollTimeout = setTimeout(() => {
             // Check if this video is in the current view
             const videoRect = video.getBoundingClientRect();
             const sliderRect = slider.getBoundingClientRect();
-            
+
             // If video is mostly visible in the slider
             if (videoRect.left >= sliderRect.left - videoRect.width / 2 &&
                 videoRect.right <= sliderRect.right + videoRect.width / 2) {
@@ -441,6 +444,24 @@ This file can be re-written at any time.
     childList: true,
     subtree: true
   });
+</script>
+<script>
+  // Added this to change Product Title and Price position for mobile layout to be on top 
+document.addEventListener("DOMContentLoaded", function () {
+
+  if (window.innerWidth <= 749) {
+
+    const slot = document.querySelector('.mobile-top-slot');
+    const title = document.querySelector('.product__title');
+    const price = document.querySelector('[id^="price-"]');
+
+    if (slot && title && price) {
+      slot.appendChild(title);
+      slot.appendChild(price);
+    }
+  }
+});
+  // Added this to change Product Title and Price position for mobile layout to be on top 
 </script>
     <style type="text/css">
       body, html {
