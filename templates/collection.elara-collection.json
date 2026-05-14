@@ -12,7 +12,7 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-        ".collection-hero,.collection-hero.collection-hero--with-image {padding-bottom: 0 !important;}",
+        ".collection-hero,.collection-hero.collection-hero--with-image {padding-bottom: 30px !important;}",
         ".collection-hero__text-wrapper {padding-bottom: 0 !important; margin-bottom: 0 !important;}",
         ".collection-hero__title {margin-bottom: 0 !important;}"
       ],
@@ -44,6 +44,7 @@
       "blocks": {
         "heading_kBPaGj": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "<p>Talk about your brand</p>",
             "heading_size": "h1"
@@ -52,11 +53,12 @@
         "text_k7GV8r": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Type: Elara. One stone. Two ways. </p>"
           }
         },
         "button_myaXQz": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "Button label",
             "button_link": "",
@@ -80,7 +82,7 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 40
       }
     },
     "product-grid": {
@@ -125,21 +127,22 @@
         "heading_j9DqLi": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Type the studio contact line:</p>",
             "heading_size": "h1"
           }
         },
         "text_LikWVM": {
           "type": "text",
+          "disabled": true,
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Type the studio contact line:</p>"
           }
         },
         "button_tiiWmP": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
+            "button_label": "Contact Us",
+            "button_link": "shopify://pages/contact",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -152,6 +155,9 @@
         "text_LikWVM",
         "button_tiiWmP"
       ],
+      "custom_css": [
+        "h2 {font-size: 20px !important;}"
+      ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "anchor_id": "",
@@ -160,7 +166,7 @@
         "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 40
       }
     }
   },
