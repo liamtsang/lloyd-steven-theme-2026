@@ -1,0 +1,159 @@
+<section class="custom-dual-showcase page-width">
+  <div class="custom-dual-showcase__grid">
+
+    {% for block in section.blocks %}
+      <a
+        href="{{ block.settings.link }}"
+        class="custom-dual-showcase__item"
+        {{ block.shopify_attributes }}
+      >
+        {% if block.settings.image != blank %}
+          <div class="custom-dual-showcase__image-wrapper">
+            {{
+              block.settings.image
+              | image_url: width: 1600
+              | image_tag:
+                loading: 'lazy',
+                class: 'custom-dual-showcase__image',
+                alt: block.settings.title
+            }}
+          </div>
+        {% endif %}
+
+        {% if block.settings.title != blank %}
+          <div class="custom-dual-showcase__cta">
+            {{ block.settings.title }}
+          </div>
+        {% endif %}
+      </a>
+    {% endfor %}
+
+  </div>
+</section>
+
+<style>
+.custom-dual-showcase {
+  padding: 0;
+}
+
+.custom-dual-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.custom-dual-showcase__item {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.custom-dual-showcase__image-wrapper {
+  overflow: hidden;
+  position: relative;
+  background: #f5f5f5;
+}
+
+.custom-dual-showcase__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.custom-dual-showcase__item:hover .custom-dual-showcase__image {
+  transform: scale(1.03);
+}
+
+.custom-dual-showcase__cta {
+  text-align: center;
+  margin-top: 18px;
+  font-size: {{ section.settings.font_size }}px;
+  color: {{ section.settings.text_color }};
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+@media screen and (max-width: 749px) {
+  .custom-dual-showcase__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .custom-dual-showcase__cta {
+    margin-top: 14px;
+    font-size: {{ section.settings.mobile_font_size }}px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Custom Dual Showcase",
+  "settings": [
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Desktop Font Size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "label": "Mobile Font Size",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#111111"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Showcase Item",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Upload Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "CTA Text",
+          "default": "New Arrivals"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Collection/Product Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Dual Showcase",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
