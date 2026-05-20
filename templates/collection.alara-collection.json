@@ -27,6 +27,7 @@
     },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "custom_css": [
         ".collection-hero,.collection-hero.collection-hero--with-image {padding-bottom: 30px !important;}",
         ".collection-hero__text-wrapper {padding-bottom: 0 !important; margin-bottom: 0 !important;}",
@@ -50,6 +51,7 @@
     },
     "image_video_section_KdxnaR": {
       "type": "image-video-section",
+      "disabled": true,
       "name": "Image + Video Split",
       "settings": {
         "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.22_am_e323a92a-6565-49bb-a2d8-67739f4b5b2c.png",
@@ -59,6 +61,7 @@
     },
     "image_banner_nXNwMd": {
       "type": "image-banner",
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.11_am.png",
