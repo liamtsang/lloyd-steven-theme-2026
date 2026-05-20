@@ -4,7 +4,13 @@
   sections/custom-dual-showcase.liquid
 {% endcomment %}
 
-<section class="custom-dual-showcase">
+<section
+  class="custom-dual-showcase"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
   <div class="custom-dual-showcase__grid page-width">
 
     {% for block in section.blocks %}
@@ -15,10 +21,13 @@
       >
 
         {% if block.settings.image != blank %}
-          <div class="custom-dual-showcase__image-wrapper">
+          <div
+            class="custom-dual-showcase__image-wrapper"
+            style="height: {{ section.settings.image_height }}px;"
+          >
             {{
               block.settings.image
-              | image_url: width: 1200
+              | image_url: width: 1600
               | image_tag:
                 loading: 'lazy',
                 class: 'custom-dual-showcase__image',
@@ -44,7 +53,6 @@
 <style>
 .custom-dual-showcase {
   width: 100%;
-  padding: 0;
 }
 
 .custom-dual-showcase .page-width {
@@ -69,7 +77,7 @@
   position: relative;
   overflow: hidden;
   background: #f5f5f5;
-  aspect-ratio: 600 / 800;
+  width: 100%;
 }
 
 .custom-dual-showcase__image {
@@ -124,6 +132,10 @@
     gap: 18px;
   }
 
+  .custom-dual-showcase__image-wrapper {
+    height: {{ section.settings.mobile_image_height }}px !important;
+  }
+
   .custom-dual-showcase__cta {
     font-size: {{ section.settings.mobile_font_size }}px;
   }
@@ -134,6 +146,42 @@
 {
   "name": "Custom Dual Showcase",
   "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top Padding",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom Padding",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "label": "Desktop Image Height",
+      "min": 300,
+      "max": 1200,
+      "step": 20,
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "label": "Mobile Image Height",
+      "min": 200,
+      "max": 900,
+      "step": 20,
+      "default": 500
+    },
     {
       "type": "range",
       "id": "font_size",
