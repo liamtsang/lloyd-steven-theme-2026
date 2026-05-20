@@ -77,6 +77,38 @@
         "show_text_below": true
       }
     },
+    "custom_dual_showcase_ARiQ6Y": {
+      "type": "custom-dual-showcase",
+      "blocks": {
+        "item_3C9G8Y": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/250624_LSt_StillLife5842.jpg",
+            "title": "ALARA SKY",
+            "link": ""
+          }
+        },
+        "item_ME87Ln": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/250624_LSt_StillLife3891.jpg",
+            "title": "ALARA EARTH",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_3C9G8Y",
+        "item_ME87Ln"
+      ],
+      "custom_css": [],
+      "name": "Custom Dual Showcase",
+      "settings": {
+        "font_size": 22,
+        "mobile_font_size": 18,
+        "text_color": "#111111"
+      }
+    },
     "rich_text_4GmaYX": {
       "type": "rich-text",
       "blocks": {
@@ -214,6 +246,7 @@
     "upload_video_file_KAc9iz",
     "image_video_section_KdxnaR",
     "image_banner_nXNwMd",
+    "custom_dual_showcase_ARiQ6Y",
     "rich_text_4GmaYX",
     "product-grid",
     "image_banner_eeHcKc",
