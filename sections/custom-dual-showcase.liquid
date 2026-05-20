@@ -27,7 +27,7 @@
           >
             {{
               block.settings.image
-              | image_url: width: 1600
+              | image_url: width: 1800
               | image_tag:
                 loading: 'lazy',
                 class: 'custom-dual-showcase__image',
@@ -53,12 +53,16 @@
 <style>
 .custom-dual-showcase {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .custom-dual-showcase .page-width {
+  width: {{ section.settings.section_width }}%;
   max-width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
+  margin: 0 auto;
+  padding-left: {{ section.settings.padding_left }}px;
+  padding-right: {{ section.settings.padding_right }}px;
+  box-sizing: border-box;
 }
 
 .custom-dual-showcase__grid {
@@ -123,8 +127,9 @@
 @media screen and (max-width: 749px) {
 
   .custom-dual-showcase .page-width {
-    padding-left: 16px;
-    padding-right: 16px;
+    width: 100%;
+    padding-left: {{ section.settings.mobile_padding_left }}px;
+    padding-right: {{ section.settings.mobile_padding_right }}px;
   }
 
   .custom-dual-showcase__grid {
@@ -166,10 +171,55 @@
     },
     {
       "type": "range",
+      "id": "section_width",
+      "label": "Section Width (%)",
+      "min": 60,
+      "max": 100,
+      "step": 1,
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "label": "Desktop Left Padding",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "label": "Desktop Right Padding",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_left",
+      "label": "Mobile Left Padding",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "mobile_padding_right",
+      "label": "Mobile Right Padding",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 16
+    },
+    {
+      "type": "range",
       "id": "image_height",
       "label": "Desktop Image Height",
       "min": 300,
-      "max": 1200,
+      "max": 1400,
       "step": 20,
       "default": 800
     },
@@ -178,7 +228,7 @@
       "id": "mobile_image_height",
       "label": "Mobile Image Height",
       "min": 200,
-      "max": 900,
+      "max": 1000,
       "step": 20,
       "default": 500
     },
