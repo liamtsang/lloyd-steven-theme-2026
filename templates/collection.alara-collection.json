@@ -150,8 +150,12 @@
       "custom_css": [],
       "name": "Custom Dual Showcase",
       "settings": {
-        "font_size": 22,
-        "mobile_font_size": 18,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "image_height": 800,
+        "mobile_image_height": 500,
+        "font_size": 15,
+        "mobile_font_size": 13,
         "text_color": "#111111"
       }
     },
