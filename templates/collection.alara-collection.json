@@ -159,7 +159,7 @@
         "mobile_padding_right": 16,
         "image_height": 640,
         "mobile_image_height": 440,
-        "font_size": 13,
+        "font_size": 12,
         "mobile_font_size": 12,
         "text_color": "#111111"
       }
