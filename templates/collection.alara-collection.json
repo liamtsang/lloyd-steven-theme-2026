@@ -13,11 +13,11 @@
       "type": "custom-hero-banner",
       "name": "Custom Hero Banner",
       "settings": {
-        "video": "shopify://files/videos/598D60F0-F297-4BD8-9F82-E6ECB4D5530BIMG_2122.mp4",
+        "video": "shopify://files/videos/ALARA WEB 1.mp4",
         "heading": "ALARA",
         "button_label": "",
         "button_link": "",
-        "content_position": "left-center",
+        "content_position": "right-center",
         "heading_size": 58,
         "button_size": 18,
         "heading_color": "#ffffff",
