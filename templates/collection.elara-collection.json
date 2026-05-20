@@ -9,6 +9,22 @@
  */
 {
   "sections": {
+    "custom_hero_banner_LqCB4E": {
+      "type": "custom-hero-banner",
+      "name": "Custom Hero Banner",
+      "settings": {
+        "video": "shopify://files/videos/598D60F0-F297-4BD8-9F82-E6ECB4D5530BIMG_2122.mp4",
+        "heading": "ALARA",
+        "button_label": "",
+        "button_link": "",
+        "content_position": "left-center",
+        "heading_size": 58,
+        "button_size": 18,
+        "heading_color": "#ffffff",
+        "button_color": "#ffffff",
+        "overlay_opacity": 20
+      }
+    },
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
@@ -25,6 +41,7 @@
     },
     "upload_video_file_KAc9iz": {
       "type": "upload-video-file",
+      "disabled": true,
       "name": "Upload Video Banner",
       "settings": {
         "desktop_video": "shopify://files/videos/598D60F0-F297-4BD8-9F82-E6ECB4D5530BIMG_2122.mov",
@@ -189,6 +206,7 @@
     }
   },
   "order": [
+    "custom_hero_banner_LqCB4E",
     "banner",
     "upload_video_file_KAc9iz",
     "image_video_section_KdxnaR",
