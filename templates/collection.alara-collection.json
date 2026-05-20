@@ -157,8 +157,8 @@
         "padding_right": 30,
         "mobile_padding_left": 16,
         "mobile_padding_right": 16,
-        "image_height": 800,
-        "mobile_image_height": 500,
+        "image_height": 680,
+        "mobile_image_height": 460,
         "font_size": 15,
         "mobile_font_size": 13,
         "text_color": "#111111"
