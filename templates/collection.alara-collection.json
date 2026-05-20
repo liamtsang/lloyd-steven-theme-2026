@@ -129,16 +129,16 @@
         "item_3C9G8Y": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-05-20_at_2.57.46_pm.png",
-            "title": "ALARA SKY",
+            "image": "shopify://shop_images/Alara_Sky.jpg",
+            "title": "Alara Sky",
             "link": ""
           }
         },
         "item_ME87Ln": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-05-20_at_2.57.37_pm.png",
-            "title": "ALARA EARTH",
+            "image": "shopify://shop_images/Alara_Earth.jpg",
+            "title": "Alara Earth",
             "link": ""
           }
         }
