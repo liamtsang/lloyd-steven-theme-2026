@@ -397,7 +397,7 @@
     {% if template == 'index' %}
       {%- render 'home-celebrity-popup' -%}
     {%- endif -%}
-<script>
+{% comment %} <script>
   const observer = new MutationObserver((mutations, obs) => {
     console.log('mutation observer')
 
@@ -466,7 +466,7 @@
     childList: true,
     subtree: true
   });
-</script>
+</script> {% endcomment %}
 
  
 <script>
