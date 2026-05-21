@@ -375,7 +375,7 @@ This file can be re-written at any time.
     </script>
 <script src="{{ 'predictive-search.js' | asset_url }}" defer></script>
 <script src="{{ 'cart-drawer.js' | asset_url }}" defer></script>
-<script>
+{% comment %} <script>
   const observer = new MutationObserver((mutations, obs) => {
     console.log('mutation observer')
 
@@ -444,7 +444,7 @@ This file can be re-written at any time.
     childList: true,
     subtree: true
   });
-</script>
+</script> {% endcomment %}
 <script>
   // Added this to change Product Title and Price position for mobile layout to be on top 
 document.addEventListener("DOMContentLoaded", function () {
