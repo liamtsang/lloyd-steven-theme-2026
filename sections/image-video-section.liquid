@@ -44,48 +44,102 @@
 
 <div class="custom-split">
 
-  <!-- LEFT IMAGE -->
-  <div class="custom-split__image">
-    {% if section.settings.image != blank %}
-      <img 
-        src="{{ section.settings.image | image_url: width: 1600 }}" 
-        alt="{{ section.settings.image.alt | escape }}"
-        loading="lazy"
-      >
-    {% endif %}
-  </div>
+  {% if section.settings.layout == 'image_left' %}
 
-  <!-- RIGHT VIDEO -->
-  <div class="custom-split__video">
+    <!-- LEFT IMAGE -->
+    <div class="custom-split__image">
+      {% if section.settings.image != blank %}
+        <img 
+          src="{{ section.settings.image | image_url: width: 1600 }}" 
+          alt="{{ section.settings.image.alt | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
 
-    {% if section.settings.video != blank %}
-      {{
-        section.settings.video
-        | video_tag:
-          autoplay: true,
-          muted: true,
-          loop: true,
-          controls: false
-      }}
+    <!-- RIGHT VIDEO -->
+    <div class="custom-split__video">
 
-    {% elsif section.settings.video_url != blank %}
-      <video autoplay muted loop playsinline>
-        <source src="{{ section.settings.video_url }}" type="video/mp4">
-      </video>
-    {% endif %}
+      {% if section.settings.video != blank %}
+        {{
+          section.settings.video
+          | video_tag:
+            autoplay: true,
+            muted: true,
+            loop: true,
+            controls: false
+        }}
 
-  </div>
+      {% elsif section.settings.video_url != blank %}
+        <video autoplay muted loop playsinline>
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+        </video>
+      {% endif %}
+
+    </div>
+
+  {% else %}
+
+    <!-- LEFT VIDEO -->
+    <div class="custom-split__video">
+
+      {% if section.settings.video != blank %}
+        {{
+          section.settings.video
+          | video_tag:
+            autoplay: true,
+            muted: true,
+            loop: true,
+            controls: false
+        }}
+
+      {% elsif section.settings.video_url != blank %}
+        <video autoplay muted loop playsinline>
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+        </video>
+      {% endif %}
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="custom-split__image">
+      {% if section.settings.image != blank %}
+        <img 
+          src="{{ section.settings.image | image_url: width: 1600 }}" 
+          alt="{{ section.settings.image.alt | escape }}"
+          loading="lazy"
+        >
+      {% endif %}
+    </div>
+
+  {% endif %}
 
 </div>
 
 {% schema %}
 {
-  "name": "Image Left Video Right",
+  "name": "Image / Video Split",
   "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "image_left",
+      "options": [
+        {
+          "value": "image_left",
+          "label": "Image Left / Video Right"
+        },
+        {
+          "value": "video_left",
+          "label": "Video Left / Image Right"
+        }
+      ]
+    },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Left Image"
+      "label": "Image"
     },
     {
       "type": "video",
