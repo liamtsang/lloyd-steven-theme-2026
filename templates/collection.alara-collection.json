@@ -128,12 +128,16 @@
         "image_button_link": "",
         "image_content_position": "left",
         "image_overlay_opacity": 20,
+        "image_heading_color": "#ffffff",
+        "image_button_color": "#ffffff",
         "show_video_overlay": true,
         "video_heading": "",
         "video_button_label": "",
         "video_button_link": "",
         "video_content_position": "center",
         "video_overlay_opacity": 20,
+        "video_heading_color": "#ffffff",
+        "video_button_color": "#ffffff",
         "heading_size": 54,
         "button_size": 18
       }
@@ -231,12 +235,16 @@
         "image_button_link": "",
         "image_content_position": "left",
         "image_overlay_opacity": 20,
+        "image_heading_color": "#242833",
+        "image_button_color": "#242833",
         "show_video_overlay": true,
         "video_heading": "ALARA",
         "video_button_label": "Shop Now",
         "video_button_link": "",
         "video_content_position": "left",
         "video_overlay_opacity": 0,
+        "video_heading_color": "#ededeb",
+        "video_button_color": "#ededeb",
         "heading_size": 20,
         "button_size": 15
       }
