@@ -49,16 +49,6 @@
         "video_link": ""
       }
     },
-    "image_video_section_KdxnaR": {
-      "type": "image-video-section",
-      "disabled": true,
-      "name": "Image + Video Split",
-      "settings": {
-        "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.22_am_e323a92a-6565-49bb-a2d8-67739f4b5b2c.png",
-        "video": "shopify://files/videos/DIAMOND AURA RING_2 - GALLERY.mp4",
-        "video_url": ""
-      }
-    },
     "image_banner_nXNwMd": {
       "type": "image-banner",
       "disabled": true,
@@ -121,6 +111,16 @@
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "image_video_section_KdxnaR": {
+      "type": "image-video-section",
+      "disabled": true,
+      "name": "Image + Video Split",
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.22_am_e323a92a-6565-49bb-a2d8-67739f4b5b2c.png",
+        "video": "shopify://files/videos/DIAMOND AURA RING_2 - GALLERY.mp4",
+        "video_url": ""
       }
     },
     "custom_dual_showcase_ARiQ6Y": {
@@ -189,6 +189,7 @@
       "type": "image-banner",
       "name": "t:sections.image-banner.presets.name",
       "settings": {
+        "image": "shopify://shop_images/DSC_3201_1.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
@@ -254,9 +255,9 @@
     "custom_hero_banner_LqCB4E",
     "banner",
     "upload_video_file_KAc9iz",
-    "image_video_section_KdxnaR",
     "image_banner_nXNwMd",
     "rich_text_4GmaYX",
+    "image_video_section_KdxnaR",
     "custom_dual_showcase_ARiQ6Y",
     "product-grid",
     "image_banner_eeHcKc",
