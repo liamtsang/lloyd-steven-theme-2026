@@ -24,7 +24,6 @@
 .custom-split__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,var(--overlay-opacity));
   z-index: 1;
 }
 
@@ -63,7 +62,6 @@
 .custom-split__heading {
   margin: 0 0 15px;
   font-size: {{ section.settings.heading_size }}px;
-  color: {{ section.settings.heading_color }};
   line-height: 1.1;
 }
 
@@ -71,7 +69,6 @@
   display: inline-block;
   text-decoration: none;
   font-size: {{ section.settings.button_size }}px;
-  color: {{ section.settings.button_color }};
   border-bottom: 1px solid currentColor;
   padding-bottom: 3px;
   transition: opacity .3s ease;
@@ -129,20 +126,27 @@
     {% if section.settings.show_image_overlay %}
       <div 
         class="custom-split__overlay"
-        style="--overlay-opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};"
+        style="background: rgba(0,0,0,{{ section.settings.image_overlay_opacity | divided_by: 100.0 }});"
       ></div>
 
       <div class="custom-split__content custom-split__content--{{ section.settings.image_content_position }}">
         <div class="custom-split__inner">
 
           {% if section.settings.image_heading != blank %}
-            <h2 class="custom-split__heading">
+            <h2 
+              class="custom-split__heading"
+              style="color: {{ section.settings.image_heading_color }};"
+            >
               {{ section.settings.image_heading }}
             </h2>
           {% endif %}
 
           {% if section.settings.image_button_label != blank %}
-            <a href="{{ section.settings.image_button_link }}" class="custom-split__button">
+            <a 
+              href="{{ section.settings.image_button_link }}" 
+              class="custom-split__button"
+              style="color: {{ section.settings.image_button_color }};"
+            >
               {{ section.settings.image_button_label }}
             </a>
           {% endif %}
@@ -176,20 +180,27 @@
     {% if section.settings.show_video_overlay %}
       <div 
         class="custom-split__overlay"
-        style="--overlay-opacity: {{ section.settings.video_overlay_opacity | divided_by: 100.0 }};"
+        style="background: rgba(0,0,0,{{ section.settings.video_overlay_opacity | divided_by: 100.0 }});"
       ></div>
 
       <div class="custom-split__content custom-split__content--{{ section.settings.video_content_position }}">
         <div class="custom-split__inner">
 
           {% if section.settings.video_heading != blank %}
-            <h2 class="custom-split__heading">
+            <h2 
+              class="custom-split__heading"
+              style="color: {{ section.settings.video_heading_color }};"
+            >
               {{ section.settings.video_heading }}
             </h2>
           {% endif %}
 
           {% if section.settings.video_button_label != blank %}
-            <a href="{{ section.settings.video_button_link }}" class="custom-split__button">
+            <a 
+              href="{{ section.settings.video_button_link }}" 
+              class="custom-split__button"
+              style="color: {{ section.settings.video_button_color }};"
+            >
               {{ section.settings.video_button_label }}
             </a>
           {% endif %}
@@ -225,20 +236,27 @@
     {% if section.settings.show_video_overlay %}
       <div 
         class="custom-split__overlay"
-        style="--overlay-opacity: {{ section.settings.video_overlay_opacity | divided_by: 100.0 }};"
+        style="background: rgba(0,0,0,{{ section.settings.video_overlay_opacity | divided_by: 100.0 }});"
       ></div>
 
       <div class="custom-split__content custom-split__content--{{ section.settings.video_content_position }}">
         <div class="custom-split__inner">
 
           {% if section.settings.video_heading != blank %}
-            <h2 class="custom-split__heading">
+            <h2 
+              class="custom-split__heading"
+              style="color: {{ section.settings.video_heading_color }};"
+            >
               {{ section.settings.video_heading }}
             </h2>
           {% endif %}
 
           {% if section.settings.video_button_label != blank %}
-            <a href="{{ section.settings.video_button_link }}" class="custom-split__button">
+            <a 
+              href="{{ section.settings.video_button_link }}" 
+              class="custom-split__button"
+              style="color: {{ section.settings.video_button_color }};"
+            >
               {{ section.settings.video_button_label }}
             </a>
           {% endif %}
@@ -263,20 +281,27 @@
     {% if section.settings.show_image_overlay %}
       <div 
         class="custom-split__overlay"
-        style="--overlay-opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};"
+        style="background: rgba(0,0,0,{{ section.settings.image_overlay_opacity | divided_by: 100.0 }});"
       ></div>
 
       <div class="custom-split__content custom-split__content--{{ section.settings.image_content_position }}">
         <div class="custom-split__inner">
 
           {% if section.settings.image_heading != blank %}
-            <h2 class="custom-split__heading">
+            <h2 
+              class="custom-split__heading"
+              style="color: {{ section.settings.image_heading_color }};"
+            >
               {{ section.settings.image_heading }}
             </h2>
           {% endif %}
 
           {% if section.settings.image_button_label != blank %}
-            <a href="{{ section.settings.image_button_link }}" class="custom-split__button">
+            <a 
+              href="{{ section.settings.image_button_link }}" 
+              class="custom-split__button"
+              style="color: {{ section.settings.image_button_color }};"
+            >
               {{ section.settings.image_button_label }}
             </a>
           {% endif %}
@@ -379,6 +404,20 @@
     },
 
     {
+      "type": "color",
+      "id": "image_heading_color",
+      "label": "Image Heading Color",
+      "default": "#ffffff"
+    },
+
+    {
+      "type": "color",
+      "id": "image_button_color",
+      "label": "Image Button Color",
+      "default": "#ffffff"
+    },
+
+    {
       "type": "checkbox",
       "id": "show_video_overlay",
       "label": "Show Video Overlay Content",
@@ -426,6 +465,20 @@
     },
 
     {
+      "type": "color",
+      "id": "video_heading_color",
+      "label": "Video Heading Color",
+      "default": "#ffffff"
+    },
+
+    {
+      "type": "color",
+      "id": "video_button_color",
+      "label": "Video Button Color",
+      "default": "#ffffff"
+    },
+
+    {
       "type": "range",
       "id": "heading_size",
       "label": "Heading Size",
@@ -443,20 +496,6 @@
       "max": 40,
       "step": 1,
       "default": 18
-    },
-
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading Color",
-      "default": "#ffffff"
-    },
-
-    {
-      "type": "color",
-      "id": "button_color",
-      "label": "Button Color",
-      "default": "#ffffff"
     }
 
   ],
