@@ -6,19 +6,13 @@
   align-items: stretch;
 }
 
-.custom-split > div {
+.custom-split__item {
+  position: relative;
+  overflow: hidden;
   min-width: 0;
 }
 
-/* IMAGE */
-.custom-split__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* VIDEO */
+.custom-split__image img,
 .custom-split__video video {
   width: 100%;
   height: 100%;
@@ -26,7 +20,68 @@
   display: block;
 }
 
-/* Desktop height */
+/* OVERLAY */
+.custom-split__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,var(--overlay-opacity));
+  z-index: 1;
+}
+
+/* CONTENT */
+.custom-split__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.custom-split__content--left {
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.custom-split__content--center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.custom-split__content--right {
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+
+.custom-split__inner {
+  max-width: 500px;
+}
+
+.custom-split__heading {
+  margin: 0 0 15px;
+  font-size: {{ section.settings.heading_size }}px;
+  color: {{ section.settings.heading_color }};
+  line-height: 1.1;
+}
+
+.custom-split__button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: {{ section.settings.button_size }}px;
+  color: {{ section.settings.button_color }};
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
+  transition: opacity .3s ease;
+}
+
+.custom-split__button:hover {
+  opacity: .7;
+}
+
+/* Desktop */
 @media screen and (min-width: 990px) {
   .custom-split {
     height: 80vh;
@@ -35,84 +90,204 @@
 
 /* Mobile */
 @media screen and (max-width: 749px) {
+
   .custom-split {
     grid-template-columns: 1fr;
     height: auto;
   }
+
+  .custom-split__item {
+    min-height: 60vh;
+  }
+
+  .custom-split__content {
+    padding: 25px;
+  }
+
+  .custom-split__heading {
+    font-size: calc({{ section.settings.heading_size }}px * .7);
+  }
+
 }
 </style>
 
 <div class="custom-split">
 
-  {% if section.settings.layout == 'image_left' %}
+{% if section.settings.layout == 'image_left' %}
 
-    <!-- LEFT IMAGE -->
-    <div class="custom-split__image">
-      {% if section.settings.image != blank %}
-        <img 
-          src="{{ section.settings.image | image_url: width: 1600 }}" 
-          alt="{{ section.settings.image.alt | escape }}"
-          loading="lazy"
-        >
-      {% endif %}
-    </div>
+  <!-- IMAGE -->
+  <div class="custom-split__item custom-split__image">
 
-    <!-- RIGHT VIDEO -->
-    <div class="custom-split__video">
+    {% if section.settings.image != blank %}
+      <img 
+        src="{{ section.settings.image | image_url: width: 2000 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="lazy"
+      >
+    {% endif %}
 
-      {% if section.settings.video != blank %}
-        {{
-          section.settings.video
-          | video_tag:
-            autoplay: true,
-            muted: true,
-            loop: true,
-            controls: false
-        }}
+    {% if section.settings.show_image_overlay %}
+      <div 
+        class="custom-split__overlay"
+        style="--overlay-opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};"
+      ></div>
 
-      {% elsif section.settings.video_url != blank %}
-        <video autoplay muted loop playsinline>
-          <source src="{{ section.settings.video_url }}" type="video/mp4">
-        </video>
-      {% endif %}
+      <div class="custom-split__content custom-split__content--{{ section.settings.image_content_position }}">
+        <div class="custom-split__inner">
 
-    </div>
+          {% if section.settings.image_heading != blank %}
+            <h2 class="custom-split__heading">
+              {{ section.settings.image_heading }}
+            </h2>
+          {% endif %}
 
-  {% else %}
+          {% if section.settings.image_button_label != blank %}
+            <a href="{{ section.settings.image_button_link }}" class="custom-split__button">
+              {{ section.settings.image_button_label }}
+            </a>
+          {% endif %}
 
-    <!-- LEFT VIDEO -->
-    <div class="custom-split__video">
+        </div>
+      </div>
+    {% endif %}
 
-      {% if section.settings.video != blank %}
-        {{
-          section.settings.video
-          | video_tag:
-            autoplay: true,
-            muted: true,
-            loop: true,
-            controls: false
-        }}
+  </div>
 
-      {% elsif section.settings.video_url != blank %}
-        <video autoplay muted loop playsinline>
-          <source src="{{ section.settings.video_url }}" type="video/mp4">
-        </video>
-      {% endif %}
+  <!-- VIDEO -->
+  <div class="custom-split__item custom-split__video">
 
-    </div>
+    {% if section.settings.video != blank %}
+      {{
+        section.settings.video
+        | video_tag:
+          autoplay: true,
+          muted: true,
+          loop: true,
+          controls: false,
+          playsinline: true
+      }}
 
-    <!-- RIGHT IMAGE -->
-    <div class="custom-split__image">
-      {% if section.settings.image != blank %}
-        <img 
-          src="{{ section.settings.image | image_url: width: 1600 }}" 
-          alt="{{ section.settings.image.alt | escape }}"
-          loading="lazy"
-        >
-      {% endif %}
-    </div>
+    {% elsif section.settings.video_url != blank %}
+      <video autoplay muted loop playsinline>
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
 
-  {% endif %}
+    {% if section.settings.show_video_overlay %}
+      <div 
+        class="custom-split__overlay"
+        style="--overlay-opacity: {{ section.settings.video_overlay_opacity | divided_by: 100.0 }};"
+      ></div>
+
+      <div class="custom-split__content custom-split__content--{{ section.settings.video_content_position }}">
+        <div class="custom-split__inner">
+
+          {% if section.settings.video_heading != blank %}
+            <h2 class="custom-split__heading">
+              {{ section.settings.video_heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.video_button_label != blank %}
+            <a href="{{ section.settings.video_button_link }}" class="custom-split__button">
+              {{ section.settings.video_button_label }}
+            </a>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+
+{% else %}
+
+  <!-- VIDEO -->
+  <div class="custom-split__item custom-split__video">
+
+    {% if section.settings.video != blank %}
+      {{
+        section.settings.video
+        | video_tag:
+          autoplay: true,
+          muted: true,
+          loop: true,
+          controls: false,
+          playsinline: true
+      }}
+
+    {% elsif section.settings.video_url != blank %}
+      <video autoplay muted loop playsinline>
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+
+    {% if section.settings.show_video_overlay %}
+      <div 
+        class="custom-split__overlay"
+        style="--overlay-opacity: {{ section.settings.video_overlay_opacity | divided_by: 100.0 }};"
+      ></div>
+
+      <div class="custom-split__content custom-split__content--{{ section.settings.video_content_position }}">
+        <div class="custom-split__inner">
+
+          {% if section.settings.video_heading != blank %}
+            <h2 class="custom-split__heading">
+              {{ section.settings.video_heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.video_button_label != blank %}
+            <a href="{{ section.settings.video_button_link }}" class="custom-split__button">
+              {{ section.settings.video_button_label }}
+            </a>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <!-- IMAGE -->
+  <div class="custom-split__item custom-split__image">
+
+    {% if section.settings.image != blank %}
+      <img 
+        src="{{ section.settings.image | image_url: width: 2000 }}"
+        alt="{{ section.settings.image.alt | escape }}"
+        loading="lazy"
+      >
+    {% endif %}
+
+    {% if section.settings.show_image_overlay %}
+      <div 
+        class="custom-split__overlay"
+        style="--overlay-opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};"
+      ></div>
+
+      <div class="custom-split__content custom-split__content--{{ section.settings.image_content_position }}">
+        <div class="custom-split__inner">
+
+          {% if section.settings.image_heading != blank %}
+            <h2 class="custom-split__heading">
+              {{ section.settings.image_heading }}
+            </h2>
+          {% endif %}
+
+          {% if section.settings.image_button_label != blank %}
+            <a href="{{ section.settings.image_button_link }}" class="custom-split__button">
+              {{ section.settings.image_button_label }}
+            </a>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+
+{% endif %}
 
 </div>
 
@@ -120,6 +295,7 @@
 {
   "name": "Image / Video Split",
   "settings": [
+
     {
       "type": "select",
       "id": "layout",
@@ -136,22 +312,155 @@
         }
       ]
     },
+
     {
       "type": "image_picker",
       "id": "image",
       "label": "Image"
     },
+
     {
       "type": "video",
       "id": "video",
-      "label": "Video (Upload in Shopify)"
+      "label": "Video"
     },
+
     {
       "type": "url",
       "id": "video_url",
-      "label": "Fallback MP4 URL (optional)"
+      "label": "Fallback MP4 URL"
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_image_overlay",
+      "label": "Show Image Overlay Content",
+      "default": true
+    },
+
+    {
+      "type": "text",
+      "id": "image_heading",
+      "label": "Image Heading"
+    },
+
+    {
+      "type": "text",
+      "id": "image_button_label",
+      "label": "Image Button Label"
+    },
+
+    {
+      "type": "url",
+      "id": "image_button_link",
+      "label": "Image Button Link"
+    },
+
+    {
+      "type": "select",
+      "id": "image_content_position",
+      "label": "Image Content Position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "label": "Image Overlay Opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "default": 20
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_video_overlay",
+      "label": "Show Video Overlay Content",
+      "default": true
+    },
+
+    {
+      "type": "text",
+      "id": "video_heading",
+      "label": "Video Heading"
+    },
+
+    {
+      "type": "text",
+      "id": "video_button_label",
+      "label": "Video Button Label"
+    },
+
+    {
+      "type": "url",
+      "id": "video_button_link",
+      "label": "Video Button Link"
+    },
+
+    {
+      "type": "select",
+      "id": "video_content_position",
+      "label": "Video Content Position",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+
+    {
+      "type": "range",
+      "id": "video_overlay_opacity",
+      "label": "Video Overlay Opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "default": 20
+    },
+
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "min": 20,
+      "max": 100,
+      "step": 2,
+      "default": 54
+    },
+
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Button Size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "default": 18
+    },
+
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#ffffff"
+    },
+
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#ffffff"
     }
+
   ],
+
   "presets": [
     {
       "name": "Image + Video Split"
