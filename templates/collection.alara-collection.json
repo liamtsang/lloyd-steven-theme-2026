@@ -121,7 +121,21 @@
         "layout": "image_left",
         "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.22_am_e323a92a-6565-49bb-a2d8-67739f4b5b2c.png",
         "video": "shopify://files/videos/DIAMOND AURA RING_2 - GALLERY.mp4",
-        "video_url": ""
+        "video_url": "",
+        "show_image_overlay": true,
+        "image_heading": "",
+        "image_button_label": "",
+        "image_button_link": "",
+        "image_content_position": "left",
+        "image_overlay_opacity": 20,
+        "show_video_overlay": true,
+        "video_heading": "",
+        "video_button_label": "",
+        "video_button_link": "",
+        "video_content_position": "center",
+        "video_overlay_opacity": 20,
+        "heading_size": 54,
+        "button_size": 18
       }
     },
     "custom_dual_showcase_ARiQ6Y": {
@@ -210,7 +224,21 @@
         "layout": "video_left",
         "image": "shopify://shop_images/Elara_Vertical.jpg",
         "video": "shopify://files/videos/0520.mp4",
-        "video_url": ""
+        "video_url": "",
+        "show_image_overlay": true,
+        "image_heading": "ALARA",
+        "image_button_label": "Shop Now",
+        "image_button_link": "",
+        "image_content_position": "left",
+        "image_overlay_opacity": 20,
+        "show_video_overlay": true,
+        "video_heading": "ALARA",
+        "video_button_label": "Shop Now",
+        "video_button_link": "",
+        "video_content_position": "left",
+        "video_overlay_opacity": 0,
+        "heading_size": 20,
+        "button_size": 15
       }
     },
     "rich_text_XxDqQp": {
