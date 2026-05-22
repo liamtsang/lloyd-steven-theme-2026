@@ -118,6 +118,7 @@
       "disabled": true,
       "name": "Image + Video Split",
       "settings": {
+        "layout": "image_left",
         "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.22_am_e323a92a-6565-49bb-a2d8-67739f4b5b2c.png",
         "video": "shopify://files/videos/DIAMOND AURA RING_2 - GALLERY.mp4",
         "video_url": ""
@@ -202,6 +203,16 @@
         "show_text_below": true
       }
     },
+    "image_video_section_jgV8YD": {
+      "type": "image-video-section",
+      "name": "Image + Video Split",
+      "settings": {
+        "layout": "video_left",
+        "image": "shopify://shop_images/Elara_Vertical.jpg",
+        "video": "shopify://files/videos/0520.mp4",
+        "video_url": ""
+      }
+    },
     "rich_text_XxDqQp": {
       "type": "rich-text",
       "blocks": {
@@ -248,13 +259,6 @@
         "full_width": true,
         "padding_top": 44,
         "padding_bottom": 40
-      }
-    },
-    "image_video_section_jgV8YD": {
-      "type": "image-video-section",
-      "name": "Image + Video Split",
-      "settings": {
-        "video_url": ""
       }
     }
   },
