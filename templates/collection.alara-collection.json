@@ -81,7 +81,7 @@
         "text_k7GV8r": {
           "type": "text",
           "settings": {
-            "text": "<p>A 1ct oval diamond, bezel set in 9k white gold, surrounded by eight radiating spikes<br/>Worn vertically as Alara Sky. Horizontally as Alara Earth. </p><p>Made to order with your personal engraving included.</p>"
+            "text": "<p>Eight. The number of infinite cycles. Of abundance.<br/><br/>A 1ct oval lab diamond, wrapped in eight radiating spikes. </p>"
           }
         },
         "button_myaXQz": {
@@ -115,12 +115,11 @@
     },
     "image_video_section_KdxnaR": {
       "type": "image-video-section",
-      "disabled": true,
       "name": "Image + Video Split",
       "settings": {
         "layout": "image_left",
-        "image": "shopify://shop_images/Screenshot_2026-05-13_at_10.32.22_am_e323a92a-6565-49bb-a2d8-67739f4b5b2c.png",
-        "video": "shopify://files/videos/DIAMOND AURA RING_2 - GALLERY.mp4",
+        "image": "shopify://shop_images/ALARA_SKY_VERTICAL_RENDER_2x3_0064bc37-1bf3-4414-99dd-21d42782eed1.jpg",
+        "video": "shopify://files/videos/ALARAVERTICAL.mp4",
         "video_url": "",
         "show_image_overlay": true,
         "image_heading": "",
